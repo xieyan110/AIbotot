@@ -60,8 +60,11 @@ namespace Aibot
     }
     
     [AibotItem("Adb投屏", ActionType = ActionType.AndroidServer)]
-    public class AdbDebugRunScrcpy : BaseAdbAibotAction, IAibotAction
+    public class AdbDebugRunScrcpy : BaseAibotAction, IAibotAction
     {
+        [AibotProperty("设备[必填](String)", AibotKeyType.Object, IsRoot = false, Usage = AibotKeyUsage.Input)]
+        public AibotProperty DeviceName { get; set; }
+
         public new Task Execute(AibotV blackboard)
         {
 
