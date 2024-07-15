@@ -1,0 +1,1291 @@
+{
+  "Name": "3. 微信电脑端 聊天记录提取",
+  "SaveTime": "2024-05-28 20:03:04",
+  "Operations": [
+    {
+      "Title": "StartRoot",
+      "ActionReference": {
+        "Name": "StartRoot",
+        "Type": "Aibot.StartRoot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 0,
+        "ActionViewType": 0
+      },
+      "Location": "300,200",
+      "NodeInfo": {
+        "Input": [],
+        "Output": [
+          {
+            "Id": "6fb4781e-e5be-428e-be44-7ceffa71f39d",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "471,234.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "鼠标左击(高级)",
+      "ActionReference": {
+        "Name": "鼠标左击(高级)",
+        "Type": "Aibot.MouseClick, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 3,
+        "ActionViewType": 0
+      },
+      "Location": "330,300",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "aaf37c32-526d-46b0-9b6a-f55796d42c3c",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "343,334.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "1e9d7f8d-8a75-4276-9de2-f01e5f0a65e4",
+            "Title": "X(Int)",
+            "PropertyName": "X",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 2321,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "760cfe57-1a41-4f93-9504-3939fae9e5bd",
+            "Title": "Y(Int)",
+            "PropertyName": "Y",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 1415,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "e4f77742-f640-4fd0-864f-1691b573827b",
+            "Title": "点击次数(Int)",
+            "PropertyName": "Count",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 0,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "30389126-65f1-46c4-8bf4-24c97a2d54ed",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "534.6133333333333,334.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "窗口-截图",
+      "ActionReference": {
+        "Name": "窗口-截图",
+        "Type": "Aibot.WindowsScreenshot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 3,
+        "ActionViewType": 0
+      },
+      "Location": "645,420",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "3a48acc4-4890-45e2-8ae8-e8845aee8def",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "657.9999999999999,454.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "89749058-f628-472e-b6ec-397412df965c",
+            "Title": "IntPtr",
+            "PropertyName": "IntPtr",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "657.9999999999999,474.0999999999999",
+            "Operation": null,
+            "Type": 5,
+            "Value": {
+              "value": 263436
+            },
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "c7b419e9-7cce-4ca2-8d05-e06b67f2049d",
+            "Title": "文件名",
+            "PropertyName": "FileName",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "868.0000000000001,506.48",
+            "Operation": null,
+            "Type": 3,
+            "Value": "wx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "9b60fe8f-86b8-432e-9fbc-9145aa50300f",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "878.0433333333332,454.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "30b871dd-ce43-4f15-acfa-a459e707fd1c",
+            "Title": "文件路径",
+            "PropertyName": "FilePath",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "878.0433333333332,474.0999999999999",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\wx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "窗口-焦点句柄",
+      "ActionReference": {
+        "Name": "窗口-焦点句柄",
+        "Type": "Aibot.WindowsGetFocused, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 3,
+        "ActionViewType": 0
+      },
+      "Location": "345,570",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "34abce34-5c0f-47e6-b9cd-a00ddddf589a",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "358,604.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "8158bcd0-ac1c-4d24-8829-63a919465bc5",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "516,604.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "4904733f-83cb-4285-9f67-93fe6096bc29",
+            "Title": "IntPtr",
+            "PropertyName": "IntPtr",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "516,624.1",
+            "Operation": null,
+            "Type": 5,
+            "Value": {
+              "value": 263436
+            },
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "窗口化",
+      "ActionReference": {
+        "Name": "窗口化",
+        "Type": "Aibot.WindowsNormalize, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 3,
+        "ActionViewType": 0
+      },
+      "Location": "660,285",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "ff5f8cf4-0c4a-401c-9da1-462768f0d908",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "672.9999999999999,319.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "2cbe895c-8bbb-4a1d-976d-5af52cad9d26",
+            "Title": "IntPtr",
+            "PropertyName": "IntPtr",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "672.9999999999999,339.09999999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": {
+              "value": 263436
+            },
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "46a28595-28a2-4233-8c81-73c969d05105",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "830.9999999999999,319.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "时间-等待",
+      "ActionReference": {
+        "Name": "时间-等待",
+        "Type": "Aibot.Sleep, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "330,465",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "2cd7869b-6d43-4583-b969-bb1a34322e11",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "343,499.86000000000007",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "3d9d8d98-2e22-4dea-bc22-b3f0c4740a55",
+            "Title": "毫秒(Int)",
+            "PropertyName": "SleepTime",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 1000,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "80cf3088-4c64-4422-b50a-1a81d56d5c23",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "535.2433333333333,499.86000000000007",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "详细图片Json",
+      "ActionReference": {
+        "Name": "详细图片Json",
+        "Type": "Aibot.GetChatImageData, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "660,555",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "9ff2a779-d34b-4296-bb3a-79df38eb7044",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "672.9999999999999,589.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "d9817106-fca9-475e-9b86-5b3a1079b949",
+            "Title": "图片(String)",
+            "PropertyName": "TempPath",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "672.9999999999999,609.0999999999999",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\wx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "6d9c53c5-d731-4691-ab48-d80d41f038b5",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "907.72,589.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "bd543ef6-8bf5-45f8-8f28-1cb48aee001a",
+            "Title": "JsonData(String)",
+            "PropertyName": "JsonData",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "907.72,609.0999999999999",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 931,\r\n      \"Y\": 12\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 927,\r\n      \"Y\": 12\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 935,\r\n      \"Y\": 12\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 927,\r\n        \"Y\": 8\r\n      },\r\n      {\r\n        \"X\": 935,\r\n        \"Y\": 8\r\n      },\r\n      {\r\n        \"X\": 935,\r\n        \"Y\": 17\r\n      },\r\n      {\r\n        \"X\": 927,\r\n        \"Y\": 17\r\n      }\r\n    ],\r\n    \"Text\": \"X\",\r\n    \"Score\": 0.33831733,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 321,\r\n      \"Y\": 30\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 301,\r\n      \"Y\": 30\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 342,\r\n      \"Y\": 30\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 301,\r\n        \"Y\": 19\r\n      },\r\n      {\r\n        \"X\": 342,\r\n        \"Y\": 19\r\n      },\r\n      {\r\n        \"X\": 342,\r\n        \"Y\": 41\r\n      },\r\n      {\r\n        \"X\": 301,\r\n        \"Y\": 41\r\n      }\r\n    ],\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.93585026,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 92,\r\n      \"Y\": 37\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 69,\r\n      \"Y\": 37\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 37\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 69,\r\n        \"Y\": 30\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 30\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 44\r\n      },\r\n      {\r\n        \"X\": 69,\r\n        \"Y\": 44\r\n      }\r\n    ],\r\n    \"Text\": \"Q搜索\",\r\n    \"Score\": 0.9740575,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 74\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 74\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 74\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 64\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 65\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 83\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 82\r\n      }\r\n    ],\r\n    \"Text\": \"是通过算法来提供个性化的饮食、运动和生活方式建\",\r\n    \"Score\": 0.9985301,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 83\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 83\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 205,\r\n      \"Y\": 83\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 75\r\n      },\r\n      {\r\n        \"X\": 205,\r\n        \"Y\": 75\r\n      },\r\n      {\r\n        \"X\": 205,\r\n        \"Y\": 92\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 92\r\n      }\r\n    ],\r\n    \"Text\": \"荆则仁生活号\",\r\n    \"Score\": 0.9933574,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 83\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 233,\r\n      \"Y\": 83\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 263,\r\n      \"Y\": 83\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 233,\r\n        \"Y\": 74\r\n      },\r\n      {\r\n        \"X\": 263,\r\n        \"Y\": 76\r\n      },\r\n      {\r\n        \"X\": 262,\r\n        \"Y\": 91\r\n      },\r\n      {\r\n        \"X\": 232,\r\n        \"Y\": 89\r\n      }\r\n    ],\r\n    \"Text\": \"19:53\",\r\n    \"Score\": 0.97375995,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 93\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 93\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 93\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 85\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 85\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 101\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 101\r\n      }\r\n    ],\r\n    \"Text\": \"议的。如果您有任何关于健康的疑问或需要帮助的地\",\r\n    \"Score\": 0.9985719,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 184,\r\n      \"Y\": 106\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 106\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 254,\r\n      \"Y\": 106\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 98\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 98\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 114\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 114\r\n      }\r\n    ],\r\n    \"Text\": \"[视频号]小茗讲国学情感\",\r\n    \"Score\": 0.9721331,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 470,\r\n      \"Y\": 112\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 112\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 578,\r\n      \"Y\": 112\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 104\r\n      },\r\n      {\r\n        \"X\": 578,\r\n        \"Y\": 104\r\n      },\r\n      {\r\n        \"X\": 578,\r\n        \"Y\": 120\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 120\r\n      }\r\n    ],\r\n    \"Text\": \"方，我会尽力为您提供支持和建议。\",\r\n    \"Score\": 0.99930274,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 136,\r\n      \"Y\": 148\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 148\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 148\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 157\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 157\r\n      }\r\n    ],\r\n    \"Text\": \"薛瑞瑜\",\r\n    \"Score\": 0.9925477,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 146\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 146\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 146\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 154\r\n      }\r\n    ],\r\n    \"Text\": \"19:23\",\r\n    \"Score\": 0.98291814,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 772,\r\n      \"Y\": 162\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 680,\r\n      \"Y\": 162\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 865,\r\n      \"Y\": 162\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 680,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 865,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 865,\r\n        \"Y\": 170\r\n      },\r\n      {\r\n        \"X\": 680,\r\n        \"Y\": 170\r\n      }\r\n    ],\r\n    \"Text\": \"腌鸡蛋的吃多了会有什么危害\",\r\n    \"Score\": 0.9834602,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 121,\r\n      \"Y\": 170\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 170\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 128,\r\n      \"Y\": 170\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 164\r\n      },\r\n      {\r\n        \"X\": 128,\r\n        \"Y\": 164\r\n      },\r\n      {\r\n        \"X\": 128,\r\n        \"Y\": 176\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 176\r\n      }\r\n    ],\r\n    \"Text\": \"嘎\",\r\n    \"Score\": 0.31152982,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 129,\r\n      \"Y\": 212\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 212\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 146,\r\n      \"Y\": 212\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 222\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 222\r\n      }\r\n    ],\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.8347071,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 210\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 210\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 210\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 218\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 218\r\n      }\r\n    ],\r\n    \"Text\": \"19:23\",\r\n    \"Score\": 0.97939837,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 212\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 212\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 212\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 221\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 220\r\n      }\r\n    ],\r\n    \"Text\": \"过度食用腌制的咸蛋可能会对健康造成一些潜在的危\",\r\n    \"Score\": 0.9932003,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 145,\r\n      \"Y\": 234\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 234\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 175,\r\n      \"Y\": 234\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 227\r\n      },\r\n      {\r\n        \"X\": 175,\r\n        \"Y\": 227\r\n      },\r\n      {\r\n        \"X\": 175,\r\n        \"Y\": 241\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 241\r\n      }\r\n    ],\r\n    \"Text\": \"GMain123\",\r\n    \"Score\": 0.98863333,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 374,\r\n      \"Y\": 231\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 231\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 386,\r\n      \"Y\": 231\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 223\r\n      },\r\n      {\r\n        \"X\": 386,\r\n        \"Y\": 223\r\n      },\r\n      {\r\n        \"X\": 386,\r\n        \"Y\": 239\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 239\r\n      }\r\n    ],\r\n    \"Text\": \"害：\",\r\n    \"Score\": 0.9467095,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 520,\r\n      \"Y\": 250\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 250\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 679,\r\n      \"Y\": 250\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 242\r\n      },\r\n      {\r\n        \"X\": 679,\r\n        \"Y\": 242\r\n      },\r\n      {\r\n        \"X\": 679,\r\n        \"Y\": 258\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 258\r\n      }\r\n    ],\r\n    \"Text\": \"1.高盐摄入：许多腌制食品都含有较高的钠（salt）\",\r\n    \"Score\": 0.9660718,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 136,\r\n      \"Y\": 276\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 276\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 276\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 285\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 285\r\n      }\r\n    ],\r\n    \"Text\": \"订阅号\",\r\n    \"Score\": 0.9980481,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 274\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 274\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 274\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 281\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 281\r\n      }\r\n    ],\r\n    \"Text\": \"18:35\",\r\n    \"Score\": 0.9913623,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 268\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 268\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 268\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 260\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 260\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 277\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 277\r\n      }\r\n    ],\r\n    \"Text\": \"含量，而过量摄入盐分会增加高血压、心脏病和中风\",\r\n    \"Score\": 0.998167,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 386,\r\n      \"Y\": 288\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 288\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 411,\r\n      \"Y\": 288\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 279\r\n      },\r\n      {\r\n        \"X\": 411,\r\n        \"Y\": 279\r\n      },\r\n      {\r\n        \"X\": 411,\r\n        \"Y\": 297\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 297\r\n      }\r\n    ],\r\n    \"Text\": \"的风险。\",\r\n    \"Score\": 0.99864304,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 184,\r\n      \"Y\": 298\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 298\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 254,\r\n      \"Y\": 298\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 292\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 292\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 305\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 305\r\n      }\r\n    ],\r\n    \"Text\": \"刘悦的技术博客：Live2D..\",\r\n    \"Score\": 0.968494,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 306\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 306\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 688,\r\n      \"Y\": 306\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 298\r\n      },\r\n      {\r\n        \"X\": 688,\r\n        \"Y\": 298\r\n      },\r\n      {\r\n        \"X\": 688,\r\n        \"Y\": 315\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 315\r\n      }\r\n    ],\r\n    \"Text\": \"2.营养流失：在腌制过程中，食物中的维生素和矿物\",\r\n    \"Score\": 0.9960397,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 26,\r\n      \"Y\": 314\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 19,\r\n      \"Y\": 314\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 33,\r\n      \"Y\": 314\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 19,\r\n        \"Y\": 308\r\n      },\r\n      {\r\n        \"X\": 33,\r\n        \"Y\": 308\r\n      },\r\n      {\r\n        \"X\": 33,\r\n        \"Y\": 321\r\n      },\r\n      {\r\n        \"X\": 19,\r\n        \"Y\": 321\r\n      }\r\n    ],\r\n    \"Text\": \"六\",\r\n    \"Score\": 0.30470404,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 484,\r\n      \"Y\": 326\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 326\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 606,\r\n      \"Y\": 326\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 318\r\n      },\r\n      {\r\n        \"X\": 606,\r\n        \"Y\": 318\r\n      },\r\n      {\r\n        \"X\": 606,\r\n        \"Y\": 334\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 334\r\n      }\r\n    ],\r\n    \"Text\": \"质可能被分解或损失，导致营养素匮乏。\",\r\n    \"Score\": 0.97833484,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 139,\r\n      \"Y\": 339\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 339\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 164,\r\n      \"Y\": 339\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 331\r\n      },\r\n      {\r\n        \"X\": 164,\r\n        \"Y\": 331\r\n      },\r\n      {\r\n        \"X\": 164,\r\n        \"Y\": 348\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 348\r\n      }\r\n    ],\r\n    \"Text\": \"*(M）\",\r\n    \"Score\": 0.53811383,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 251,\r\n      \"Y\": 337\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 237,\r\n      \"Y\": 337\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 266,\r\n      \"Y\": 337\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 237,\r\n        \"Y\": 330\r\n      },\r\n      {\r\n        \"X\": 266,\r\n        \"Y\": 330\r\n      },\r\n      {\r\n        \"X\": 266,\r\n        \"Y\": 345\r\n      },\r\n      {\r\n        \"X\": 237,\r\n        \"Y\": 345\r\n      }\r\n    ],\r\n    \"Text\": \"昨天\",\r\n    \"Score\": 0.9800522,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 344\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 344\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 689,\r\n      \"Y\": 344\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 336\r\n      },\r\n      {\r\n        \"X\": 689,\r\n        \"Y\": 336\r\n      },\r\n      {\r\n        \"X\": 689,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 353\r\n      }\r\n    ],\r\n    \"Text\": \"3.食品安全风险：如果腌制的咸蛋未经妥善保存或在\",\r\n    \"Score\": 0.9952418,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 133,\r\n      \"Y\": 362\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 362\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 154,\r\n      \"Y\": 362\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 154,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 154,\r\n        \"Y\": 371\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 371\r\n      }\r\n    ],\r\n    \"Text\": \"就知道\",\r\n    \"Score\": 0.9995415,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 517,\r\n      \"Y\": 364\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 364\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 674,\r\n      \"Y\": 364\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 355\r\n      },\r\n      {\r\n        \"X\": 674,\r\n        \"Y\": 356\r\n      },\r\n      {\r\n        \"X\": 674,\r\n        \"Y\": 373\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 372\r\n      }\r\n    ],\r\n    \"Text\": \"过期后食用，可能会受到细菌污染而引发食源性疾\",\r\n    \"Score\": 0.9992052,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 372,\r\n      \"Y\": 383\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 383\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 384,\r\n      \"Y\": 383\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 375\r\n      },\r\n      {\r\n        \"X\": 384,\r\n        \"Y\": 375\r\n      },\r\n      {\r\n        \"X\": 384,\r\n        \"Y\": 391\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 391\r\n      }\r\n    ],\r\n    \"Text\": \"病。\",\r\n    \"Score\": 0.9969212,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 402\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 402\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 402\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 395\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 395\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 409\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 409\r\n      }\r\n    ],\r\n    \"Text\": \"18:08\",\r\n    \"Score\": 0.99156827,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 517,\r\n      \"Y\": 401\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 360,\r\n      \"Y\": 401\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 675,\r\n      \"Y\": 401\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 360,\r\n        \"Y\": 392\r\n      },\r\n      {\r\n        \"X\": 675,\r\n        \"Y\": 393\r\n      },\r\n      {\r\n        \"X\": 675,\r\n        \"Y\": 410\r\n      },\r\n      {\r\n        \"X\": 360,\r\n        \"Y\": 409\r\n      }\r\n    ],\r\n    \"Text\": \"4.口味依赖：经常食用过咸的食物可能导致味觉适\",\r\n    \"Score\": 0.9985878,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 421\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 421\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 421\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 412\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 412\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 430\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 430\r\n      }\r\n    ],\r\n    \"Text\": \"应，使人对盐分的需求增加，进而可能对健康产生负\",\r\n    \"Score\": 0.9992417,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 130,\r\n      \"Y\": 403\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 403\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 146,\r\n      \"Y\": 403\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 396\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 396\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 411\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 411\r\n      }\r\n    ],\r\n    \"Text\": \"刘敏\",\r\n    \"Score\": 0.99950165,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 131,\r\n      \"Y\": 427\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 427\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 149,\r\n      \"Y\": 427\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 419\r\n      },\r\n      {\r\n        \"X\": 149,\r\n        \"Y\": 419\r\n      },\r\n      {\r\n        \"X\": 149,\r\n        \"Y\": 435\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 435\r\n      }\r\n    ],\r\n    \"Text\": \"[文件]\",\r\n    \"Score\": 0.85837626,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 387,\r\n      \"Y\": 440\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 440\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 412,\r\n      \"Y\": 440\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 432\r\n      },\r\n      {\r\n        \"X\": 412,\r\n        \"Y\": 432\r\n      },\r\n      {\r\n        \"X\": 412,\r\n        \"Y\": 449\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 449\r\n      }\r\n    ],\r\n    \"Text\": \"面影响。\",\r\n    \"Score\": 0.9340384,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 466\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 466\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 466\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 459\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 459\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 473\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 473\r\n      }\r\n    ],\r\n    \"Text\": \"15:46\",\r\n    \"Score\": 0.98768777,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 459\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 459\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 459\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 451\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 451\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 467\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 467\r\n      }\r\n    ],\r\n    \"Text\": \"因此，适量摄入制食品是重要的，同时应注意食物\",\r\n    \"Score\": 0.998468,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 448,\r\n      \"Y\": 478\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 478\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 536,\r\n      \"Y\": 478\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 470\r\n      },\r\n      {\r\n        \"X\": 536,\r\n        \"Y\": 470\r\n      },\r\n      {\r\n        \"X\": 536,\r\n        \"Y\": 486\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 486\r\n      }\r\n    ],\r\n    \"Text\": \"的多样性以获取均衡的营养。\",\r\n    \"Score\": 0.9977578,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 129,\r\n      \"Y\": 467\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 467\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 145,\r\n      \"Y\": 467\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 460\r\n      },\r\n      {\r\n        \"X\": 145,\r\n        \"Y\": 460\r\n      },\r\n      {\r\n        \"X\": 145,\r\n        \"Y\": 475\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 475\r\n      }\r\n    ],\r\n    \"Text\": \"郭超\",\r\n    \"Score\": 0.9998116,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 127,\r\n      \"Y\": 490\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 490\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 141,\r\n      \"Y\": 490\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 482\r\n      },\r\n      {\r\n        \"X\": 141,\r\n        \"Y\": 482\r\n      },\r\n      {\r\n        \"X\": 141,\r\n        \"Y\": 498\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 498\r\n      }\r\n    ],\r\n    \"Text\": \"挺好\",\r\n    \"Score\": 0.9965997,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 189,\r\n      \"Y\": 530\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 530\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 530\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 523\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 522\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 539\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 540\r\n      }\r\n    ],\r\n    \"Text\": \"前程无忧51Job服...昨天\",\r\n    \"Score\": 0.9130505,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 822,\r\n      \"Y\": 528\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 778,\r\n      \"Y\": 528\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 866,\r\n      \"Y\": 528\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 778,\r\n        \"Y\": 520\r\n      },\r\n      {\r\n        \"X\": 866,\r\n        \"Y\": 520\r\n      },\r\n      {\r\n        \"X\": 866,\r\n        \"Y\": 537\r\n      },\r\n      {\r\n        \"X\": 778,\r\n        \"Y\": 537\r\n      }\r\n    ],\r\n    \"Text\": \"给我写一首诗\",\r\n    \"Score\": 0.9330258,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 174,\r\n      \"Y\": 554\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 554\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 235,\r\n      \"Y\": 554\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 546\r\n      },\r\n      {\r\n        \"X\": 235,\r\n        \"Y\": 546\r\n      },\r\n      {\r\n        \"X\": 235,\r\n        \"Y\": 562\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 562\r\n      }\r\n    ],\r\n    \"Text\": \"您有新的职位邀请…\",\r\n    \"Score\": 0.92687553,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 84,\r\n      \"Y\": 554\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 73,\r\n      \"Y\": 554\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 96,\r\n      \"Y\": 554\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 73,\r\n        \"Y\": 549\r\n      },\r\n      {\r\n        \"X\": 96,\r\n        \"Y\": 549\r\n      },\r\n      {\r\n        \"X\": 96,\r\n        \"Y\": 559\r\n      },\r\n      {\r\n        \"X\": 73,\r\n        \"Y\": 559\r\n      }\r\n    ],\r\n    \"Text\": \"51J08\",\r\n    \"Score\": 0.873438,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 150,\r\n      \"Y\": 596\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 596\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 187,\r\n      \"Y\": 596\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 589\r\n      },\r\n      {\r\n        \"X\": 187,\r\n        \"Y\": 589\r\n      },\r\n      {\r\n        \"X\": 187,\r\n        \"Y\": 603\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 603\r\n      }\r\n    ],\r\n    \"Text\": \"折叠的群聊\",\r\n    \"Score\": 0.9985479,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 180,\r\n      \"Y\": 618\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 618\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 246,\r\n      \"Y\": 618\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 610\r\n      },\r\n      {\r\n        \"X\": 246,\r\n        \"Y\": 610\r\n      },\r\n      {\r\n        \"X\": 246,\r\n        \"Y\": 626\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 626\r\n      }\r\n    ],\r\n    \"Text\": \"临晋镇团委工作群：好\",\r\n    \"Score\": 0.9875928,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 26,\r\n      \"Y\": 667\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 21,\r\n      \"Y\": 667\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 32,\r\n      \"Y\": 667\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 21,\r\n        \"Y\": 663\r\n      },\r\n      {\r\n        \"X\": 32,\r\n        \"Y\": 663\r\n      },\r\n      {\r\n        \"X\": 32,\r\n        \"Y\": 672\r\n      },\r\n      {\r\n        \"X\": 21,\r\n        \"Y\": 672\r\n      }\r\n    ],\r\n    \"Text\": \"P\",\r\n    \"Score\": 0.43580973,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 866,\r\n      \"Y\": 751\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 843,\r\n      \"Y\": 751\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 890,\r\n      \"Y\": 751\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 843,\r\n        \"Y\": 743\r\n      },\r\n      {\r\n        \"X\": 890,\r\n        \"Y\": 743\r\n      },\r\n      {\r\n        \"X\": 890,\r\n        \"Y\": 760\r\n      },\r\n      {\r\n        \"X\": 843,\r\n        \"Y\": 760\r\n      }\r\n    ],\r\n    \"Text\": \"发送(S)\",\r\n    \"Score\": 0.8911538,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "服务-解析聊天",
+      "ActionReference": {
+        "Name": "服务-解析聊天",
+        "Type": "Aibot.ParseChatRecord, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "1035,0",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "a15c6656-f6ca-4c9d-af00-8b6ca9ac260c",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1048.0000000000002,34.860000000000014",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "a4ef0156-c3b6-4379-acd2-ebda74a20847",
+            "Title": "详细记录(JsonData)",
+            "PropertyName": "Records",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1048.0000000000002,54.10000000000002",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 931,\r\n      \"Y\": 12\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 927,\r\n      \"Y\": 12\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 935,\r\n      \"Y\": 12\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 927,\r\n        \"Y\": 8\r\n      },\r\n      {\r\n        \"X\": 935,\r\n        \"Y\": 8\r\n      },\r\n      {\r\n        \"X\": 935,\r\n        \"Y\": 17\r\n      },\r\n      {\r\n        \"X\": 927,\r\n        \"Y\": 17\r\n      }\r\n    ],\r\n    \"Text\": \"X\",\r\n    \"Score\": 0.33831733,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 321,\r\n      \"Y\": 30\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 301,\r\n      \"Y\": 30\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 342,\r\n      \"Y\": 30\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 301,\r\n        \"Y\": 19\r\n      },\r\n      {\r\n        \"X\": 342,\r\n        \"Y\": 19\r\n      },\r\n      {\r\n        \"X\": 342,\r\n        \"Y\": 41\r\n      },\r\n      {\r\n        \"X\": 301,\r\n        \"Y\": 41\r\n      }\r\n    ],\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.93585026,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 92,\r\n      \"Y\": 37\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 69,\r\n      \"Y\": 37\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 37\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 69,\r\n        \"Y\": 30\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 30\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 44\r\n      },\r\n      {\r\n        \"X\": 69,\r\n        \"Y\": 44\r\n      }\r\n    ],\r\n    \"Text\": \"Q搜索\",\r\n    \"Score\": 0.9740575,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 74\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 74\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 74\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 64\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 65\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 83\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 82\r\n      }\r\n    ],\r\n    \"Text\": \"是通过算法来提供个性化的饮食、运动和生活方式建\",\r\n    \"Score\": 0.9985301,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 83\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 83\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 205,\r\n      \"Y\": 83\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 75\r\n      },\r\n      {\r\n        \"X\": 205,\r\n        \"Y\": 75\r\n      },\r\n      {\r\n        \"X\": 205,\r\n        \"Y\": 92\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 92\r\n      }\r\n    ],\r\n    \"Text\": \"荆则仁生活号\",\r\n    \"Score\": 0.9933574,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 83\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 233,\r\n      \"Y\": 83\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 263,\r\n      \"Y\": 83\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 233,\r\n        \"Y\": 74\r\n      },\r\n      {\r\n        \"X\": 263,\r\n        \"Y\": 76\r\n      },\r\n      {\r\n        \"X\": 262,\r\n        \"Y\": 91\r\n      },\r\n      {\r\n        \"X\": 232,\r\n        \"Y\": 89\r\n      }\r\n    ],\r\n    \"Text\": \"19:53\",\r\n    \"Score\": 0.97375995,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 93\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 93\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 93\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 85\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 85\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 101\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 101\r\n      }\r\n    ],\r\n    \"Text\": \"议的。如果您有任何关于健康的疑问或需要帮助的地\",\r\n    \"Score\": 0.9985719,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 184,\r\n      \"Y\": 106\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 106\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 254,\r\n      \"Y\": 106\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 98\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 98\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 114\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 114\r\n      }\r\n    ],\r\n    \"Text\": \"[视频号]小茗讲国学情感\",\r\n    \"Score\": 0.9721331,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 470,\r\n      \"Y\": 112\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 112\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 578,\r\n      \"Y\": 112\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 104\r\n      },\r\n      {\r\n        \"X\": 578,\r\n        \"Y\": 104\r\n      },\r\n      {\r\n        \"X\": 578,\r\n        \"Y\": 120\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 120\r\n      }\r\n    ],\r\n    \"Text\": \"方，我会尽力为您提供支持和建议。\",\r\n    \"Score\": 0.99930274,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 136,\r\n      \"Y\": 148\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 148\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 148\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 157\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 157\r\n      }\r\n    ],\r\n    \"Text\": \"薛瑞瑜\",\r\n    \"Score\": 0.9925477,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 146\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 146\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 146\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 154\r\n      }\r\n    ],\r\n    \"Text\": \"19:23\",\r\n    \"Score\": 0.98291814,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 772,\r\n      \"Y\": 162\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 680,\r\n      \"Y\": 162\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 865,\r\n      \"Y\": 162\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 680,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 865,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 865,\r\n        \"Y\": 170\r\n      },\r\n      {\r\n        \"X\": 680,\r\n        \"Y\": 170\r\n      }\r\n    ],\r\n    \"Text\": \"腌鸡蛋的吃多了会有什么危害\",\r\n    \"Score\": 0.9834602,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 121,\r\n      \"Y\": 170\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 170\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 128,\r\n      \"Y\": 170\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 164\r\n      },\r\n      {\r\n        \"X\": 128,\r\n        \"Y\": 164\r\n      },\r\n      {\r\n        \"X\": 128,\r\n        \"Y\": 176\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 176\r\n      }\r\n    ],\r\n    \"Text\": \"嘎\",\r\n    \"Score\": 0.31152982,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 129,\r\n      \"Y\": 212\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 212\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 146,\r\n      \"Y\": 212\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 222\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 222\r\n      }\r\n    ],\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.8347071,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 210\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 210\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 210\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 218\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 218\r\n      }\r\n    ],\r\n    \"Text\": \"19:23\",\r\n    \"Score\": 0.97939837,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 212\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 212\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 212\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 221\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 220\r\n      }\r\n    ],\r\n    \"Text\": \"过度食用腌制的咸蛋可能会对健康造成一些潜在的危\",\r\n    \"Score\": 0.9932003,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 145,\r\n      \"Y\": 234\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 234\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 175,\r\n      \"Y\": 234\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 227\r\n      },\r\n      {\r\n        \"X\": 175,\r\n        \"Y\": 227\r\n      },\r\n      {\r\n        \"X\": 175,\r\n        \"Y\": 241\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 241\r\n      }\r\n    ],\r\n    \"Text\": \"GMain123\",\r\n    \"Score\": 0.98863333,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 374,\r\n      \"Y\": 231\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 231\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 386,\r\n      \"Y\": 231\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 223\r\n      },\r\n      {\r\n        \"X\": 386,\r\n        \"Y\": 223\r\n      },\r\n      {\r\n        \"X\": 386,\r\n        \"Y\": 239\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 239\r\n      }\r\n    ],\r\n    \"Text\": \"害：\",\r\n    \"Score\": 0.9467095,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 520,\r\n      \"Y\": 250\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 250\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 679,\r\n      \"Y\": 250\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 242\r\n      },\r\n      {\r\n        \"X\": 679,\r\n        \"Y\": 242\r\n      },\r\n      {\r\n        \"X\": 679,\r\n        \"Y\": 258\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 258\r\n      }\r\n    ],\r\n    \"Text\": \"1.高盐摄入：许多腌制食品都含有较高的钠（salt）\",\r\n    \"Score\": 0.9660718,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 136,\r\n      \"Y\": 276\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 276\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 276\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 285\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 285\r\n      }\r\n    ],\r\n    \"Text\": \"订阅号\",\r\n    \"Score\": 0.9980481,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 274\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 274\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 274\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 281\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 281\r\n      }\r\n    ],\r\n    \"Text\": \"18:35\",\r\n    \"Score\": 0.9913623,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 268\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 268\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 268\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 260\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 260\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 277\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 277\r\n      }\r\n    ],\r\n    \"Text\": \"含量，而过量摄入盐分会增加高血压、心脏病和中风\",\r\n    \"Score\": 0.998167,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 386,\r\n      \"Y\": 288\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 288\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 411,\r\n      \"Y\": 288\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 279\r\n      },\r\n      {\r\n        \"X\": 411,\r\n        \"Y\": 279\r\n      },\r\n      {\r\n        \"X\": 411,\r\n        \"Y\": 297\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 297\r\n      }\r\n    ],\r\n    \"Text\": \"的风险。\",\r\n    \"Score\": 0.99864304,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 184,\r\n      \"Y\": 298\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 298\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 254,\r\n      \"Y\": 298\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 292\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 292\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 305\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 305\r\n      }\r\n    ],\r\n    \"Text\": \"刘悦的技术博客：Live2D..\",\r\n    \"Score\": 0.968494,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 306\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 306\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 688,\r\n      \"Y\": 306\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 298\r\n      },\r\n      {\r\n        \"X\": 688,\r\n        \"Y\": 298\r\n      },\r\n      {\r\n        \"X\": 688,\r\n        \"Y\": 315\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 315\r\n      }\r\n    ],\r\n    \"Text\": \"2.营养流失：在腌制过程中，食物中的维生素和矿物\",\r\n    \"Score\": 0.9960397,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 26,\r\n      \"Y\": 314\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 19,\r\n      \"Y\": 314\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 33,\r\n      \"Y\": 314\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 19,\r\n        \"Y\": 308\r\n      },\r\n      {\r\n        \"X\": 33,\r\n        \"Y\": 308\r\n      },\r\n      {\r\n        \"X\": 33,\r\n        \"Y\": 321\r\n      },\r\n      {\r\n        \"X\": 19,\r\n        \"Y\": 321\r\n      }\r\n    ],\r\n    \"Text\": \"六\",\r\n    \"Score\": 0.30470404,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 484,\r\n      \"Y\": 326\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 326\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 606,\r\n      \"Y\": 326\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 318\r\n      },\r\n      {\r\n        \"X\": 606,\r\n        \"Y\": 318\r\n      },\r\n      {\r\n        \"X\": 606,\r\n        \"Y\": 334\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 334\r\n      }\r\n    ],\r\n    \"Text\": \"质可能被分解或损失，导致营养素匮乏。\",\r\n    \"Score\": 0.97833484,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 139,\r\n      \"Y\": 339\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 339\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 164,\r\n      \"Y\": 339\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 331\r\n      },\r\n      {\r\n        \"X\": 164,\r\n        \"Y\": 331\r\n      },\r\n      {\r\n        \"X\": 164,\r\n        \"Y\": 348\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 348\r\n      }\r\n    ],\r\n    \"Text\": \"*(M）\",\r\n    \"Score\": 0.53811383,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 251,\r\n      \"Y\": 337\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 237,\r\n      \"Y\": 337\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 266,\r\n      \"Y\": 337\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 237,\r\n        \"Y\": 330\r\n      },\r\n      {\r\n        \"X\": 266,\r\n        \"Y\": 330\r\n      },\r\n      {\r\n        \"X\": 266,\r\n        \"Y\": 345\r\n      },\r\n      {\r\n        \"X\": 237,\r\n        \"Y\": 345\r\n      }\r\n    ],\r\n    \"Text\": \"昨天\",\r\n    \"Score\": 0.9800522,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 344\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 344\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 689,\r\n      \"Y\": 344\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 336\r\n      },\r\n      {\r\n        \"X\": 689,\r\n        \"Y\": 336\r\n      },\r\n      {\r\n        \"X\": 689,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 353\r\n      }\r\n    ],\r\n    \"Text\": \"3.食品安全风险：如果腌制的咸蛋未经妥善保存或在\",\r\n    \"Score\": 0.9952418,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 133,\r\n      \"Y\": 362\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 362\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 154,\r\n      \"Y\": 362\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 154,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 154,\r\n        \"Y\": 371\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 371\r\n      }\r\n    ],\r\n    \"Text\": \"就知道\",\r\n    \"Score\": 0.9995415,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 517,\r\n      \"Y\": 364\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 364\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 674,\r\n      \"Y\": 364\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 355\r\n      },\r\n      {\r\n        \"X\": 674,\r\n        \"Y\": 356\r\n      },\r\n      {\r\n        \"X\": 674,\r\n        \"Y\": 373\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 372\r\n      }\r\n    ],\r\n    \"Text\": \"过期后食用，可能会受到细菌污染而引发食源性疾\",\r\n    \"Score\": 0.9992052,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 372,\r\n      \"Y\": 383\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 383\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 384,\r\n      \"Y\": 383\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 375\r\n      },\r\n      {\r\n        \"X\": 384,\r\n        \"Y\": 375\r\n      },\r\n      {\r\n        \"X\": 384,\r\n        \"Y\": 391\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 391\r\n      }\r\n    ],\r\n    \"Text\": \"病。\",\r\n    \"Score\": 0.9969212,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 402\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 402\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 402\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 395\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 395\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 409\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 409\r\n      }\r\n    ],\r\n    \"Text\": \"18:08\",\r\n    \"Score\": 0.99156827,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 517,\r\n      \"Y\": 401\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 360,\r\n      \"Y\": 401\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 675,\r\n      \"Y\": 401\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 360,\r\n        \"Y\": 392\r\n      },\r\n      {\r\n        \"X\": 675,\r\n        \"Y\": 393\r\n      },\r\n      {\r\n        \"X\": 675,\r\n        \"Y\": 410\r\n      },\r\n      {\r\n        \"X\": 360,\r\n        \"Y\": 409\r\n      }\r\n    ],\r\n    \"Text\": \"4.口味依赖：经常食用过咸的食物可能导致味觉适\",\r\n    \"Score\": 0.9985878,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 421\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 421\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 421\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 412\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 412\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 430\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 430\r\n      }\r\n    ],\r\n    \"Text\": \"应，使人对盐分的需求增加，进而可能对健康产生负\",\r\n    \"Score\": 0.9992417,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 130,\r\n      \"Y\": 403\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 403\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 146,\r\n      \"Y\": 403\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 396\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 396\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 411\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 411\r\n      }\r\n    ],\r\n    \"Text\": \"刘敏\",\r\n    \"Score\": 0.99950165,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 131,\r\n      \"Y\": 427\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 427\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 149,\r\n      \"Y\": 427\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 419\r\n      },\r\n      {\r\n        \"X\": 149,\r\n        \"Y\": 419\r\n      },\r\n      {\r\n        \"X\": 149,\r\n        \"Y\": 435\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 435\r\n      }\r\n    ],\r\n    \"Text\": \"[文件]\",\r\n    \"Score\": 0.85837626,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 387,\r\n      \"Y\": 440\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 440\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 412,\r\n      \"Y\": 440\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 432\r\n      },\r\n      {\r\n        \"X\": 412,\r\n        \"Y\": 432\r\n      },\r\n      {\r\n        \"X\": 412,\r\n        \"Y\": 449\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 449\r\n      }\r\n    ],\r\n    \"Text\": \"面影响。\",\r\n    \"Score\": 0.9340384,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 466\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 466\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 466\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 459\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 459\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 473\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 473\r\n      }\r\n    ],\r\n    \"Text\": \"15:46\",\r\n    \"Score\": 0.98768777,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 459\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 459\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 459\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 451\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 451\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 467\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 467\r\n      }\r\n    ],\r\n    \"Text\": \"因此，适量摄入制食品是重要的，同时应注意食物\",\r\n    \"Score\": 0.998468,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 448,\r\n      \"Y\": 478\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 478\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 536,\r\n      \"Y\": 478\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 470\r\n      },\r\n      {\r\n        \"X\": 536,\r\n        \"Y\": 470\r\n      },\r\n      {\r\n        \"X\": 536,\r\n        \"Y\": 486\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 486\r\n      }\r\n    ],\r\n    \"Text\": \"的多样性以获取均衡的营养。\",\r\n    \"Score\": 0.9977578,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 129,\r\n      \"Y\": 467\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 467\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 145,\r\n      \"Y\": 467\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 460\r\n      },\r\n      {\r\n        \"X\": 145,\r\n        \"Y\": 460\r\n      },\r\n      {\r\n        \"X\": 145,\r\n        \"Y\": 475\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 475\r\n      }\r\n    ],\r\n    \"Text\": \"郭超\",\r\n    \"Score\": 0.9998116,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 127,\r\n      \"Y\": 490\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 490\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 141,\r\n      \"Y\": 490\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 482\r\n      },\r\n      {\r\n        \"X\": 141,\r\n        \"Y\": 482\r\n      },\r\n      {\r\n        \"X\": 141,\r\n        \"Y\": 498\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 498\r\n      }\r\n    ],\r\n    \"Text\": \"挺好\",\r\n    \"Score\": 0.9965997,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 189,\r\n      \"Y\": 530\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 530\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 530\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 523\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 522\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 539\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 540\r\n      }\r\n    ],\r\n    \"Text\": \"前程无忧51Job服...昨天\",\r\n    \"Score\": 0.9130505,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 822,\r\n      \"Y\": 528\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 778,\r\n      \"Y\": 528\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 866,\r\n      \"Y\": 528\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 778,\r\n        \"Y\": 520\r\n      },\r\n      {\r\n        \"X\": 866,\r\n        \"Y\": 520\r\n      },\r\n      {\r\n        \"X\": 866,\r\n        \"Y\": 537\r\n      },\r\n      {\r\n        \"X\": 778,\r\n        \"Y\": 537\r\n      }\r\n    ],\r\n    \"Text\": \"给我写一首诗\",\r\n    \"Score\": 0.9330258,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 174,\r\n      \"Y\": 554\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 554\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 235,\r\n      \"Y\": 554\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 546\r\n      },\r\n      {\r\n        \"X\": 235,\r\n        \"Y\": 546\r\n      },\r\n      {\r\n        \"X\": 235,\r\n        \"Y\": 562\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 562\r\n      }\r\n    ],\r\n    \"Text\": \"您有新的职位邀请…\",\r\n    \"Score\": 0.92687553,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 84,\r\n      \"Y\": 554\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 73,\r\n      \"Y\": 554\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 96,\r\n      \"Y\": 554\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 73,\r\n        \"Y\": 549\r\n      },\r\n      {\r\n        \"X\": 96,\r\n        \"Y\": 549\r\n      },\r\n      {\r\n        \"X\": 96,\r\n        \"Y\": 559\r\n      },\r\n      {\r\n        \"X\": 73,\r\n        \"Y\": 559\r\n      }\r\n    ],\r\n    \"Text\": \"51J08\",\r\n    \"Score\": 0.873438,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 150,\r\n      \"Y\": 596\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 596\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 187,\r\n      \"Y\": 596\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 589\r\n      },\r\n      {\r\n        \"X\": 187,\r\n        \"Y\": 589\r\n      },\r\n      {\r\n        \"X\": 187,\r\n        \"Y\": 603\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 603\r\n      }\r\n    ],\r\n    \"Text\": \"折叠的群聊\",\r\n    \"Score\": 0.9985479,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 180,\r\n      \"Y\": 618\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 618\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 246,\r\n      \"Y\": 618\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 610\r\n      },\r\n      {\r\n        \"X\": 246,\r\n        \"Y\": 610\r\n      },\r\n      {\r\n        \"X\": 246,\r\n        \"Y\": 626\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 626\r\n      }\r\n    ],\r\n    \"Text\": \"临晋镇团委工作群：好\",\r\n    \"Score\": 0.9875928,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 26,\r\n      \"Y\": 667\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 21,\r\n      \"Y\": 667\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 32,\r\n      \"Y\": 667\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 21,\r\n        \"Y\": 663\r\n      },\r\n      {\r\n        \"X\": 32,\r\n        \"Y\": 663\r\n      },\r\n      {\r\n        \"X\": 32,\r\n        \"Y\": 672\r\n      },\r\n      {\r\n        \"X\": 21,\r\n        \"Y\": 672\r\n      }\r\n    ],\r\n    \"Text\": \"P\",\r\n    \"Score\": 0.43580973,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 866,\r\n      \"Y\": 751\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 843,\r\n      \"Y\": 751\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 890,\r\n      \"Y\": 751\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 843,\r\n        \"Y\": 743\r\n      },\r\n      {\r\n        \"X\": 890,\r\n        \"Y\": 743\r\n      },\r\n      {\r\n        \"X\": 890,\r\n        \"Y\": 760\r\n      },\r\n      {\r\n        \"X\": 843,\r\n        \"Y\": 760\r\n      }\r\n    ],\r\n    \"Text\": \"发送(S)\",\r\n    \"Score\": 0.8911538,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "b92394d3-8530-46b1-a5a5-523bc3ea2dae",
+            "Title": "客户LeftX(Int)",
+            "PropertyName": "CustomerLeftX",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1258.5101788897225,185.5905520011736",
+            "Operation": null,
+            "Type": 1,
+            "Value": 360,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "9f305903-4df7-4138-b870-cf0e4647acdc",
+            "Title": "客户RightX(Int)",
+            "PropertyName": "CustomerRightX",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1258.5101788897225,213.59055200117365",
+            "Operation": null,
+            "Type": 1,
+            "Value": 695,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "d3b191af-345f-410f-b104-942adf40ebba",
+            "Title": "咱们Left(Int)",
+            "PropertyName": "AssistantLeftX",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1258.5101788897225,241.59055200117365",
+            "Operation": null,
+            "Type": 1,
+            "Value": 540,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "bdb5791a-2e46-4d7f-9437-962a4762fa33",
+            "Title": "咱们Right(Int)",
+            "PropertyName": "AssistantRightX",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1258.5101788897225,269.5905520011736",
+            "Operation": null,
+            "Type": 1,
+            "Value": 875,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "6b0c631b-d531-44d0-b7ae-6c3a77f9a83f",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1336.5933333333332,34.860000000000014",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "d8f6fb68-58f7-4cb9-ac19-61e1223830a9",
+            "Title": "聊天记录(String)",
+            "PropertyName": "ChatMessage",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1336.5933333333332,54.10000000000002",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"IsCustomer\": true,\r\n    \"Text\": \"是通过算法来提供个性化的饮食、运动和生活方式建\\n议的。如果您有任何关于健康的疑问或需要帮助的地\\n方，我会尽力为您提供支持和建议。\"\r\n  },\r\n  {\r\n    \"IsCustomer\": false,\r\n    \"Text\": \"腌鸡蛋的吃多了会有什么危害\"\r\n  },\r\n  {\r\n    \"IsCustomer\": true,\r\n    \"Text\": \"过度食用腌制的咸蛋可能会对健康造成一些潜在的危\\n害：\\n1.高盐摄入：许多腌制食品都含有较高的钠（salt）\\n含量，而过量摄入盐分会增加高血压、心脏病和中风\\n的风险。\\n2.营养流失：在腌制过程中，食物中的维生素和矿物\\n质可能被分解或损失，导致营养素匮乏。\\n3.食品安全风险：如果腌制的咸蛋未经妥善保存或在\\n过期后食用，可能会受到细菌污染而引发食源性疾\\n病。\\n4.口味依赖：经常食用过咸的食物可能导致味觉适\\n应，使人对盐分的需求增加，进而可能对健康产生负\\n面影响。\\n因此，适量摄入制食品是重要的，同时应注意食物\\n的多样性以获取均衡的营养。\"\r\n  },\r\n  {\r\n    \"IsCustomer\": false,\r\n    \"Text\": \"给我写一首诗\"\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "d64d7985-a96f-4757-b571-dc5c65761233",
+            "Title": "客户说(String)",
+            "PropertyName": "CustomerSpeak",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1336.5933333333332,73.34000000000003",
+            "Operation": null,
+            "Type": 3,
+            "Value": "",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "1468.957408344832,221.44432452395833",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "bfbd2da9-3024-4348-809f-2c55a16e2a5e",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1481.957408344832,256.30432452395837",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "64916fd4-093e-4efe-b635-60b9531eada3",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1481.957408344832,275.5443245239584",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"IsCustomer\": true,\r\n    \"Text\": \"是通过算法来提供个性化的饮食、运动和生活方式建\\n议的。如果您有任何关于健康的疑问或需要帮助的地\\n方，我会尽力为您提供支持和建议。\"\r\n  },\r\n  {\r\n    \"IsCustomer\": false,\r\n    \"Text\": \"腌鸡蛋的吃多了会有什么危害\"\r\n  },\r\n  {\r\n    \"IsCustomer\": true,\r\n    \"Text\": \"过度食用腌制的咸蛋可能会对健康造成一些潜在的危\\n害：\\n1.高盐摄入：许多腌制食品都含有较高的钠（salt）\\n含量，而过量摄入盐分会增加高血压、心脏病和中风\\n的风险。\\n2.营养流失：在腌制过程中，食物中的维生素和矿物\\n质可能被分解或损失，导致营养素匮乏。\\n3.食品安全风险：如果腌制的咸蛋未经妥善保存或在\\n过期后食用，可能会受到细菌污染而引发食源性疾\\n病。\\n4.口味依赖：经常食用过咸的食物可能导致味觉适\\n应，使人对盐分的需求增加，进而可能对健康产生负\\n面影响。\\n因此，适量摄入制食品是重要的，同时应注意食物\\n的多样性以获取均衡的营养。\"\r\n  },\r\n  {\r\n    \"IsCustomer\": false,\r\n    \"Text\": \"给我写一首诗\"\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "b1653a27-24cd-4c88-a08f-0ac03ad279ea",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1481.957408344832,307.9243245239583",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "01a756fa-6351-4cf5-b2eb-7b9829f01c97",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2105.277408344832,256.30432452395837",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "2220,255",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "ce905582-cd51-4456-b27d-44eac0763d74",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2233,289.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "ae74a1ab-b98c-43f6-b99b-fa172c23fe97",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2233,309.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "64379eff-4b88-4670-9652-97a7dbccbc41",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "6cc2a20a-0afe-4b1f-90dc-fc39f786d76d",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    }
+  ],
+  "Connections": [
+    {
+      "Input": {
+        "Id": "aaf37c32-526d-46b0-9b6a-f55796d42c3c",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "343,334.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "6fb4781e-e5be-428e-be44-7ceffa71f39d",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "471,234.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "2cd7869b-6d43-4583-b969-bb1a34322e11",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "343,499.86000000000007",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "30389126-65f1-46c4-8bf4-24c97a2d54ed",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "534.6133333333333,334.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "34abce34-5c0f-47e6-b9cd-a00ddddf589a",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "358,604.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "80cf3088-4c64-4422-b50a-1a81d56d5c23",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "535.2433333333333,499.86000000000007",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "ff5f8cf4-0c4a-401c-9da1-462768f0d908",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "672.9999999999999,319.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "8158bcd0-ac1c-4d24-8829-63a919465bc5",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "516,604.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "2cbe895c-8bbb-4a1d-976d-5af52cad9d26",
+        "Title": "IntPtr",
+        "PropertyName": "IntPtr",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "672.9999999999999,339.09999999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": {
+          "value": 263436
+        },
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "4904733f-83cb-4285-9f67-93fe6096bc29",
+        "Title": "IntPtr",
+        "PropertyName": "IntPtr",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "516,624.1",
+        "Operation": null,
+        "Type": 5,
+        "Value": {
+          "value": 263436
+        },
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "3a48acc4-4890-45e2-8ae8-e8845aee8def",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "657.9999999999999,454.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "46a28595-28a2-4233-8c81-73c969d05105",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "830.9999999999999,319.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "89749058-f628-472e-b6ec-397412df965c",
+        "Title": "IntPtr",
+        "PropertyName": "IntPtr",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "657.9999999999999,474.0999999999999",
+        "Operation": null,
+        "Type": 5,
+        "Value": {
+          "value": 263436
+        },
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "4904733f-83cb-4285-9f67-93fe6096bc29",
+        "Title": "IntPtr",
+        "PropertyName": "IntPtr",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "516,624.1",
+        "Operation": null,
+        "Type": 5,
+        "Value": {
+          "value": 263436
+        },
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "9ff2a779-d34b-4296-bb3a-79df38eb7044",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "672.9999999999999,589.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "9b60fe8f-86b8-432e-9fbc-9145aa50300f",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "878.0433333333332,454.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "d9817106-fca9-475e-9b86-5b3a1079b949",
+        "Title": "图片(String)",
+        "PropertyName": "TempPath",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "672.9999999999999,609.0999999999999",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\wx.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "30b871dd-ce43-4f15-acfa-a459e707fd1c",
+        "Title": "文件路径",
+        "PropertyName": "FilePath",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "878.0433333333332,474.0999999999999",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\wx.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "a15c6656-f6ca-4c9d-af00-8b6ca9ac260c",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1048.0000000000002,34.860000000000014",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "6d9c53c5-d731-4691-ab48-d80d41f038b5",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "907.72,589.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "a4ef0156-c3b6-4379-acd2-ebda74a20847",
+        "Title": "详细记录(JsonData)",
+        "PropertyName": "Records",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1048.0000000000002,54.10000000000002",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 931,\r\n      \"Y\": 12\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 927,\r\n      \"Y\": 12\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 935,\r\n      \"Y\": 12\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 927,\r\n        \"Y\": 8\r\n      },\r\n      {\r\n        \"X\": 935,\r\n        \"Y\": 8\r\n      },\r\n      {\r\n        \"X\": 935,\r\n        \"Y\": 17\r\n      },\r\n      {\r\n        \"X\": 927,\r\n        \"Y\": 17\r\n      }\r\n    ],\r\n    \"Text\": \"X\",\r\n    \"Score\": 0.33831733,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 321,\r\n      \"Y\": 30\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 301,\r\n      \"Y\": 30\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 342,\r\n      \"Y\": 30\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 301,\r\n        \"Y\": 19\r\n      },\r\n      {\r\n        \"X\": 342,\r\n        \"Y\": 19\r\n      },\r\n      {\r\n        \"X\": 342,\r\n        \"Y\": 41\r\n      },\r\n      {\r\n        \"X\": 301,\r\n        \"Y\": 41\r\n      }\r\n    ],\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.93585026,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 92,\r\n      \"Y\": 37\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 69,\r\n      \"Y\": 37\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 37\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 69,\r\n        \"Y\": 30\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 30\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 44\r\n      },\r\n      {\r\n        \"X\": 69,\r\n        \"Y\": 44\r\n      }\r\n    ],\r\n    \"Text\": \"Q搜索\",\r\n    \"Score\": 0.9740575,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 74\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 74\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 74\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 64\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 65\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 83\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 82\r\n      }\r\n    ],\r\n    \"Text\": \"是通过算法来提供个性化的饮食、运动和生活方式建\",\r\n    \"Score\": 0.9985301,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 83\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 83\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 205,\r\n      \"Y\": 83\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 75\r\n      },\r\n      {\r\n        \"X\": 205,\r\n        \"Y\": 75\r\n      },\r\n      {\r\n        \"X\": 205,\r\n        \"Y\": 92\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 92\r\n      }\r\n    ],\r\n    \"Text\": \"荆则仁生活号\",\r\n    \"Score\": 0.9933574,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 83\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 233,\r\n      \"Y\": 83\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 263,\r\n      \"Y\": 83\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 233,\r\n        \"Y\": 74\r\n      },\r\n      {\r\n        \"X\": 263,\r\n        \"Y\": 76\r\n      },\r\n      {\r\n        \"X\": 262,\r\n        \"Y\": 91\r\n      },\r\n      {\r\n        \"X\": 232,\r\n        \"Y\": 89\r\n      }\r\n    ],\r\n    \"Text\": \"19:53\",\r\n    \"Score\": 0.97375995,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 93\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 93\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 93\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 85\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 85\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 101\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 101\r\n      }\r\n    ],\r\n    \"Text\": \"议的。如果您有任何关于健康的疑问或需要帮助的地\",\r\n    \"Score\": 0.9985719,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 184,\r\n      \"Y\": 106\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 106\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 254,\r\n      \"Y\": 106\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 98\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 98\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 114\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 114\r\n      }\r\n    ],\r\n    \"Text\": \"[视频号]小茗讲国学情感\",\r\n    \"Score\": 0.9721331,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 470,\r\n      \"Y\": 112\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 112\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 578,\r\n      \"Y\": 112\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 104\r\n      },\r\n      {\r\n        \"X\": 578,\r\n        \"Y\": 104\r\n      },\r\n      {\r\n        \"X\": 578,\r\n        \"Y\": 120\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 120\r\n      }\r\n    ],\r\n    \"Text\": \"方，我会尽力为您提供支持和建议。\",\r\n    \"Score\": 0.99930274,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 136,\r\n      \"Y\": 148\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 148\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 148\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 157\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 157\r\n      }\r\n    ],\r\n    \"Text\": \"薛瑞瑜\",\r\n    \"Score\": 0.9925477,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 146\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 146\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 146\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 154\r\n      }\r\n    ],\r\n    \"Text\": \"19:23\",\r\n    \"Score\": 0.98291814,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 772,\r\n      \"Y\": 162\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 680,\r\n      \"Y\": 162\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 865,\r\n      \"Y\": 162\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 680,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 865,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 865,\r\n        \"Y\": 170\r\n      },\r\n      {\r\n        \"X\": 680,\r\n        \"Y\": 170\r\n      }\r\n    ],\r\n    \"Text\": \"腌鸡蛋的吃多了会有什么危害\",\r\n    \"Score\": 0.9834602,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 121,\r\n      \"Y\": 170\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 170\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 128,\r\n      \"Y\": 170\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 164\r\n      },\r\n      {\r\n        \"X\": 128,\r\n        \"Y\": 164\r\n      },\r\n      {\r\n        \"X\": 128,\r\n        \"Y\": 176\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 176\r\n      }\r\n    ],\r\n    \"Text\": \"嘎\",\r\n    \"Score\": 0.31152982,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 129,\r\n      \"Y\": 212\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 212\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 146,\r\n      \"Y\": 212\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 222\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 222\r\n      }\r\n    ],\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.8347071,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 210\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 210\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 210\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 218\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 218\r\n      }\r\n    ],\r\n    \"Text\": \"19:23\",\r\n    \"Score\": 0.97939837,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 212\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 212\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 212\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 221\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 220\r\n      }\r\n    ],\r\n    \"Text\": \"过度食用腌制的咸蛋可能会对健康造成一些潜在的危\",\r\n    \"Score\": 0.9932003,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 145,\r\n      \"Y\": 234\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 234\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 175,\r\n      \"Y\": 234\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 227\r\n      },\r\n      {\r\n        \"X\": 175,\r\n        \"Y\": 227\r\n      },\r\n      {\r\n        \"X\": 175,\r\n        \"Y\": 241\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 241\r\n      }\r\n    ],\r\n    \"Text\": \"GMain123\",\r\n    \"Score\": 0.98863333,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 374,\r\n      \"Y\": 231\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 231\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 386,\r\n      \"Y\": 231\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 223\r\n      },\r\n      {\r\n        \"X\": 386,\r\n        \"Y\": 223\r\n      },\r\n      {\r\n        \"X\": 386,\r\n        \"Y\": 239\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 239\r\n      }\r\n    ],\r\n    \"Text\": \"害：\",\r\n    \"Score\": 0.9467095,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 520,\r\n      \"Y\": 250\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 250\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 679,\r\n      \"Y\": 250\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 242\r\n      },\r\n      {\r\n        \"X\": 679,\r\n        \"Y\": 242\r\n      },\r\n      {\r\n        \"X\": 679,\r\n        \"Y\": 258\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 258\r\n      }\r\n    ],\r\n    \"Text\": \"1.高盐摄入：许多腌制食品都含有较高的钠（salt）\",\r\n    \"Score\": 0.9660718,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 136,\r\n      \"Y\": 276\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 276\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 276\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 285\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 285\r\n      }\r\n    ],\r\n    \"Text\": \"订阅号\",\r\n    \"Score\": 0.9980481,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 274\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 274\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 274\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 281\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 281\r\n      }\r\n    ],\r\n    \"Text\": \"18:35\",\r\n    \"Score\": 0.9913623,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 268\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 268\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 268\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 260\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 260\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 277\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 277\r\n      }\r\n    ],\r\n    \"Text\": \"含量，而过量摄入盐分会增加高血压、心脏病和中风\",\r\n    \"Score\": 0.998167,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 386,\r\n      \"Y\": 288\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 288\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 411,\r\n      \"Y\": 288\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 279\r\n      },\r\n      {\r\n        \"X\": 411,\r\n        \"Y\": 279\r\n      },\r\n      {\r\n        \"X\": 411,\r\n        \"Y\": 297\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 297\r\n      }\r\n    ],\r\n    \"Text\": \"的风险。\",\r\n    \"Score\": 0.99864304,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 184,\r\n      \"Y\": 298\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 298\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 254,\r\n      \"Y\": 298\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 292\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 292\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 305\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 305\r\n      }\r\n    ],\r\n    \"Text\": \"刘悦的技术博客：Live2D..\",\r\n    \"Score\": 0.968494,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 306\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 306\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 688,\r\n      \"Y\": 306\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 298\r\n      },\r\n      {\r\n        \"X\": 688,\r\n        \"Y\": 298\r\n      },\r\n      {\r\n        \"X\": 688,\r\n        \"Y\": 315\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 315\r\n      }\r\n    ],\r\n    \"Text\": \"2.营养流失：在腌制过程中，食物中的维生素和矿物\",\r\n    \"Score\": 0.9960397,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 26,\r\n      \"Y\": 314\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 19,\r\n      \"Y\": 314\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 33,\r\n      \"Y\": 314\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 19,\r\n        \"Y\": 308\r\n      },\r\n      {\r\n        \"X\": 33,\r\n        \"Y\": 308\r\n      },\r\n      {\r\n        \"X\": 33,\r\n        \"Y\": 321\r\n      },\r\n      {\r\n        \"X\": 19,\r\n        \"Y\": 321\r\n      }\r\n    ],\r\n    \"Text\": \"六\",\r\n    \"Score\": 0.30470404,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 484,\r\n      \"Y\": 326\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 326\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 606,\r\n      \"Y\": 326\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 318\r\n      },\r\n      {\r\n        \"X\": 606,\r\n        \"Y\": 318\r\n      },\r\n      {\r\n        \"X\": 606,\r\n        \"Y\": 334\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 334\r\n      }\r\n    ],\r\n    \"Text\": \"质可能被分解或损失，导致营养素匮乏。\",\r\n    \"Score\": 0.97833484,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 139,\r\n      \"Y\": 339\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 339\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 164,\r\n      \"Y\": 339\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 331\r\n      },\r\n      {\r\n        \"X\": 164,\r\n        \"Y\": 331\r\n      },\r\n      {\r\n        \"X\": 164,\r\n        \"Y\": 348\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 348\r\n      }\r\n    ],\r\n    \"Text\": \"*(M）\",\r\n    \"Score\": 0.53811383,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 251,\r\n      \"Y\": 337\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 237,\r\n      \"Y\": 337\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 266,\r\n      \"Y\": 337\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 237,\r\n        \"Y\": 330\r\n      },\r\n      {\r\n        \"X\": 266,\r\n        \"Y\": 330\r\n      },\r\n      {\r\n        \"X\": 266,\r\n        \"Y\": 345\r\n      },\r\n      {\r\n        \"X\": 237,\r\n        \"Y\": 345\r\n      }\r\n    ],\r\n    \"Text\": \"昨天\",\r\n    \"Score\": 0.9800522,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 344\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 344\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 689,\r\n      \"Y\": 344\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 336\r\n      },\r\n      {\r\n        \"X\": 689,\r\n        \"Y\": 336\r\n      },\r\n      {\r\n        \"X\": 689,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 353\r\n      }\r\n    ],\r\n    \"Text\": \"3.食品安全风险：如果腌制的咸蛋未经妥善保存或在\",\r\n    \"Score\": 0.9952418,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 133,\r\n      \"Y\": 362\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 362\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 154,\r\n      \"Y\": 362\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 154,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 154,\r\n        \"Y\": 371\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 371\r\n      }\r\n    ],\r\n    \"Text\": \"就知道\",\r\n    \"Score\": 0.9995415,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 517,\r\n      \"Y\": 364\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 364\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 674,\r\n      \"Y\": 364\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 355\r\n      },\r\n      {\r\n        \"X\": 674,\r\n        \"Y\": 356\r\n      },\r\n      {\r\n        \"X\": 674,\r\n        \"Y\": 373\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 372\r\n      }\r\n    ],\r\n    \"Text\": \"过期后食用，可能会受到细菌污染而引发食源性疾\",\r\n    \"Score\": 0.9992052,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 372,\r\n      \"Y\": 383\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 383\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 384,\r\n      \"Y\": 383\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 375\r\n      },\r\n      {\r\n        \"X\": 384,\r\n        \"Y\": 375\r\n      },\r\n      {\r\n        \"X\": 384,\r\n        \"Y\": 391\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 391\r\n      }\r\n    ],\r\n    \"Text\": \"病。\",\r\n    \"Score\": 0.9969212,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 402\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 402\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 402\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 395\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 395\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 409\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 409\r\n      }\r\n    ],\r\n    \"Text\": \"18:08\",\r\n    \"Score\": 0.99156827,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 517,\r\n      \"Y\": 401\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 360,\r\n      \"Y\": 401\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 675,\r\n      \"Y\": 401\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 360,\r\n        \"Y\": 392\r\n      },\r\n      {\r\n        \"X\": 675,\r\n        \"Y\": 393\r\n      },\r\n      {\r\n        \"X\": 675,\r\n        \"Y\": 410\r\n      },\r\n      {\r\n        \"X\": 360,\r\n        \"Y\": 409\r\n      }\r\n    ],\r\n    \"Text\": \"4.口味依赖：经常食用过咸的食物可能导致味觉适\",\r\n    \"Score\": 0.9985878,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 421\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 421\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 421\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 412\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 412\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 430\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 430\r\n      }\r\n    ],\r\n    \"Text\": \"应，使人对盐分的需求增加，进而可能对健康产生负\",\r\n    \"Score\": 0.9992417,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 130,\r\n      \"Y\": 403\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 403\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 146,\r\n      \"Y\": 403\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 396\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 396\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 411\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 411\r\n      }\r\n    ],\r\n    \"Text\": \"刘敏\",\r\n    \"Score\": 0.99950165,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 131,\r\n      \"Y\": 427\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 427\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 149,\r\n      \"Y\": 427\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 419\r\n      },\r\n      {\r\n        \"X\": 149,\r\n        \"Y\": 419\r\n      },\r\n      {\r\n        \"X\": 149,\r\n        \"Y\": 435\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 435\r\n      }\r\n    ],\r\n    \"Text\": \"[文件]\",\r\n    \"Score\": 0.85837626,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 387,\r\n      \"Y\": 440\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 440\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 412,\r\n      \"Y\": 440\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 432\r\n      },\r\n      {\r\n        \"X\": 412,\r\n        \"Y\": 432\r\n      },\r\n      {\r\n        \"X\": 412,\r\n        \"Y\": 449\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 449\r\n      }\r\n    ],\r\n    \"Text\": \"面影响。\",\r\n    \"Score\": 0.9340384,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 466\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 466\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 466\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 459\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 459\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 473\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 473\r\n      }\r\n    ],\r\n    \"Text\": \"15:46\",\r\n    \"Score\": 0.98768777,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 459\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 459\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 459\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 451\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 451\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 467\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 467\r\n      }\r\n    ],\r\n    \"Text\": \"因此，适量摄入制食品是重要的，同时应注意食物\",\r\n    \"Score\": 0.998468,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 448,\r\n      \"Y\": 478\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 478\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 536,\r\n      \"Y\": 478\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 470\r\n      },\r\n      {\r\n        \"X\": 536,\r\n        \"Y\": 470\r\n      },\r\n      {\r\n        \"X\": 536,\r\n        \"Y\": 486\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 486\r\n      }\r\n    ],\r\n    \"Text\": \"的多样性以获取均衡的营养。\",\r\n    \"Score\": 0.9977578,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 129,\r\n      \"Y\": 467\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 467\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 145,\r\n      \"Y\": 467\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 460\r\n      },\r\n      {\r\n        \"X\": 145,\r\n        \"Y\": 460\r\n      },\r\n      {\r\n        \"X\": 145,\r\n        \"Y\": 475\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 475\r\n      }\r\n    ],\r\n    \"Text\": \"郭超\",\r\n    \"Score\": 0.9998116,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 127,\r\n      \"Y\": 490\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 490\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 141,\r\n      \"Y\": 490\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 482\r\n      },\r\n      {\r\n        \"X\": 141,\r\n        \"Y\": 482\r\n      },\r\n      {\r\n        \"X\": 141,\r\n        \"Y\": 498\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 498\r\n      }\r\n    ],\r\n    \"Text\": \"挺好\",\r\n    \"Score\": 0.9965997,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 189,\r\n      \"Y\": 530\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 530\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 530\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 523\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 522\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 539\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 540\r\n      }\r\n    ],\r\n    \"Text\": \"前程无忧51Job服...昨天\",\r\n    \"Score\": 0.9130505,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 822,\r\n      \"Y\": 528\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 778,\r\n      \"Y\": 528\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 866,\r\n      \"Y\": 528\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 778,\r\n        \"Y\": 520\r\n      },\r\n      {\r\n        \"X\": 866,\r\n        \"Y\": 520\r\n      },\r\n      {\r\n        \"X\": 866,\r\n        \"Y\": 537\r\n      },\r\n      {\r\n        \"X\": 778,\r\n        \"Y\": 537\r\n      }\r\n    ],\r\n    \"Text\": \"给我写一首诗\",\r\n    \"Score\": 0.9330258,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 174,\r\n      \"Y\": 554\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 554\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 235,\r\n      \"Y\": 554\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 546\r\n      },\r\n      {\r\n        \"X\": 235,\r\n        \"Y\": 546\r\n      },\r\n      {\r\n        \"X\": 235,\r\n        \"Y\": 562\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 562\r\n      }\r\n    ],\r\n    \"Text\": \"您有新的职位邀请…\",\r\n    \"Score\": 0.92687553,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 84,\r\n      \"Y\": 554\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 73,\r\n      \"Y\": 554\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 96,\r\n      \"Y\": 554\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 73,\r\n        \"Y\": 549\r\n      },\r\n      {\r\n        \"X\": 96,\r\n        \"Y\": 549\r\n      },\r\n      {\r\n        \"X\": 96,\r\n        \"Y\": 559\r\n      },\r\n      {\r\n        \"X\": 73,\r\n        \"Y\": 559\r\n      }\r\n    ],\r\n    \"Text\": \"51J08\",\r\n    \"Score\": 0.873438,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 150,\r\n      \"Y\": 596\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 596\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 187,\r\n      \"Y\": 596\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 589\r\n      },\r\n      {\r\n        \"X\": 187,\r\n        \"Y\": 589\r\n      },\r\n      {\r\n        \"X\": 187,\r\n        \"Y\": 603\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 603\r\n      }\r\n    ],\r\n    \"Text\": \"折叠的群聊\",\r\n    \"Score\": 0.9985479,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 180,\r\n      \"Y\": 618\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 618\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 246,\r\n      \"Y\": 618\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 610\r\n      },\r\n      {\r\n        \"X\": 246,\r\n        \"Y\": 610\r\n      },\r\n      {\r\n        \"X\": 246,\r\n        \"Y\": 626\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 626\r\n      }\r\n    ],\r\n    \"Text\": \"临晋镇团委工作群：好\",\r\n    \"Score\": 0.9875928,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 26,\r\n      \"Y\": 667\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 21,\r\n      \"Y\": 667\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 32,\r\n      \"Y\": 667\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 21,\r\n        \"Y\": 663\r\n      },\r\n      {\r\n        \"X\": 32,\r\n        \"Y\": 663\r\n      },\r\n      {\r\n        \"X\": 32,\r\n        \"Y\": 672\r\n      },\r\n      {\r\n        \"X\": 21,\r\n        \"Y\": 672\r\n      }\r\n    ],\r\n    \"Text\": \"P\",\r\n    \"Score\": 0.43580973,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 866,\r\n      \"Y\": 751\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 843,\r\n      \"Y\": 751\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 890,\r\n      \"Y\": 751\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 843,\r\n        \"Y\": 743\r\n      },\r\n      {\r\n        \"X\": 890,\r\n        \"Y\": 743\r\n      },\r\n      {\r\n        \"X\": 890,\r\n        \"Y\": 760\r\n      },\r\n      {\r\n        \"X\": 843,\r\n        \"Y\": 760\r\n      }\r\n    ],\r\n    \"Text\": \"发送(S)\",\r\n    \"Score\": 0.8911538,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "bd543ef6-8bf5-45f8-8f28-1cb48aee001a",
+        "Title": "JsonData(String)",
+        "PropertyName": "JsonData",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "907.72,609.0999999999999",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 931,\r\n      \"Y\": 12\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 927,\r\n      \"Y\": 12\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 935,\r\n      \"Y\": 12\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 927,\r\n        \"Y\": 8\r\n      },\r\n      {\r\n        \"X\": 935,\r\n        \"Y\": 8\r\n      },\r\n      {\r\n        \"X\": 935,\r\n        \"Y\": 17\r\n      },\r\n      {\r\n        \"X\": 927,\r\n        \"Y\": 17\r\n      }\r\n    ],\r\n    \"Text\": \"X\",\r\n    \"Score\": 0.33831733,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 321,\r\n      \"Y\": 30\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 301,\r\n      \"Y\": 30\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 342,\r\n      \"Y\": 30\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 301,\r\n        \"Y\": 19\r\n      },\r\n      {\r\n        \"X\": 342,\r\n        \"Y\": 19\r\n      },\r\n      {\r\n        \"X\": 342,\r\n        \"Y\": 41\r\n      },\r\n      {\r\n        \"X\": 301,\r\n        \"Y\": 41\r\n      }\r\n    ],\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.93585026,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 92,\r\n      \"Y\": 37\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 69,\r\n      \"Y\": 37\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 37\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 69,\r\n        \"Y\": 30\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 30\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 44\r\n      },\r\n      {\r\n        \"X\": 69,\r\n        \"Y\": 44\r\n      }\r\n    ],\r\n    \"Text\": \"Q搜索\",\r\n    \"Score\": 0.9740575,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 74\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 74\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 74\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 64\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 65\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 83\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 82\r\n      }\r\n    ],\r\n    \"Text\": \"是通过算法来提供个性化的饮食、运动和生活方式建\",\r\n    \"Score\": 0.9985301,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 83\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 83\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 205,\r\n      \"Y\": 83\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 75\r\n      },\r\n      {\r\n        \"X\": 205,\r\n        \"Y\": 75\r\n      },\r\n      {\r\n        \"X\": 205,\r\n        \"Y\": 92\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 92\r\n      }\r\n    ],\r\n    \"Text\": \"荆则仁生活号\",\r\n    \"Score\": 0.9933574,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 83\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 233,\r\n      \"Y\": 83\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 263,\r\n      \"Y\": 83\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 233,\r\n        \"Y\": 74\r\n      },\r\n      {\r\n        \"X\": 263,\r\n        \"Y\": 76\r\n      },\r\n      {\r\n        \"X\": 262,\r\n        \"Y\": 91\r\n      },\r\n      {\r\n        \"X\": 232,\r\n        \"Y\": 89\r\n      }\r\n    ],\r\n    \"Text\": \"19:53\",\r\n    \"Score\": 0.97375995,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 93\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 93\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 93\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 85\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 85\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 101\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 101\r\n      }\r\n    ],\r\n    \"Text\": \"议的。如果您有任何关于健康的疑问或需要帮助的地\",\r\n    \"Score\": 0.9985719,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 184,\r\n      \"Y\": 106\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 106\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 254,\r\n      \"Y\": 106\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 98\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 98\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 114\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 114\r\n      }\r\n    ],\r\n    \"Text\": \"[视频号]小茗讲国学情感\",\r\n    \"Score\": 0.9721331,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 470,\r\n      \"Y\": 112\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 112\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 578,\r\n      \"Y\": 112\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 104\r\n      },\r\n      {\r\n        \"X\": 578,\r\n        \"Y\": 104\r\n      },\r\n      {\r\n        \"X\": 578,\r\n        \"Y\": 120\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 120\r\n      }\r\n    ],\r\n    \"Text\": \"方，我会尽力为您提供支持和建议。\",\r\n    \"Score\": 0.99930274,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 136,\r\n      \"Y\": 148\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 148\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 148\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 157\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 157\r\n      }\r\n    ],\r\n    \"Text\": \"薛瑞瑜\",\r\n    \"Score\": 0.9925477,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 146\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 146\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 146\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 139\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 154\r\n      }\r\n    ],\r\n    \"Text\": \"19:23\",\r\n    \"Score\": 0.98291814,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 772,\r\n      \"Y\": 162\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 680,\r\n      \"Y\": 162\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 865,\r\n      \"Y\": 162\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 680,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 865,\r\n        \"Y\": 154\r\n      },\r\n      {\r\n        \"X\": 865,\r\n        \"Y\": 170\r\n      },\r\n      {\r\n        \"X\": 680,\r\n        \"Y\": 170\r\n      }\r\n    ],\r\n    \"Text\": \"腌鸡蛋的吃多了会有什么危害\",\r\n    \"Score\": 0.9834602,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 121,\r\n      \"Y\": 170\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 170\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 128,\r\n      \"Y\": 170\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 164\r\n      },\r\n      {\r\n        \"X\": 128,\r\n        \"Y\": 164\r\n      },\r\n      {\r\n        \"X\": 128,\r\n        \"Y\": 176\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 176\r\n      }\r\n    ],\r\n    \"Text\": \"嘎\",\r\n    \"Score\": 0.31152982,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 129,\r\n      \"Y\": 212\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 212\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 146,\r\n      \"Y\": 212\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 222\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 222\r\n      }\r\n    ],\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.8347071,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 210\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 210\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 210\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 218\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 218\r\n      }\r\n    ],\r\n    \"Text\": \"19:23\",\r\n    \"Score\": 0.97939837,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 212\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 212\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 212\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 202\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 203\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 221\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 220\r\n      }\r\n    ],\r\n    \"Text\": \"过度食用腌制的咸蛋可能会对健康造成一些潜在的危\",\r\n    \"Score\": 0.9932003,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 145,\r\n      \"Y\": 234\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 234\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 175,\r\n      \"Y\": 234\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 227\r\n      },\r\n      {\r\n        \"X\": 175,\r\n        \"Y\": 227\r\n      },\r\n      {\r\n        \"X\": 175,\r\n        \"Y\": 241\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 241\r\n      }\r\n    ],\r\n    \"Text\": \"GMain123\",\r\n    \"Score\": 0.98863333,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 374,\r\n      \"Y\": 231\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 231\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 386,\r\n      \"Y\": 231\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 223\r\n      },\r\n      {\r\n        \"X\": 386,\r\n        \"Y\": 223\r\n      },\r\n      {\r\n        \"X\": 386,\r\n        \"Y\": 239\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 239\r\n      }\r\n    ],\r\n    \"Text\": \"害：\",\r\n    \"Score\": 0.9467095,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 520,\r\n      \"Y\": 250\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 250\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 679,\r\n      \"Y\": 250\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 242\r\n      },\r\n      {\r\n        \"X\": 679,\r\n        \"Y\": 242\r\n      },\r\n      {\r\n        \"X\": 679,\r\n        \"Y\": 258\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 258\r\n      }\r\n    ],\r\n    \"Text\": \"1.高盐摄入：许多腌制食品都含有较高的钠（salt）\",\r\n    \"Score\": 0.9660718,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 136,\r\n      \"Y\": 276\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 276\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 159,\r\n      \"Y\": 276\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 159,\r\n        \"Y\": 285\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 285\r\n      }\r\n    ],\r\n    \"Text\": \"订阅号\",\r\n    \"Score\": 0.9980481,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 247,\r\n      \"Y\": 274\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 274\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 264,\r\n      \"Y\": 274\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 267\r\n      },\r\n      {\r\n        \"X\": 264,\r\n        \"Y\": 281\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 281\r\n      }\r\n    ],\r\n    \"Text\": \"18:35\",\r\n    \"Score\": 0.9913623,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 268\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 268\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 268\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 260\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 260\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 277\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 277\r\n      }\r\n    ],\r\n    \"Text\": \"含量，而过量摄入盐分会增加高血压、心脏病和中风\",\r\n    \"Score\": 0.998167,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 386,\r\n      \"Y\": 288\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 288\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 411,\r\n      \"Y\": 288\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 279\r\n      },\r\n      {\r\n        \"X\": 411,\r\n        \"Y\": 279\r\n      },\r\n      {\r\n        \"X\": 411,\r\n        \"Y\": 297\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 297\r\n      }\r\n    ],\r\n    \"Text\": \"的风险。\",\r\n    \"Score\": 0.99864304,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 184,\r\n      \"Y\": 298\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 298\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 254,\r\n      \"Y\": 298\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 292\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 292\r\n      },\r\n      {\r\n        \"X\": 254,\r\n        \"Y\": 305\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 305\r\n      }\r\n    ],\r\n    \"Text\": \"刘悦的技术博客：Live2D..\",\r\n    \"Score\": 0.968494,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 306\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 306\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 688,\r\n      \"Y\": 306\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 298\r\n      },\r\n      {\r\n        \"X\": 688,\r\n        \"Y\": 298\r\n      },\r\n      {\r\n        \"X\": 688,\r\n        \"Y\": 315\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 315\r\n      }\r\n    ],\r\n    \"Text\": \"2.营养流失：在腌制过程中，食物中的维生素和矿物\",\r\n    \"Score\": 0.9960397,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 26,\r\n      \"Y\": 314\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 19,\r\n      \"Y\": 314\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 33,\r\n      \"Y\": 314\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 19,\r\n        \"Y\": 308\r\n      },\r\n      {\r\n        \"X\": 33,\r\n        \"Y\": 308\r\n      },\r\n      {\r\n        \"X\": 33,\r\n        \"Y\": 321\r\n      },\r\n      {\r\n        \"X\": 19,\r\n        \"Y\": 321\r\n      }\r\n    ],\r\n    \"Text\": \"六\",\r\n    \"Score\": 0.30470404,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 484,\r\n      \"Y\": 326\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 326\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 606,\r\n      \"Y\": 326\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 318\r\n      },\r\n      {\r\n        \"X\": 606,\r\n        \"Y\": 318\r\n      },\r\n      {\r\n        \"X\": 606,\r\n        \"Y\": 334\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 334\r\n      }\r\n    ],\r\n    \"Text\": \"质可能被分解或损失，导致营养素匮乏。\",\r\n    \"Score\": 0.97833484,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 139,\r\n      \"Y\": 339\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 339\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 164,\r\n      \"Y\": 339\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 331\r\n      },\r\n      {\r\n        \"X\": 164,\r\n        \"Y\": 331\r\n      },\r\n      {\r\n        \"X\": 164,\r\n        \"Y\": 348\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 348\r\n      }\r\n    ],\r\n    \"Text\": \"*(M）\",\r\n    \"Score\": 0.53811383,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 251,\r\n      \"Y\": 337\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 237,\r\n      \"Y\": 337\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 266,\r\n      \"Y\": 337\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 237,\r\n        \"Y\": 330\r\n      },\r\n      {\r\n        \"X\": 266,\r\n        \"Y\": 330\r\n      },\r\n      {\r\n        \"X\": 266,\r\n        \"Y\": 345\r\n      },\r\n      {\r\n        \"X\": 237,\r\n        \"Y\": 345\r\n      }\r\n    ],\r\n    \"Text\": \"昨天\",\r\n    \"Score\": 0.9800522,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 344\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 344\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 689,\r\n      \"Y\": 344\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 336\r\n      },\r\n      {\r\n        \"X\": 689,\r\n        \"Y\": 336\r\n      },\r\n      {\r\n        \"X\": 689,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 353\r\n      }\r\n    ],\r\n    \"Text\": \"3.食品安全风险：如果腌制的咸蛋未经妥善保存或在\",\r\n    \"Score\": 0.9952418,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 133,\r\n      \"Y\": 362\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 362\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 154,\r\n      \"Y\": 362\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 154,\r\n        \"Y\": 353\r\n      },\r\n      {\r\n        \"X\": 154,\r\n        \"Y\": 371\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 371\r\n      }\r\n    ],\r\n    \"Text\": \"就知道\",\r\n    \"Score\": 0.9995415,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 517,\r\n      \"Y\": 364\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 364\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 674,\r\n      \"Y\": 364\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 355\r\n      },\r\n      {\r\n        \"X\": 674,\r\n        \"Y\": 356\r\n      },\r\n      {\r\n        \"X\": 674,\r\n        \"Y\": 373\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 372\r\n      }\r\n    ],\r\n    \"Text\": \"过期后食用，可能会受到细菌污染而引发食源性疾\",\r\n    \"Score\": 0.9992052,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 372,\r\n      \"Y\": 383\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 383\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 384,\r\n      \"Y\": 383\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 375\r\n      },\r\n      {\r\n        \"X\": 384,\r\n        \"Y\": 375\r\n      },\r\n      {\r\n        \"X\": 384,\r\n        \"Y\": 391\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 391\r\n      }\r\n    ],\r\n    \"Text\": \"病。\",\r\n    \"Score\": 0.9969212,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 402\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 402\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 402\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 395\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 395\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 409\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 409\r\n      }\r\n    ],\r\n    \"Text\": \"18:08\",\r\n    \"Score\": 0.99156827,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 517,\r\n      \"Y\": 401\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 360,\r\n      \"Y\": 401\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 675,\r\n      \"Y\": 401\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 360,\r\n        \"Y\": 392\r\n      },\r\n      {\r\n        \"X\": 675,\r\n        \"Y\": 393\r\n      },\r\n      {\r\n        \"X\": 675,\r\n        \"Y\": 410\r\n      },\r\n      {\r\n        \"X\": 360,\r\n        \"Y\": 409\r\n      }\r\n    ],\r\n    \"Text\": \"4.口味依赖：经常食用过咸的食物可能导致味觉适\",\r\n    \"Score\": 0.9985878,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 524,\r\n      \"Y\": 421\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 421\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 421\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 412\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 412\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 430\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 430\r\n      }\r\n    ],\r\n    \"Text\": \"应，使人对盐分的需求增加，进而可能对健康产生负\",\r\n    \"Score\": 0.9992417,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 130,\r\n      \"Y\": 403\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 403\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 146,\r\n      \"Y\": 403\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 396\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 396\r\n      },\r\n      {\r\n        \"X\": 146,\r\n        \"Y\": 411\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 411\r\n      }\r\n    ],\r\n    \"Text\": \"刘敏\",\r\n    \"Score\": 0.99950165,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 131,\r\n      \"Y\": 427\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 427\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 149,\r\n      \"Y\": 427\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 419\r\n      },\r\n      {\r\n        \"X\": 149,\r\n        \"Y\": 419\r\n      },\r\n      {\r\n        \"X\": 149,\r\n        \"Y\": 435\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 435\r\n      }\r\n    ],\r\n    \"Text\": \"[文件]\",\r\n    \"Score\": 0.85837626,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 387,\r\n      \"Y\": 440\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 362,\r\n      \"Y\": 440\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 412,\r\n      \"Y\": 440\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 432\r\n      },\r\n      {\r\n        \"X\": 412,\r\n        \"Y\": 432\r\n      },\r\n      {\r\n        \"X\": 412,\r\n        \"Y\": 449\r\n      },\r\n      {\r\n        \"X\": 362,\r\n        \"Y\": 449\r\n      }\r\n    ],\r\n    \"Text\": \"面影响。\",\r\n    \"Score\": 0.9340384,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 248,\r\n      \"Y\": 466\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 231,\r\n      \"Y\": 466\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 466\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 459\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 459\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 473\r\n      },\r\n      {\r\n        \"X\": 231,\r\n        \"Y\": 473\r\n      }\r\n    ],\r\n    \"Text\": \"15:46\",\r\n    \"Score\": 0.98768777,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 525,\r\n      \"Y\": 459\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 363,\r\n      \"Y\": 459\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 687,\r\n      \"Y\": 459\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 451\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 451\r\n      },\r\n      {\r\n        \"X\": 687,\r\n        \"Y\": 467\r\n      },\r\n      {\r\n        \"X\": 363,\r\n        \"Y\": 467\r\n      }\r\n    ],\r\n    \"Text\": \"因此，适量摄入制食品是重要的，同时应注意食物\",\r\n    \"Score\": 0.998468,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 448,\r\n      \"Y\": 478\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 361,\r\n      \"Y\": 478\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 536,\r\n      \"Y\": 478\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 470\r\n      },\r\n      {\r\n        \"X\": 536,\r\n        \"Y\": 470\r\n      },\r\n      {\r\n        \"X\": 536,\r\n        \"Y\": 486\r\n      },\r\n      {\r\n        \"X\": 361,\r\n        \"Y\": 486\r\n      }\r\n    ],\r\n    \"Text\": \"的多样性以获取均衡的营养。\",\r\n    \"Score\": 0.9977578,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 129,\r\n      \"Y\": 467\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 467\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 145,\r\n      \"Y\": 467\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 460\r\n      },\r\n      {\r\n        \"X\": 145,\r\n        \"Y\": 460\r\n      },\r\n      {\r\n        \"X\": 145,\r\n        \"Y\": 475\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 475\r\n      }\r\n    ],\r\n    \"Text\": \"郭超\",\r\n    \"Score\": 0.9998116,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 127,\r\n      \"Y\": 490\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 490\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 141,\r\n      \"Y\": 490\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 482\r\n      },\r\n      {\r\n        \"X\": 141,\r\n        \"Y\": 482\r\n      },\r\n      {\r\n        \"X\": 141,\r\n        \"Y\": 498\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 498\r\n      }\r\n    ],\r\n    \"Text\": \"挺好\",\r\n    \"Score\": 0.9965997,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 189,\r\n      \"Y\": 530\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 530\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 265,\r\n      \"Y\": 530\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 523\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 522\r\n      },\r\n      {\r\n        \"X\": 265,\r\n        \"Y\": 539\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 540\r\n      }\r\n    ],\r\n    \"Text\": \"前程无忧51Job服...昨天\",\r\n    \"Score\": 0.9130505,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 822,\r\n      \"Y\": 528\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 778,\r\n      \"Y\": 528\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 866,\r\n      \"Y\": 528\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 778,\r\n        \"Y\": 520\r\n      },\r\n      {\r\n        \"X\": 866,\r\n        \"Y\": 520\r\n      },\r\n      {\r\n        \"X\": 866,\r\n        \"Y\": 537\r\n      },\r\n      {\r\n        \"X\": 778,\r\n        \"Y\": 537\r\n      }\r\n    ],\r\n    \"Text\": \"给我写一首诗\",\r\n    \"Score\": 0.9330258,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 174,\r\n      \"Y\": 554\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 113,\r\n      \"Y\": 554\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 235,\r\n      \"Y\": 554\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 546\r\n      },\r\n      {\r\n        \"X\": 235,\r\n        \"Y\": 546\r\n      },\r\n      {\r\n        \"X\": 235,\r\n        \"Y\": 562\r\n      },\r\n      {\r\n        \"X\": 113,\r\n        \"Y\": 562\r\n      }\r\n    ],\r\n    \"Text\": \"您有新的职位邀请…\",\r\n    \"Score\": 0.92687553,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 84,\r\n      \"Y\": 554\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 73,\r\n      \"Y\": 554\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 96,\r\n      \"Y\": 554\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 73,\r\n        \"Y\": 549\r\n      },\r\n      {\r\n        \"X\": 96,\r\n        \"Y\": 549\r\n      },\r\n      {\r\n        \"X\": 96,\r\n        \"Y\": 559\r\n      },\r\n      {\r\n        \"X\": 73,\r\n        \"Y\": 559\r\n      }\r\n    ],\r\n    \"Text\": \"51J08\",\r\n    \"Score\": 0.873438,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 150,\r\n      \"Y\": 596\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 114,\r\n      \"Y\": 596\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 187,\r\n      \"Y\": 596\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 589\r\n      },\r\n      {\r\n        \"X\": 187,\r\n        \"Y\": 589\r\n      },\r\n      {\r\n        \"X\": 187,\r\n        \"Y\": 603\r\n      },\r\n      {\r\n        \"X\": 114,\r\n        \"Y\": 603\r\n      }\r\n    ],\r\n    \"Text\": \"折叠的群聊\",\r\n    \"Score\": 0.9985479,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 180,\r\n      \"Y\": 618\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 115,\r\n      \"Y\": 618\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 246,\r\n      \"Y\": 618\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 610\r\n      },\r\n      {\r\n        \"X\": 246,\r\n        \"Y\": 610\r\n      },\r\n      {\r\n        \"X\": 246,\r\n        \"Y\": 626\r\n      },\r\n      {\r\n        \"X\": 115,\r\n        \"Y\": 626\r\n      }\r\n    ],\r\n    \"Text\": \"临晋镇团委工作群：好\",\r\n    \"Score\": 0.9875928,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 26,\r\n      \"Y\": 667\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 21,\r\n      \"Y\": 667\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 32,\r\n      \"Y\": 667\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 21,\r\n        \"Y\": 663\r\n      },\r\n      {\r\n        \"X\": 32,\r\n        \"Y\": 663\r\n      },\r\n      {\r\n        \"X\": 32,\r\n        \"Y\": 672\r\n      },\r\n      {\r\n        \"X\": 21,\r\n        \"Y\": 672\r\n      }\r\n    ],\r\n    \"Text\": \"P\",\r\n    \"Score\": 0.43580973,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  },\r\n  {\r\n    \"CenterPoint\": {\r\n      \"X\": 866,\r\n      \"Y\": 751\r\n    },\r\n    \"LeftCenterPoint\": {\r\n      \"X\": 843,\r\n      \"Y\": 751\r\n    },\r\n    \"RightCenterPoint\": {\r\n      \"X\": 890,\r\n      \"Y\": 751\r\n    },\r\n    \"BoxPoints\": [\r\n      {\r\n        \"X\": 843,\r\n        \"Y\": 743\r\n      },\r\n      {\r\n        \"X\": 890,\r\n        \"Y\": 743\r\n      },\r\n      {\r\n        \"X\": 890,\r\n        \"Y\": 760\r\n      },\r\n      {\r\n        \"X\": 843,\r\n        \"Y\": 760\r\n      }\r\n    ],\r\n    \"Text\": \"发送(S)\",\r\n    \"Score\": 0.8911538,\r\n    \"cls_score\": 0.0,\r\n    \"cls_label\": -1\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "bfbd2da9-3024-4348-809f-2c55a16e2a5e",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1481.957408344832,256.30432452395837",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "6b0c631b-d531-44d0-b7ae-6c3a77f9a83f",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1336.5933333333332,34.860000000000014",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "64916fd4-093e-4efe-b635-60b9531eada3",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1481.957408344832,275.5443245239584",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"IsCustomer\": true,\r\n    \"Text\": \"是通过算法来提供个性化的饮食、运动和生活方式建\\n议的。如果您有任何关于健康的疑问或需要帮助的地\\n方，我会尽力为您提供支持和建议。\"\r\n  },\r\n  {\r\n    \"IsCustomer\": false,\r\n    \"Text\": \"腌鸡蛋的吃多了会有什么危害\"\r\n  },\r\n  {\r\n    \"IsCustomer\": true,\r\n    \"Text\": \"过度食用腌制的咸蛋可能会对健康造成一些潜在的危\\n害：\\n1.高盐摄入：许多腌制食品都含有较高的钠（salt）\\n含量，而过量摄入盐分会增加高血压、心脏病和中风\\n的风险。\\n2.营养流失：在腌制过程中，食物中的维生素和矿物\\n质可能被分解或损失，导致营养素匮乏。\\n3.食品安全风险：如果腌制的咸蛋未经妥善保存或在\\n过期后食用，可能会受到细菌污染而引发食源性疾\\n病。\\n4.口味依赖：经常食用过咸的食物可能导致味觉适\\n应，使人对盐分的需求增加，进而可能对健康产生负\\n面影响。\\n因此，适量摄入制食品是重要的，同时应注意食物\\n的多样性以获取均衡的营养。\"\r\n  },\r\n  {\r\n    \"IsCustomer\": false,\r\n    \"Text\": \"给我写一首诗\"\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "d8f6fb68-58f7-4cb9-ac19-61e1223830a9",
+        "Title": "聊天记录(String)",
+        "PropertyName": "ChatMessage",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1336.5933333333332,54.10000000000002",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"IsCustomer\": true,\r\n    \"Text\": \"是通过算法来提供个性化的饮食、运动和生活方式建\\n议的。如果您有任何关于健康的疑问或需要帮助的地\\n方，我会尽力为您提供支持和建议。\"\r\n  },\r\n  {\r\n    \"IsCustomer\": false,\r\n    \"Text\": \"腌鸡蛋的吃多了会有什么危害\"\r\n  },\r\n  {\r\n    \"IsCustomer\": true,\r\n    \"Text\": \"过度食用腌制的咸蛋可能会对健康造成一些潜在的危\\n害：\\n1.高盐摄入：许多腌制食品都含有较高的钠（salt）\\n含量，而过量摄入盐分会增加高血压、心脏病和中风\\n的风险。\\n2.营养流失：在腌制过程中，食物中的维生素和矿物\\n质可能被分解或损失，导致营养素匮乏。\\n3.食品安全风险：如果腌制的咸蛋未经妥善保存或在\\n过期后食用，可能会受到细菌污染而引发食源性疾\\n病。\\n4.口味依赖：经常食用过咸的食物可能导致味觉适\\n应，使人对盐分的需求增加，进而可能对健康产生负\\n面影响。\\n因此，适量摄入制食品是重要的，同时应注意食物\\n的多样性以获取均衡的营养。\"\r\n  },\r\n  {\r\n    \"IsCustomer\": false,\r\n    \"Text\": \"给我写一首诗\"\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "ce905582-cd51-4456-b27d-44eac0763d74",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2233,289.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "01a756fa-6351-4cf5-b2eb-7b9829f01c97",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2105.277408344832,256.30432452395837",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "ae74a1ab-b98c-43f6-b99b-fa172c23fe97",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2233,309.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "d64d7985-a96f-4757-b571-dc5c65761233",
+        "Title": "客户说(String)",
+        "PropertyName": "CustomerSpeak",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1336.5933333333332,73.34000000000003",
+        "Operation": null,
+        "Type": 3,
+        "Value": "",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    }
+  ]
+}

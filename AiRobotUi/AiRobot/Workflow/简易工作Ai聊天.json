@@ -1,0 +1,723 @@
+{
+  "Name": "简易工作Ai聊天",
+  "SaveTime": "2024-05-26 15:31:49",
+  "Operations": [
+    {
+      "Title": "StartRoot",
+      "ActionReference": {
+        "Name": "StartRoot",
+        "Type": "Aibot.StartRoot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 0,
+        "ActionViewType": 0
+      },
+      "Location": "780,1815",
+      "NodeInfo": {
+        "Input": [],
+        "Output": [
+          {
+            "Id": "df4ae5d8-2f7f-44bd-96f3-293bcf667c36",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "951,1849.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "LoadJson",
+      "ActionReference": {
+        "Name": "LoadJson",
+        "Type": "Aibot.LoadJson, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 3
+      },
+      "Location": "675,1935",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "54066432-302b-4697-81c8-b09a1ba7769f",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "688,1969.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "1a767339-52b5-4fa8-914c-e130620956b0",
+            "Title": "JsonData",
+            "PropertyName": "JsonData",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "688,2082.27",
+            "Operation": null,
+            "Type": 5,
+            "Value": "\r\n{\r\n    \"wxUser\": \"阿呆\",\r\n    \"userInfo\": \"阿呆先生为人正义\",\r\n    \"System\":\"你正在和user聊天，你称呼user为阿呆先生，你的工作是咨询阿呆先生身体健康，向阿呆先生推荐你的减肥药物，要关心阿呆先生的身体健康，下面的内容是工作指南参考<工作指南>工作中必须称呼客户为 名称加尊称 比如阿呆先生</工作指南>，如果客户咨询的内容和工作指南参考无关请回复‘阿呆先生，不好意思这个我不太了解’\"\r\n}",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "ff4d2fca-5e4c-4f5b-8e6f-d8674ee4bc35",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1369.003333333333,1969.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "555c2c71-2222-49d1-bd4b-b72ae0cfdd2a",
+            "Title": "wxUser",
+            "PropertyName": "wxUser",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "阿呆",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "1892428f-7112-4b2a-969b-db66ccde4309",
+            "Title": "userInfo",
+            "PropertyName": "userInfo",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "阿呆先生为人正义",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "6ef0d94a-9342-4e7c-acd2-fba735e35069",
+            "Title": "System",
+            "PropertyName": "System",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "1369.003333333333,2027.5799999999997",
+            "Operation": null,
+            "Type": 3,
+            "Value": "你正在和user聊天，你称呼user为阿呆先生，你的工作是咨询阿呆先生身体健康，向阿呆先生推荐你的减肥药物，要关心阿呆先生的身体健康，下面的内容是工作指南参考<工作指南>工作中必须称呼客户为 名称加尊称 比如阿呆先生</工作指南>，如果客户咨询的内容和工作指南参考无关请回复‘阿呆先生，不好意思这个我不太了解’",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "服务-Ai聊天",
+      "ActionReference": {
+        "Name": "服务-Ai聊天",
+        "Type": "Aibot.AiChat, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "1470,1965",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "f7e56674-a605-41ef-8086-8c4295a9413d",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1483,1999.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "2983f60d-56ef-40e9-8daa-cb1b6032dac0",
+            "Title": "ApiUrl(String)",
+            "PropertyName": "ApiUrl",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1483,2019.1000000000001",
+            "Operation": null,
+            "Type": 3,
+            "Value": "http://localhost:1234/{0}/{1}",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "06e304e6-33fa-4bb3-b9d1-a4dba59e16b5",
+            "Title": "ApiKey(String)",
+            "PropertyName": "ApiKey",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1483,2038.3400000000001",
+            "Operation": null,
+            "Type": 3,
+            "Value": "lm-studio",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "2c9f0a30-bee6-4d8c-b4c6-19f5747ae749",
+            "Title": "系统提示词(String)",
+            "PropertyName": "System",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1483,2299.9599999999996",
+            "Operation": null,
+            "Type": 3,
+            "Value": "你正在和user聊天，你称呼user为阿呆先生，你的工作是咨询阿呆先生身体健康，向阿呆先生推荐你的减肥药物，要关心阿呆先生的身体健康，下面的内容是工作指南参考\r\n<工作指南>工作中必须称呼客户为 名称加尊称 比如阿呆先生。咨询：‘减肥产品是否安全？’  \r\n答：‘我们的减肥产品经过严格的质量检测和认证，符合国家标准，确保安全有效。请您放心使用。’\r\n\r\n咨询：‘产品的成分是什么？’  \r\n答：‘我们的产品成分包括天然草本提取物、维生素和矿物质，不含任何有害化学物质。具体成分可以在产品包装或说明书上详细查看。’\r\n\r\n咨询：‘如何使用产品？’  \r\n答：‘每种产品的使用方法都不同，一般来说，建议按照产品包装上的说明进行使用。如有疑问，可以随时联系我们的客服。’\r\n\r\n咨询：‘使用产品多久能看到效果？’  \r\n答：‘根据个人体质和使用情况不同，见效时间也会有所不同。通常来说，坚持使用一至两个月可以看到明显效果。’\r\n\r\n咨询：‘产品是否有副作用？’  \r\n答：‘我们的产品以天然成分为主，副作用极少。如果您有过敏史或特殊体质，建议在使用前咨询医生。’\r\n\r\n咨询：‘主动倾听’  \r\n答：‘客户表达减肥困扰时，可以说：“我理解您的困扰，很多客户也有类似的困惑。您能具体说说您的情况吗？”’\r\n\r\n咨询：‘积极回应’  \r\n答：‘客户提问时，可以说：“这是个很好的问题，我来为您详细解释一下。”’\r\n\r\n咨询：‘建立信任’  \r\n答：‘客户表示怀疑时，可以说：“我们的产品经过多次临床试验，并有大量成功案例。如果您愿意，可以先试用一段时间看看效果。”’\r\n\r\n咨询：‘表示关心’  \r\n答：‘客户提到使用后的感受时，可以说：“听到您有这样的反馈，我们非常重视。请问具体是什么情况呢？我可以为您提供帮助。”’\r\n\r\n咨询：‘介绍产品优势’  \r\n答：‘我们的产品不仅能帮助减肥，还能调节身体代谢，改善整体健康状况。它们采用天然成分，安全无副作用。’\r\n\r\n咨询：‘提供试用装’  \r\n答：‘为了让您更好地了解我们的产品效果，我们提供免费试用装，您可以先体验一下。’\r\n\r\n咨询：‘分享成功案例’  \r\n答：‘很多客户使用我们的产品后，成功减重并改善了健康状况。我们有很多成功案例可以与您分享。’\r\n\r\n咨询：‘优惠活动’  \r\n答：‘目前我们正在进行促销活动，购买一套产品可以享受八折优惠，还赠送一个月的营养指导服务。’\r\n\r\n咨询：‘定期跟进’  \r\n答：‘每周或每月与客户联系，了解他们的使用情况和身体反应，提供针对性的建议。’\r\n\r\n咨询：‘提供健康建议’  \r\n答：‘除了使用产品，我们建议您每天进行适量运动，保持均衡饮食，多喝水，这样可以更好地促进减肥效果。’\r\n\r\n咨询：‘鼓励健康生活方式’  \r\n答：‘鼓励客户养成良好的生活习惯，如早睡早起、减少高糖高脂肪食品摄入等。’\r\n\r\n咨询：‘提供心理支持’  \r\n答：‘减肥过程可能会遇到瓶颈期和困难，我们随时愿意倾听和帮助您，您可以随时联系我们。’\r\n禁止用英文和客户聊天。\r\n\r\n与客户聊天之后，不要回复：”如果您有其他问题或需要进一步的指导，请随时告诉我。“ 之类的话。客户有自然找你的。\r\n应该回复：”很高兴为您服务“\r\n</工作指南>如果客户咨询的内容和工作指南参考无关请回复‘阿呆先生，不好意思这个我不太了解’",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "89bd3d40-2a50-4ba7-ac78-5f9b2397f65c",
+            "Title": "聊天示例(String)",
+            "PropertyName": "ChatExample",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1483,2565.96",
+            "Operation": null,
+            "Type": 3,
+            "Value": "",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "a0c5574c-d4d7-44db-acf6-71ddd5bb300e",
+            "Title": "聊天记录(String)",
+            "PropertyName": "ChatHistorical",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1483,2589.58",
+            "Operation": null,
+            "Type": 3,
+            "Value": "",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "70b93f39-efce-4650-be01-2d06ed856873",
+            "Title": "用户输入(String)",
+            "PropertyName": "UserSpeak",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1873,2440.92",
+            "Operation": null,
+            "Type": 3,
+            "Value": "工作指南参考，是什么",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "788f997d-1504-4ffa-9898-de4b8638a659",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2149.5133333333333,1999.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "c932b8fb-e3ee-4cd4-b44f-4f775d09d476",
+            "Title": "聊天记录(String)",
+            "PropertyName": "OutputChatHistorical",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2149.5133333333333,2019.1000000000001",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"工作指南参考，是什么\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"阿呆先生，不好意思这个我不太了解\"\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "9aba712f-1836-4d21-820e-270f0e1cd0fc",
+            "Title": "Ai回复(String)",
+            "PropertyName": "AiSpeak",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "2149.5133333333333,2038.34",
+            "Operation": null,
+            "Type": 3,
+            "Value": "阿呆先生，不好意思这个我不太了解",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "LoadJson",
+      "ActionReference": {
+        "Name": "LoadJson",
+        "Type": "Aibot.LoadJson, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 3
+      },
+      "Location": "1140,1770",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "aefd0fe3-c141-4c9e-8053-6ac4d1149f78",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1153,1804.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "60e90237-8417-4c6c-9630-ce966149e218",
+            "Title": "JsonData",
+            "PropertyName": "JsonData",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1153,1857.69",
+            "Operation": null,
+            "Type": 5,
+            "Value": "{\r\n    \"ApiUrl\": \"http://localhost:1234/{0}/{1}\",\r\n    \"ApiKey\": \"lm-studio\",\r\n    \"System\":\"你正在和user聊天，你的名字叫莉莉\"\r\n}",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "0b09f05c-48a7-42c0-bbeb-402216af05af",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1759.28,1804.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "881fecd5-52b9-4623-bc57-f1993fab6916",
+            "Title": "ApiUrl",
+            "PropertyName": "ApiUrl",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1759.28,1824.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "http://localhost:1234/{0}/{1}",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "f1ddc154-c0ac-4718-92c1-c8cc09e88857",
+            "Title": "ApiKey",
+            "PropertyName": "ApiKey",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1759.28,1843.34",
+            "Operation": null,
+            "Type": 3,
+            "Value": "lm-studio",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "1cdb512e-ac8e-4e07-9c9f-cb8dfa7e4d32",
+            "Title": "System",
+            "PropertyName": "System",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "你正在和user聊天，你的名字叫莉莉",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "2445,2130",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "69397e67-1a51-4020-b14e-391d1afdf886",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2458,2164.8600000000006",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "6ac64a67-b71f-44fc-97e2-a32f00fc5b62",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2458,2184.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"工作指南参考，是什么\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"阿呆先生，不好意思这个我不太了解\"\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "192a5f33-0865-4598-985a-aea898d7d1d9",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": true,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "d6d166c9-a920-4090-b5ee-ecbfd00893ba",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    }
+  ],
+  "Connections": [
+    {
+      "Input": {
+        "Id": "54066432-302b-4697-81c8-b09a1ba7769f",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "688,1969.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "df4ae5d8-2f7f-44bd-96f3-293bcf667c36",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "951,1849.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "aefd0fe3-c141-4c9e-8053-6ac4d1149f78",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1153,1804.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "ff4d2fca-5e4c-4f5b-8e6f-d8674ee4bc35",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1369.003333333333,1969.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "f7e56674-a605-41ef-8086-8c4295a9413d",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1483,1999.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "0b09f05c-48a7-42c0-bbeb-402216af05af",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1759.28,1804.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "2983f60d-56ef-40e9-8daa-cb1b6032dac0",
+        "Title": "ApiUrl(String)",
+        "PropertyName": "ApiUrl",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1483,2019.1000000000001",
+        "Operation": null,
+        "Type": 3,
+        "Value": "http://localhost:1234/{0}/{1}",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "881fecd5-52b9-4623-bc57-f1993fab6916",
+        "Title": "ApiUrl",
+        "PropertyName": "ApiUrl",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1759.28,1824.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "http://localhost:1234/{0}/{1}",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "06e304e6-33fa-4bb3-b9d1-a4dba59e16b5",
+        "Title": "ApiKey(String)",
+        "PropertyName": "ApiKey",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1483,2038.3400000000001",
+        "Operation": null,
+        "Type": 3,
+        "Value": "lm-studio",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "f1ddc154-c0ac-4718-92c1-c8cc09e88857",
+        "Title": "ApiKey",
+        "PropertyName": "ApiKey",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1759.28,1843.34",
+        "Operation": null,
+        "Type": 3,
+        "Value": "lm-studio",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "69397e67-1a51-4020-b14e-391d1afdf886",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2458,2164.8600000000006",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "788f997d-1504-4ffa-9898-de4b8638a659",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2149.5133333333333,1999.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "6ac64a67-b71f-44fc-97e2-a32f00fc5b62",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2458,2184.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"工作指南参考，是什么\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"阿呆先生，不好意思这个我不太了解\"\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "c932b8fb-e3ee-4cd4-b44f-4f775d09d476",
+        "Title": "聊天记录(String)",
+        "PropertyName": "OutputChatHistorical",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2149.5133333333333,2019.1000000000001",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"工作指南参考，是什么\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"阿呆先生，不好意思这个我不太了解\"\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    }
+  ]
+}

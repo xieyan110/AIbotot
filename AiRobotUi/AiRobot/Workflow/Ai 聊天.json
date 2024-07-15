@@ -1,0 +1,1483 @@
+{
+  "Name": "ai 聊天",
+  "SaveTime": "2024-05-26 13:54:34",
+  "Operations": [
+    {
+      "Title": "StartRoot",
+      "ActionReference": {
+        "Name": "StartRoot",
+        "Type": "Aibot.StartRoot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 0,
+        "ActionViewType": 0
+      },
+      "Location": "660,1125",
+      "NodeInfo": {
+        "Input": [],
+        "Output": [
+          {
+            "Id": "abfc8e15-3e12-4be7-a211-c48014150882",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "830.9999999999998,1159.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "LoadJson",
+      "ActionReference": {
+        "Name": "LoadJson",
+        "Type": "Aibot.LoadJson, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 3
+      },
+      "Location": "510,1275",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "118f3b00-91aa-4403-a4f8-179f82cd3fe5",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "522.9999999999998,1309.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "91835342-4565-4e0c-a473-b6d9883d66a9",
+            "Title": "JsonData",
+            "PropertyName": "JsonData",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": "{\r\n    \"ApiUrl\": \"http://localhost:1234/{0}/{1}\",\r\n    \"ApiKey\": \"lm-studio\",\r\n    \"System\":\"你正在和user聊天，你的名字叫莉莉\"\r\n}",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "ccfe4875-0af0-4451-8131-394e9add60e7",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1129.28,1309.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "8e702349-9d3e-4db6-973d-ee1232920568",
+            "Title": "ApiUrl",
+            "PropertyName": "ApiUrl",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1129.28,1329.0999999999995",
+            "Operation": null,
+            "Type": 3,
+            "Value": "http://localhost:1234/{0}/{1}",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "0413af93-b449-479d-867f-e842b54cc1c6",
+            "Title": "ApiKey",
+            "PropertyName": "ApiKey",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1129.28,1348.3400000000001",
+            "Operation": null,
+            "Type": 3,
+            "Value": "lm-studio",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "f9c015cf-f775-4955-b01a-2d208da47383",
+            "Title": "System",
+            "PropertyName": "System",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1129.28,1367.5799999999995",
+            "Operation": null,
+            "Type": 3,
+            "Value": "你正在和user聊天，你的名字叫莉莉",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "LoadJson",
+      "ActionReference": {
+        "Name": "LoadJson",
+        "Type": "Aibot.LoadJson, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 3
+      },
+      "Location": "915,1110",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "327033fb-809f-4388-89d8-e4183f21bcfa",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "928,1144.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "de386d03-a177-45c4-8df3-e6b9c0f9e1f8",
+            "Title": "JsonData",
+            "PropertyName": "JsonData",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1167.0096022567268,286.77902741904893",
+            "Operation": null,
+            "Type": 5,
+            "Value": "{\r\n    \"text\": \"最近天气怎么样？\"\r\n}",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "b6782e79-a050-414e-8fbc-69e65a2e5026",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1385.9,1144.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "92f34e74-9097-4fae-9704-0210fcacb6e3",
+            "Title": "text",
+            "PropertyName": "text",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1385.9,1164.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "最近天气怎么样？",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "服务-Ai聊天",
+      "ActionReference": {
+        "Name": "服务-Ai聊天",
+        "Type": "Aibot.AiChat, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "1545,1095",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "296ad047-28a9-44ed-8a33-55eb307ae5c5",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1558,1129.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "d961b777-13b5-4af2-9d2e-cf2761132027",
+            "Title": "ApiUrl(String)",
+            "PropertyName": "ApiUrl",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1558,1149.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "http://localhost:1234/{0}/{1}",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "7bac40cf-9a38-4883-a81e-4066c7095330",
+            "Title": "ApiKey(String)",
+            "PropertyName": "ApiKey",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1558,1168.3399999999997",
+            "Operation": null,
+            "Type": 3,
+            "Value": "lm-studio",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "b41873db-5b6e-45c4-80b8-64ceb945e401",
+            "Title": "系统提示词(String)",
+            "PropertyName": "System",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1558,1187.5799999999995",
+            "Operation": null,
+            "Type": 3,
+            "Value": "你正在和user聊天，你的名字叫莉莉",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "ac5081be-2386-4766-95a7-f1b2e2e032a5",
+            "Title": "聊天示例(String)",
+            "PropertyName": "ChatExample",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "ed97a548-f34b-43a5-a73c-1697661f378b",
+            "Title": "聊天记录(String)",
+            "PropertyName": "ChatHistorical",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "9a4a3419-9d18-483b-b45a-52d94254b963",
+            "Title": "用户输入(String)",
+            "PropertyName": "UserSpeak",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1558,1262.8199999999997",
+            "Operation": null,
+            "Type": 3,
+            "Value": "最近天气怎么样？",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "62cf048f-38af-43d5-a939-e78ebf388c4c",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1826.5133333333333,1129.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "8e59e73b-0ca9-452e-ba0c-640fab995ce4",
+            "Title": "聊天记录(String)",
+            "PropertyName": "OutputChatHistorical",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1826.5133333333333,1149.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"最近天气怎么样？\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。\"\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "1b26a2fb-9b6e-4a57-beda-6f963dd8e10b",
+            "Title": "Ai回复(String)",
+            "PropertyName": "AiSpeak",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1826.5133333333333,1168.3399999999997",
+            "Operation": null,
+            "Type": 3,
+            "Value": "哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "服务-Ai聊天",
+      "ActionReference": {
+        "Name": "服务-Ai聊天",
+        "Type": "Aibot.AiChat, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "1320,1335",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "2ecba22b-dc7c-4e43-a460-b51f725937c8",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1333,1369.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "92261db1-58eb-48fc-b774-e57f31d973bc",
+            "Title": "ApiUrl(String)",
+            "PropertyName": "ApiUrl",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1333,1389.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "http://localhost:1234/{0}/{1}",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "e9f685da-c6b1-4685-bf1c-6c7a1132f132",
+            "Title": "ApiKey(String)",
+            "PropertyName": "ApiKey",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1333,1408.3400000000001",
+            "Operation": null,
+            "Type": 3,
+            "Value": "lm-studio",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "bab00145-fbb6-4781-bba7-224378b05ec5",
+            "Title": "系统提示词(String)",
+            "PropertyName": "System",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1183,497.58000000000004",
+            "Operation": null,
+            "Type": 3,
+            "Value": "你正在和user聊天，user的名字叫莉莉,",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "d6814ccb-2ac0-4628-8d73-edb948c205b4",
+            "Title": "聊天示例(String)",
+            "PropertyName": "ChatExample",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1183,521.2",
+            "Operation": null,
+            "Type": 3,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "4785e238-cb02-46c4-83f8-b659cf3dd447",
+            "Title": "聊天记录(String)",
+            "PropertyName": "ChatHistorical",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1183,544.82",
+            "Operation": null,
+            "Type": 3,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "290531e6-1241-4a94-b818-90aaa5b09388",
+            "Title": "用户输入(String)",
+            "PropertyName": "UserSpeak",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1333,1511.5799999999995",
+            "Operation": null,
+            "Type": 3,
+            "Value": "哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "823ace71-ab24-4074-b63e-3e295adf8de5",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1855.6766666666665,1369.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "540282a7-f023-445b-80f9-41548a1ca3b1",
+            "Title": "聊天记录(String)",
+            "PropertyName": "OutputChatHistorical",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1855.6766666666665,1389.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"听起来你那里有很多不同的天气体验！我猜这会让你每天都有新的发现和惊喜吧？\"\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "cd25ac59-2d7b-4199-a01b-fdea9e5cd438",
+            "Title": "Ai回复(String)",
+            "PropertyName": "AiSpeak",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1855.6766666666665,1408.3400000000001",
+            "Operation": null,
+            "Type": 3,
+            "Value": "听起来你那里有很多不同的天气体验！我猜这会让你每天都有新的发现和惊喜吧？",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "1935,885",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "7ad56b3c-b05f-4d01-9fd9-972060c8eded",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1948,919.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "3d20c1b1-de71-4aa9-83d6-e49dc5aabb47",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1948,939.0999999999999",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"最近天气怎么样？\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。\"\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "202c44ee-5cbe-4f06-b505-db2033f77beb",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1762.0096022567266,161.01902741904905",
+            "Operation": null,
+            "Type": 0,
+            "Value": true,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "6ac70145-3bd3-4b7e-bf26-0bcbcc8cd020",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2567.94,919.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "1950,1335",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "4473bda1-f999-4d91-9769-57e21676b57b",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1962.9999999999995,1369.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "fc684a4f-1b33-4409-add6-67a256db155d",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1962.9999999999995,1389.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"听起来你那里有很多不同的天气体验！我猜这会让你每天都有新的发现和惊喜吧？\"\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "5d4d5c5a-79e9-47a7-8885-55708454e50a",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1558,527.72",
+            "Operation": null,
+            "Type": 0,
+            "Value": true,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "25ba83a4-3ae1-4d14-b825-79b52e7e5be3",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2582.94,1369.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "2745,885",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "ef35ca06-1cf3-46eb-a712-142126454dcc",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2758,919.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "e54ea94d-5f1d-4f36-a667-8af330142b1b",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2758,939.0999999999999",
+            "Operation": null,
+            "Type": 3,
+            "Value": "哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "e5d7d339-c849-459c-ba42-18b92f550d6d",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1963,251.4799999999999",
+            "Operation": null,
+            "Type": 0,
+            "Value": true,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "827c94d5-78dc-4d33-a82a-ea75b195fbcf",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "3376.533333333333,919.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "2715,1380",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "0b96405c-5ac2-4710-bc6e-7007f649249a",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2727.9999999999995,1414.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "2760ce8d-7dcf-46c2-8184-f2fa6a67575c",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2727.9999999999995,1434.0999999999995",
+            "Operation": null,
+            "Type": 3,
+            "Value": "听起来你那里有很多不同的天气体验！我猜这会让你每天都有新的发现和惊喜吧？",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "0c7ac112-c244-47b0-a871-2eeeafb6d03c",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": true,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "f4a19ded-f452-4d2c-bcb9-6d930004d33b",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    }
+  ],
+  "Connections": [
+    {
+      "Input": {
+        "Id": "118f3b00-91aa-4403-a4f8-179f82cd3fe5",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "522.9999999999998,1309.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "abfc8e15-3e12-4be7-a211-c48014150882",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "830.9999999999998,1159.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "327033fb-809f-4388-89d8-e4183f21bcfa",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "928,1144.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "ccfe4875-0af0-4451-8131-394e9add60e7",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1129.28,1309.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "296ad047-28a9-44ed-8a33-55eb307ae5c5",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1558,1129.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "b6782e79-a050-414e-8fbc-69e65a2e5026",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1385.9,1144.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "d961b777-13b5-4af2-9d2e-cf2761132027",
+        "Title": "ApiUrl(String)",
+        "PropertyName": "ApiUrl",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1558,1149.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "http://localhost:1234/{0}/{1}",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "8e702349-9d3e-4db6-973d-ee1232920568",
+        "Title": "ApiUrl",
+        "PropertyName": "ApiUrl",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1129.28,1329.0999999999995",
+        "Operation": null,
+        "Type": 3,
+        "Value": "http://localhost:1234/{0}/{1}",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "7bac40cf-9a38-4883-a81e-4066c7095330",
+        "Title": "ApiKey(String)",
+        "PropertyName": "ApiKey",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1558,1168.3399999999997",
+        "Operation": null,
+        "Type": 3,
+        "Value": "lm-studio",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "0413af93-b449-479d-867f-e842b54cc1c6",
+        "Title": "ApiKey",
+        "PropertyName": "ApiKey",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1129.28,1348.3400000000001",
+        "Operation": null,
+        "Type": 3,
+        "Value": "lm-studio",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "b41873db-5b6e-45c4-80b8-64ceb945e401",
+        "Title": "系统提示词(String)",
+        "PropertyName": "System",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1558,1187.5799999999995",
+        "Operation": null,
+        "Type": 3,
+        "Value": "你正在和user聊天，你的名字叫莉莉",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "f9c015cf-f775-4955-b01a-2d208da47383",
+        "Title": "System",
+        "PropertyName": "System",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1129.28,1367.5799999999995",
+        "Operation": null,
+        "Type": 3,
+        "Value": "你正在和user聊天，你的名字叫莉莉",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "9a4a3419-9d18-483b-b45a-52d94254b963",
+        "Title": "用户输入(String)",
+        "PropertyName": "UserSpeak",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1558,1262.8199999999997",
+        "Operation": null,
+        "Type": 3,
+        "Value": "最近天气怎么样？",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "92f34e74-9097-4fae-9704-0210fcacb6e3",
+        "Title": "text",
+        "PropertyName": "text",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1385.9,1164.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "最近天气怎么样？",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "2ecba22b-dc7c-4e43-a460-b51f725937c8",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1333,1369.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "62cf048f-38af-43d5-a939-e78ebf388c4c",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1826.5133333333333,1129.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "92261db1-58eb-48fc-b774-e57f31d973bc",
+        "Title": "ApiUrl(String)",
+        "PropertyName": "ApiUrl",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1333,1389.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "http://localhost:1234/{0}/{1}",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "8e702349-9d3e-4db6-973d-ee1232920568",
+        "Title": "ApiUrl",
+        "PropertyName": "ApiUrl",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1129.28,1329.0999999999995",
+        "Operation": null,
+        "Type": 3,
+        "Value": "http://localhost:1234/{0}/{1}",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "e9f685da-c6b1-4685-bf1c-6c7a1132f132",
+        "Title": "ApiKey(String)",
+        "PropertyName": "ApiKey",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1333,1408.3400000000001",
+        "Operation": null,
+        "Type": 3,
+        "Value": "lm-studio",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "0413af93-b449-479d-867f-e842b54cc1c6",
+        "Title": "ApiKey",
+        "PropertyName": "ApiKey",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1129.28,1348.3400000000001",
+        "Operation": null,
+        "Type": 3,
+        "Value": "lm-studio",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "290531e6-1241-4a94-b818-90aaa5b09388",
+        "Title": "用户输入(String)",
+        "PropertyName": "UserSpeak",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1333,1511.5799999999995",
+        "Operation": null,
+        "Type": 3,
+        "Value": "哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "1b26a2fb-9b6e-4a57-beda-6f963dd8e10b",
+        "Title": "Ai回复(String)",
+        "PropertyName": "AiSpeak",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1826.5133333333333,1168.3399999999997",
+        "Operation": null,
+        "Type": 3,
+        "Value": "哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "7ad56b3c-b05f-4d01-9fd9-972060c8eded",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1948,919.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "823ace71-ab24-4074-b63e-3e295adf8de5",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1855.6766666666665,1369.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "3d20c1b1-de71-4aa9-83d6-e49dc5aabb47",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1948,939.0999999999999",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"最近天气怎么样？\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。\"\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "8e59e73b-0ca9-452e-ba0c-640fab995ce4",
+        "Title": "聊天记录(String)",
+        "PropertyName": "OutputChatHistorical",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1826.5133333333333,1149.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"最近天气怎么样？\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。\"\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "4473bda1-f999-4d91-9769-57e21676b57b",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1962.9999999999995,1369.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "6ac70145-3bd3-4b7e-bf26-0bcbcc8cd020",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2567.94,919.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "fc684a4f-1b33-4409-add6-67a256db155d",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1962.9999999999995,1389.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"听起来你那里有很多不同的天气体验！我猜这会让你每天都有新的发现和惊喜吧？\"\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "540282a7-f023-445b-80f9-41548a1ca3b1",
+        "Title": "聊天记录(String)",
+        "PropertyName": "OutputChatHistorical",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1855.6766666666665,1389.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Role\": 1,\r\n    \"Text\": \"哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。\"\r\n  },\r\n  {\r\n    \"Role\": 2,\r\n    \"Text\": \"听起来你那里有很多不同的天气体验！我猜这会让你每天都有新的发现和惊喜吧？\"\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "ef35ca06-1cf3-46eb-a712-142126454dcc",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2758,919.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "25ba83a4-3ae1-4d14-b825-79b52e7e5be3",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2582.94,1369.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "e54ea94d-5f1d-4f36-a667-8af330142b1b",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2758,939.0999999999999",
+        "Operation": null,
+        "Type": 3,
+        "Value": "哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "1b26a2fb-9b6e-4a57-beda-6f963dd8e10b",
+        "Title": "Ai回复(String)",
+        "PropertyName": "AiSpeak",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1826.5133333333333,1168.3399999999997",
+        "Operation": null,
+        "Type": 3,
+        "Value": "哦，最近天气有点不稳定。有时阳光明媚，但有时候也会下雨。不过总的来说，我还是挺喜欢这种多变的天气的。",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "2760ce8d-7dcf-46c2-8184-f2fa6a67575c",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2727.9999999999995,1434.0999999999995",
+        "Operation": null,
+        "Type": 3,
+        "Value": "听起来你那里有很多不同的天气体验！我猜这会让你每天都有新的发现和惊喜吧？",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "cd25ac59-2d7b-4199-a01b-fdea9e5cd438",
+        "Title": "Ai回复(String)",
+        "PropertyName": "AiSpeak",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1855.6766666666665,1408.3400000000001",
+        "Operation": null,
+        "Type": 3,
+        "Value": "听起来你那里有很多不同的天气体验！我猜这会让你每天都有新的发现和惊喜吧？",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "0b96405c-5ac2-4710-bc6e-7007f649249a",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2727.9999999999995,1414.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "827c94d5-78dc-4d33-a82a-ea75b195fbcf",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "3376.533333333333,919.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+﻿using System;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Speech.Synthesis;
+using Nodify;
+using WindowsAPI;
+using System.IO;
+
+namespace Aibot
+{
+    [AibotItem("窗口-焦点句柄", ActionType = ActionType.WindowsServer)]
+    public class WindowsGetFocused : BaseAibotAction,IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage=AibotKeyUsage.Output)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = Window.GetFocused();
+
+            blackboard.Node!.Output.ForEach(x => 
+            {
+                if(x.PropertyName == "IntPtr")
+                    x.Value = intPtr;
+            });
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("窗口-Title获取", ActionType = ActionType.WindowsServer)]
+    public class WindowsGetTitle : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        [AibotProperty("Title(String)", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty Title { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            var title = Window.GetTitle(intPtr);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if (n.PropertyName == "Title")
+                {
+                    n.Value = title;
+                }
+            });
+
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("窗口-标题更改", ActionType = ActionType.WindowsServer)]
+    public class WindowsSetTitle : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        [AibotProperty("Title(String)", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Title { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            var title = IntPtr.Value!.ToString();
+            Window.SetTitle(intPtr, title);
+
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("窗口-最大化", ActionType = ActionType.WindowsServer)]
+    public class WindowsMaximize : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+
+            Window.Maximize(intPtr);
+
+            return Task.CompletedTask;
+        }
+    }
+    [AibotItem("窗口-最小化", ActionType = ActionType.WindowsServer)]
+    public class WindowsMinimize : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+
+            Window.Minimize(intPtr);
+
+            return Task.CompletedTask;
+        }
+    }
+    
+    [AibotItem("窗口化", ActionType = ActionType.WindowsServer)]
+    public class WindowsNormalize : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+
+            Window.Normalize(intPtr);
+
+            return Task.CompletedTask;
+        }
+    }
+    
+    [AibotItem("窗口-截图", ActionType = ActionType.WindowsServer)]
+    public class WindowsScreenshot : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        [AibotProperty("文件名", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty FileName { get; set; }
+
+        [AibotProperty("文件路径", AibotKeyType.String, Usage = AibotKeyUsage.Output)]
+        public AibotProperty FilePath { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            var fileName = FileName.Value?.ToString() ?? "Desktop.png";
+
+            var bmp = Window.Screenshot(intPtr);
+            var localDir = Path.Combine(Directory.GetCurrentDirectory(), "File");
+
+            if (!Directory.Exists(localDir))
+            {
+                Directory.CreateDirectory(localDir);
+            }
+
+            string savePath = Path.Combine(localDir, fileName);
+
+            bmp.Save(savePath);
+
+            blackboard[FilePath] = savePath;
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("FilePath" == n.PropertyName)
+                    n.Value = savePath;
+            });
+
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("窗口-关闭", ActionType = ActionType.WindowsServer)]
+    public class WindowsClose : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+
+            Window.Close(intPtr);
+
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("窗口-左反转", ActionType = ActionType.WindowsServer)]
+    public class WindowsFlipLeft : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+
+            Window.FlipLeft(intPtr);
+
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("窗口-右反转", ActionType = ActionType.WindowsServer)]
+    public class WindowsFlipRight : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+
+            Window.FlipRight(intPtr);
+
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("务栏隐-藏任", ActionType = ActionType.WindowsServer)]
+    public class WindowsHideTaskBar : BaseAibotAction, IAibotAction
+    {
+        public new Task Execute(AibotV blackboard)
+        {
+            Desktop.HideTaskBar();
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("任务栏-显示", ActionType = ActionType.WindowsServer)]
+    public class WindowsShowTaskBar : BaseAibotAction, IAibotAction
+    {
+        public new Task Execute(AibotV blackboard)
+        {
+            Desktop.ShowTaskBar();
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("桌面高宽获取", ActionType = ActionType.WindowsServer)]
+    public class WindowsWidthAndHeight : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("宽(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Output)]
+        public AibotProperty Width { get; set; }
+        [AibotProperty("高(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Output)]
+        public AibotProperty Height { get; set; }
+        public new Task Execute(AibotV blackboard)
+        {
+            blackboard.Node!.Output.ForEach(x =>
+            {
+                if (x.PropertyName == "Width")
+                    x.Value = Desktop.GetWidth();
+                if (x.PropertyName == "Height")
+                    x.Value = Desktop.GetHeight();
+
+            });
+            return Task.CompletedTask;
+        }
+    }
+}

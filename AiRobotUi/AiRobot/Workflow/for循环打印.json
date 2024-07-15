@@ -1,0 +1,979 @@
+{
+  "Name": "for循环打印",
+  "SaveTime": "2024-05-27 19:46:12",
+  "Operations": [
+    {
+      "Title": "StartRoot",
+      "ActionReference": {
+        "Name": "StartRoot",
+        "Type": "Aibot.StartRoot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 0,
+        "ActionViewType": 0
+      },
+      "Location": "330,345",
+      "NodeInfo": {
+        "Input": [],
+        "Output": [
+          {
+            "Id": "63069bce-b570-4f14-aafe-f24ba2e6f11a",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "501,379.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "ForeachJson",
+      "ActionReference": {
+        "Name": "ForeachJson",
+        "Type": "Aibot.ForeachJson, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 2
+      },
+      "Location": "1260,270",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "3026d93c-59c1-4e42-875c-5786314a0131",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1273,304.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "29a78997-9433-4b98-a38c-73823effe1c6",
+            "Title": "JsonData",
+            "PropertyName": "JsonData",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": "1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "eec70df9-6910-4315-8b04-1d9cbfd06301",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1553.1633333333334,304.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "bbbc03db-0c77-44e4-9304-c0e52248f096",
+            "Title": "text",
+            "PropertyName": "text",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1553.1633333333334,324.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "9",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "ForeachJson",
+      "ActionReference": {
+        "Name": "ForeachJson",
+        "Type": "Aibot.ForeachJson, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 2
+      },
+      "Location": "1650,270",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "f3c127e4-393a-47c4-9cf8-a5839eb36b61",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1663,304.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "7df812b6-401c-4a71-9445-9d26b2f897c4",
+            "Title": "JsonData",
+            "PropertyName": "JsonData",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1108,449.37",
+            "Operation": null,
+            "Type": 5,
+            "Value": "a\r\nb\r\nc\r\nd\r\ne\r\nf\r\ng\r\nh\r\ni\r\nj\r\nk\r\nl\r\nm\r\nn\r\no\r\np\r\nq",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "2cd22b0c-ca3c-4225-b66e-f4593363fbaf",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1948.0699999999997,304.8600000000001",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "3a852cfc-6f2e-40a3-9d2f-d4a03800dd2e",
+            "Title": "text",
+            "PropertyName": "text",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1948.0699999999997,324.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "q",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "1290,675",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "db8893c4-c214-4865-8d85-8bcee699e029",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1303,709.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "2b9b1236-85bc-4b41-bdbe-9995029ff9fe",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1303,729.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "9",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "f91b32b4-254e-4f36-a4ac-1c463db82fc3",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "630,396.48",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "70e7684b-30aa-4e8a-8a21-bd8798fab128",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1549.8666666666668,709.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "1710,675",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "71de3799-100f-4b20-8507-823890e58422",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1723,709.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "24add21e-4b30-4448-ba14-948277554e4f",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1723,729.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "q",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "58e5e316-02f3-4d0c-be56-68f351f6f4a2",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1561.9999999999995,429.4799999999999",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "33b0616b-ea5e-46aa-bb13-bfa8db1e89bf",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1974.38,709.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "ForeachJson",
+      "ActionReference": {
+        "Name": "ForeachJson",
+        "Type": "Aibot.ForeachJson, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 2
+      },
+      "Location": "885,255",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "ac1228e0-ea8b-4a07-b4d4-0324d9b2383e",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "898.0000000000002,289.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "274ab11e-253a-411e-bd28-e35245cd224b",
+            "Title": "JsonData",
+            "PropertyName": "JsonData",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": "!\r\n@\r\n#\r\n$\r\n%\r\n^\r\n&\r\n*\r\n(\r\n)\r\n_\r\n+\r\n-\r\n=",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "acc7afb6-18a6-494a-bb37-a28c0349fae2",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1184.3899999999999,289.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "63a9c242-24b9-4893-b685-d987beeedaf2",
+            "Title": "text",
+            "PropertyName": "text",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1184.3899999999999,309.10000000000014",
+            "Operation": null,
+            "Type": 3,
+            "Value": "=",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "930,675",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "fefcafda-8ab0-4701-8791-6e38669b648b",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "943,709.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "a3ed78ce-bebc-4adc-bbba-1cf829ab6687",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "943,729.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "=",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "8960cdf5-3106-473e-a382-4cf9cde1a0aa",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "8ab23bc3-f24d-49de-983f-d0357ec46ef1",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1195.69,709.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "EndFor",
+      "ActionReference": {
+        "Name": "EndFor",
+        "Type": "Aibot.EndFor, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "2070,810",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "6aa7828c-ebf8-4d21-96f6-d68abb4cad20",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2083,844.8599999999999",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "2e4ea462-3ce1-4cf9-bf5c-c98da8e1030b",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2241,844.8599999999999",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "2085,1005",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "19ebb60f-13b0-4c7e-a457-3ced63fa27de",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2098,1039.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "0ad98db9-81ff-4057-8b97-50e13a681347",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1287.2042376822744,1121.0139464653084",
+            "Operation": null,
+            "Type": 3,
+            "Value": "执行结束",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "522e0418-a539-4c80-864b-722034a701d7",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "1287.2042376822744,1149.0139464653084",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "2a76395d-c9c2-45ea-b649-b2dddf2e5f62",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "1526.5242376822741,1088.6339464653086",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    }
+  ],
+  "Connections": [
+    {
+      "Input": {
+        "Id": "db8893c4-c214-4865-8d85-8bcee699e029",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1303,709.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "eec70df9-6910-4315-8b04-1d9cbfd06301",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1553.1633333333334,304.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "2b9b1236-85bc-4b41-bdbe-9995029ff9fe",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1303,729.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "9",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "bbbc03db-0c77-44e4-9304-c0e52248f096",
+        "Title": "text",
+        "PropertyName": "text",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1553.1633333333334,324.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "9",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "f3c127e4-393a-47c4-9cf8-a5839eb36b61",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1663,304.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "70e7684b-30aa-4e8a-8a21-bd8798fab128",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1549.8666666666668,709.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "71de3799-100f-4b20-8507-823890e58422",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1723,709.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "2cd22b0c-ca3c-4225-b66e-f4593363fbaf",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1948.0699999999997,304.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "24add21e-4b30-4448-ba14-948277554e4f",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1723,729.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "q",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "3a852cfc-6f2e-40a3-9d2f-d4a03800dd2e",
+        "Title": "text",
+        "PropertyName": "text",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1948.0699999999997,324.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "q",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "ac1228e0-ea8b-4a07-b4d4-0324d9b2383e",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "898.0000000000002,289.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "63069bce-b570-4f14-aafe-f24ba2e6f11a",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "501,379.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "fefcafda-8ab0-4701-8791-6e38669b648b",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "943,709.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "acc7afb6-18a6-494a-bb37-a28c0349fae2",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1184.3899999999999,289.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "3026d93c-59c1-4e42-875c-5786314a0131",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1273,304.8600000000001",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "8ab23bc3-f24d-49de-983f-d0357ec46ef1",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1195.69,709.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "a3ed78ce-bebc-4adc-bbba-1cf829ab6687",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "943,729.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "=",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "63a9c242-24b9-4893-b685-d987beeedaf2",
+        "Title": "text",
+        "PropertyName": "text",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1184.3899999999999,309.10000000000014",
+        "Operation": null,
+        "Type": 3,
+        "Value": "=",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "6aa7828c-ebf8-4d21-96f6-d68abb4cad20",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2083,844.8599999999999",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "33b0616b-ea5e-46aa-bb13-bfa8db1e89bf",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1974.38,709.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "19ebb60f-13b0-4c7e-a457-3ced63fa27de",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2098,1039.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "2e4ea462-3ce1-4cf9-bf5c-c98da8e1030b",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2241,844.8599999999999",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    }
+  ]
+}
