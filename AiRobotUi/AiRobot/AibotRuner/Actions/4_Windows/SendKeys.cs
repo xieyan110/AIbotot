@@ -13,7 +13,7 @@ using Wpf.Ui.Controls;
 
 namespace Aibot
 {
-    [AibotItem("键盘输入", ActionType = ActionType.WindowsServer)]
+    [AibotItem("窗口-键盘输入", ActionType = ActionType.WindowsServer)]
     public class SendKey : BaseAibotAction,IAibotAction
     {
         [AibotProperty("文本(String)", AibotKeyType.String, Usage=AibotKeyUsage.Input)]

@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Net;
 using System.Threading.Tasks;
 using System.Windows;
-using static OpenCvSharp.ML.DTrees;
 
 namespace Aibot
 {
@@ -71,6 +69,9 @@ namespace Aibot
         public INodifyCommand AddNewCommand { get; }
         public INodifyCommand DeleteSelectedCommand { get; }
         public INodifyCommand RefreshWorkfCommand { get; }
+        public INodifyCommand SaveListCommand { get; }
+        public INodifyCommand LoadListCommand { get; }
+
         public INodifyCommand SelectCommand { get; }
 
         public ListEditorViewModel()
@@ -85,6 +86,11 @@ namespace Aibot
             AddNewCommand = new DelegateCommand(ExecuteAddNew);
             DeleteSelectedCommand = new DelegateCommand(ExecuteDeleteSelected);
             RefreshWorkfCommand = new DelegateCommand(LoadWorkflowFiles);
+
+            SaveListCommand = new DelegateCommand(ExecuteSaveList);
+            LoadListCommand = new DelegateCommand(ExecuteLoadList);
+
+
             SelectCommand = new DelegateCommand(() =>
             {
                 if(OperationList.All(x => x.IsSelected))
@@ -104,8 +110,50 @@ namespace Aibot
             });
 
             LoadWorkflowFiles();
+            ExecuteLoadList();
         }
 
+        private void ExecuteSaveList()
+        {
+            var data = new List<OperationGraphData>();
+            foreach (var aibot in OperationList)
+            {
+                var graphData = new OperationGraphData
+                {
+                    Name = aibot.Name ?? "Unnamed",
+                    SaveTime = DateTime.Now,
+                    Operations = new(),
+                    Connections = aibot.Connections
+                };
+
+                foreach (var operation in aibot.Operations)
+                {
+                    graphData.Operations.Add(new NodeBase
+                    {
+                        Title = operation.Title,
+                        ActionReference = operation.ActionReference,
+                        Location = operation.Location,
+                        NodeInfo = new NodeInfo
+                        {
+                            Input = operation.Input,
+                            Output = operation.Output,
+                        }
+                    });
+                }
+
+                data.Add(graphData);
+            }
+
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string fileFolderPath = Path.Combine(currentDirectory, "File");
+            Directory.CreateDirectory(fileFolderPath);
+            string filePath = Path.Combine(fileFolderPath, "首页列表.json");
+
+            var jsonData = data.ToJsonString();
+            File.WriteAllText(filePath, jsonData);
+            MessageBox.Show("保存成功！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+
+        }
 
         private void LoadWorkflowFiles()
         {
@@ -237,6 +285,50 @@ namespace Aibot
             }
         }
 
+
+        private void ExecuteLoadList()
+        {
+            string currentDirectory = Directory.GetCurrentDirectory();
+            string filePath = Path.Combine(currentDirectory, "File", "首页列表.json");
+
+            if (File.Exists(filePath))
+            {
+                string jsonData = File.ReadAllText(filePath);
+                var data = jsonData.CastTo<List<OperationGraphData>>();
+
+                OperationList.Clear();
+
+                foreach (var newWork in data)
+                {
+
+                    var aibotView = new AibotViewModel();
+
+                    var sortedOperations = newWork.Operations
+                        .OrderBy(op => op.Location.X)  // 首先按 Y 坐标排序（从上到下）
+                        .ThenBy(op => op.Location.Y)   // 然后按 X 坐标排序（从左到右）
+                        .ToList();  // 将结果转换为 List
+
+                    // 清空原有集合并添加排序后的项
+                    newWork.Operations.Clear();
+                    foreach (var operation in sortedOperations)
+                    {
+                        newWork.Operations.Add(operation);
+                    }
+
+                    var graph = newWork.OpenOperation(new Point(0, 0));
+
+                    aibotView.Operations.AddRange(graph.Operations);
+
+                    foreach (var op in graph.Connections)
+                    {
+                        aibotView.CreateConnection(op.Input, op.Output);
+                    }
+
+                    OperationList.Add(aibotView);
+                }
+            }
+        }
+
         private void ExecuteAddNew()
         {
             if (SelectedWorkflow is null)
@@ -247,6 +339,18 @@ namespace Aibot
             var aibotView = new AibotViewModel();
             var json = SelectedWorkflow.ToJsonString();
             var newWork = json.CastTo<OperationGraphData>();
+
+            var sortedOperations = newWork.Operations
+                .OrderBy(op => op.Location.X)  // 首先按 Y 坐标排序（从上到下）
+                .ThenBy(op => op.Location.Y)   // 然后按 X 坐标排序（从左到右）
+                .ToList();  // 将结果转换为 List
+
+            // 清空原有集合并添加排序后的项
+            newWork.Operations.Clear();
+            foreach (var operation in sortedOperations)
+            {
+                newWork.Operations.Add(operation);
+            }
 
             var graph = newWork.OpenOperation(new Point(0, 0));
 

@@ -255,23 +255,6 @@ namespace Aibot
         }
     }
 
-    [AibotItem("Adb切换输入法", ActionType = ActionType.AndroidServer)]
-    public class AdbSwitchIme : BaseAdbAibotAction, IAibotAction
-    {
-        [AibotProperty("包名(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
-        public AibotProperty PackageName { get; set; }
-
-        public new Task Execute(AibotV blackboard)
-        {
-            var deviceName = DeviceName.Value?.ToString() ?? "";
-
-            AdbHelper.SwitchIme(PackageName.Value?.ToString() ?? "", deviceName);
-
-            return Task.CompletedTask;
-        }
-    }
-
-
     [AibotItem("Adb纵向滑动", ActionType = ActionType.AndroidServer)]
     public class AdbVerticalSwipe : BaseAdbAibotAction, IAibotAction
     {

@@ -136,6 +136,12 @@
     <None Update="Workflow\4. 微信招聘信息推广回复.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Workflow\4. 微信招聘推广【去除ai整理】- 2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Workflow\4. 微信招聘推广【去除ai整理】.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Workflow\4.0 快手发送群消息.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

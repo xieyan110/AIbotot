@@ -44,7 +44,7 @@ namespace Aibot
             IsVisible = false;
         }
 
-        public NodifyObservableCollection<OperationViewModel> AvailableOperations { get; }
+        public NodifyObservableCollection<OperationViewModel> AvailableOperations { get; set; }
         public NodifyObservableCollection<OperationGraphData> GraphOperations { get; }
 
         public INodifyCommand CreateOperationCommand { get; }
@@ -117,7 +117,16 @@ namespace Aibot
 
         public void LoldJsonGraphOperations(string jsonData,AibotViewModel calculatorG,Point location)
         {
-            var operationG = jsonData.CastTo<OperationGraphData>();
+            OperationGraphData? operationG;
+            try
+            {
+                operationG = jsonData.CastTo<OperationGraphData>();
+            }
+            catch
+            {
+                operationG = null;
+            }
+             
             if (operationG is null) return;
             var graph = operationG.OpenOperation(location);
 

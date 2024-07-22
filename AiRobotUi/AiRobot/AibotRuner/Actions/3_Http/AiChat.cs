@@ -71,7 +71,13 @@ namespace Aibot
             }
             catch
             {
-
+                blackboard.Node!.Output.ForEach(output =>
+                {
+                    if (output.PropertyName == "AiSpeak")
+                        output.Value = "";
+                    if (output.PropertyName == "OutputChatHistorical")
+                        output.Value = "{}".ToJsonString();
+                });
             }
             return Task.CompletedTask;
         }
@@ -125,7 +131,11 @@ namespace Aibot
             }
             catch
             {
-
+                blackboard.Node!.Output.ForEach(output =>
+                {
+                    if (output.PropertyName == "AiSpeak")
+                        output.Value = "";
+                });
             }
 
 
@@ -133,8 +143,8 @@ namespace Aibot
         }
     }
 
-    
-    
+
+
     [AibotItem("服务-Ai文件查询", ActionType = ActionType.CommonServer)]
     public class AiDocumentFile : BaseAibotAction, IAibotAction
     {
@@ -182,7 +192,11 @@ namespace Aibot
             }
             catch
             {
-
+                blackboard.Node!.Output.ForEach(output =>
+                {
+                    if (output.PropertyName == "AiSpeak")
+                        output.Value = "";
+                });
             }
 
 
@@ -238,7 +252,11 @@ namespace Aibot
             }
             catch
             {
-
+                blackboard.Node!.Output.ForEach(output =>
+                {
+                    if (output.PropertyName == "AiSpeak")
+                        output.Value = "";
+                });
             }
 
 
@@ -304,4 +322,64 @@ namespace Aibot
             return Task.CompletedTask;
         }
     }
+
+    [AibotItem("服务-高级解析聊天", ActionType = ActionType.CommonServer)]
+    public class ParseSupporChatRecord : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("图片路径(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty FilePath { get; set; }
+
+        [AibotProperty("客户气泡颜色(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty CustomerColorStr { get; set; }
+
+        [AibotProperty("咱们气泡颜色(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty AssistantColorStr { get; set; }
+        
+        [AibotProperty("颜色容差[默认70](Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty ColorTolerance { get; set; }
+        
+        [AibotProperty("垂直位置容差[默认70](Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty YTolerance { get; set; }
+
+
+        [AibotProperty("聊天记录(String)", AibotKeyType.String, Usage = AibotKeyUsage.Output)]
+        public AibotProperty ChatMessage { get; set; }
+
+        [AibotProperty("客户说(String)", AibotKeyType.String, Usage = AibotKeyUsage.Output)]
+        public AibotProperty CustomerSpeak { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var colorTolerance = ColorTolerance.Value!.TryInt();
+            var yTolerance = YTolerance.Value!.TryInt();
+            if (colorTolerance == 0) colorTolerance = 70; 
+            if (yTolerance == 0) yTolerance = 70;
+
+            var ppOcr = new PPOcr();
+            var result = ppOcr.GetChatMessages(
+                FilePath.Value?.ToString() ?? "",
+                customerColorStr: CustomerColorStr.Value?.ToString() ?? "",  // 白色
+                assistantColorStr: AssistantColorStr.Value?.ToString() ?? "",  // 浅绿色
+                colorTolerance: colorTolerance,  // 颜色容差
+                yTolerance: yTolerance  // 垂直位置容差
+            );
+
+            string customerSpeak = "";
+            if (result.Count > 0 && result[^1].IsCustomer)
+            {
+                customerSpeak = result[^1].Text;
+            }
+
+            blackboard.Node!.Output.ForEach(output =>
+            {
+                if (output.PropertyName == "CustomerSpeak")
+                    output.Value = customerSpeak;
+                if (output.PropertyName == "ChatMessage")
+                    output.Value = result.ToJsonString();
+            });
+
+            return Task.CompletedTask;
+        }
+    }
+
 }

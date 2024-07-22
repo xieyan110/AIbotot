@@ -11,6 +11,7 @@ using WindowsAPI;
 using OpenCvSharp.Text;
 using System.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TreeView;
+using System.Collections.ObjectModel;
 
 namespace Aibot
 {
@@ -23,6 +24,8 @@ namespace Aibot
         public EditorViewModel()
         {
             Calculator = new AibotViewModel();
+            AvailableOperations = Calculator.OperationsMenu.AvailableOperations;
+            AvailableGraphOperations = Calculator.OperationsMenu.GraphOperations;
 
 
             SaveNodeCommand = new DelegateCommand<AibotViewModel>(_ =>
@@ -233,5 +236,84 @@ namespace Aibot
             get => _name;
             set => SetProperty(ref _name, value);
         }
+
+        private string? _nodeSearchText;
+        public string? NodeSearchText
+        {
+            get => _nodeSearchText;
+            set
+            {
+                if (SetProperty(ref _nodeSearchText, value))
+                {
+                    FilterAvailableOperations();
+                }
+            }
+        }
+
+        private NodifyObservableCollection<OperationViewModel> _availableOperations = new NodifyObservableCollection<OperationViewModel>();
+        public NodifyObservableCollection<OperationViewModel> AvailableOperations
+        {
+            get => _availableOperations;
+            set => SetProperty(ref _availableOperations, value);
+        }
+
+
+
+        private void FilterAvailableOperations()
+        {
+            if (string.IsNullOrWhiteSpace(NodeSearchText))
+            {
+
+                AvailableOperations = Calculator.OperationsMenu.AvailableOperations;
+            }
+            else
+            {
+                // 根据搜索文本过滤操作
+                var filteredOperations = Calculator.OperationsMenu.AvailableOperations
+                    .Where(op => op.Title.Contains(NodeSearchText, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+                AvailableOperations = new NodifyObservableCollection<OperationViewModel>(filteredOperations);
+            }
+        }
+
+
+        private string? _nodeGroupSearchText;
+        public string? NodeGroupSearchText
+        {
+            get => _nodeGroupSearchText;
+            set
+            {
+                if (SetProperty(ref _nodeGroupSearchText, value))
+                {
+                    FilterAvailableGraphOperations();
+                }
+            }
+        }
+
+        private NodifyObservableCollection<OperationGraphData> _availableGraphOperations = new NodifyObservableCollection<OperationGraphData>();
+        public NodifyObservableCollection<OperationGraphData> AvailableGraphOperations
+        {
+            get => _availableGraphOperations;
+            set => SetProperty(ref _availableGraphOperations, value);
+        }
+
+        private void FilterAvailableGraphOperations()
+        {
+            if (string.IsNullOrWhiteSpace(NodeGroupSearchText))
+            {
+                AvailableGraphOperations = Calculator.OperationsMenu.GraphOperations;
+            }
+            else
+            {
+                // 根据搜索文本过滤操作组
+                var filteredOperations = Calculator.OperationsMenu.GraphOperations
+                    .Where(op => op.Name.Contains(NodeGroupSearchText, StringComparison.OrdinalIgnoreCase))
+                    .ToList();
+                AvailableGraphOperations = new NodifyObservableCollection<OperationGraphData>(filteredOperations);
+            }
+        }
+
+
+
     }
 }

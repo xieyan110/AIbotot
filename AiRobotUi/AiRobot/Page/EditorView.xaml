@@ -466,44 +466,57 @@
 
         <!--  节点  -->
         <ui:CardExpander
-            Width="240"
-            MaxWidth="300"
-            Margin="0,0,0,0"
-            Padding="0,5,0,0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Stretch"
-            HorizontalContentAlignment="Right"
-            VerticalContentAlignment="Top"
-            Background="{DynamicResource HighlightedBackgroundBrush}"
-            BorderBrush="{DynamicResource BackgroundBrush}"
-            Foreground="{DynamicResource ForegroundBrush}"
-            ExpandDirection="Right"
-            IsExpanded="True">
+    Width="240"
+    MaxWidth="300"
+    Margin="0,0,0,0"
+    Padding="0,5,0,0"
+    HorizontalAlignment="Right"
+    VerticalAlignment="Stretch"
+    HorizontalContentAlignment="Right"
+    VerticalContentAlignment="Top"
+    Background="{DynamicResource HighlightedBackgroundBrush}"
+    BorderBrush="{DynamicResource BackgroundBrush}"
+    Foreground="{DynamicResource ForegroundBrush}"
+    ExpandDirection="Right"
+    IsExpanded="True">
             <ui:CardExpander.Header>
                 <TextBlock HorizontalAlignment="Center" Text="节点" />
             </ui:CardExpander.Header>
-            <Border
-                Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource SubtractConverter}, ConverterParameter=110}"
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- 搜索框 -->
+                <ui:TextBox Grid.Row="0"
+                    PlaceholderText="搜索节点..."
+                    Margin="5"
+                    Icon="Search24"
+                    Text="{Binding NodeSearchText, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Border Grid.Row="1"
+                Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource SubtractConverter}, ConverterParameter=200}"
                 MinWidth="200"
                 MaxWidth="300"
-                Margin="0,0,0,0"
+                Margin="0,5,0,0"
                 Padding="7,0,0,0"
                 HorizontalAlignment="Center"
                 BorderThickness="2"
                 CornerRadius="3">
-                <ScrollViewer Margin="0,0,0,8" Padding="0,0,0,0">
-                    <ItemsControl ItemsSource="{Binding Calculator.OperationsMenu.AvailableOperations}">
-                        <ItemsControl.ItemContainerStyle>
-                            <Style>
-                                <Setter Property="FrameworkElement.Margin" Value="5" />
-                                <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
-                                <Setter Property="FrameworkElement.Cursor" Value="Hand" />
-                                <Setter Property="FrameworkElement.ToolTip" Value="Drag and drop into the editor" />
-                            </Style>
-                        </ItemsControl.ItemContainerStyle>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate DataType="{x:Type local:OperationViewModel}">
-                                <nodify:Node
+                    <ScrollViewer Margin="0,0,0,8" Padding="0,0,0,0">
+                        <ItemsControl ItemsSource="{Binding AvailableOperations}">
+                            <ItemsControl.ItemContainerStyle>
+                                <Style>
+                                    <Setter Property="FrameworkElement.Margin" Value="5" />
+                                    <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+                                    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+                                    <Setter Property="FrameworkElement.ToolTip" Value="Drag and drop into the editor" />
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type local:OperationViewModel}">
+                                    <nodify:Node
                                     Width="180"
                                     BorderBrush="{StaticResource AnimatedBrush}"
                                     BorderThickness="2"
@@ -511,11 +524,12 @@
                                     Input="{Binding Input}"
                                     MouseMove="OnNodeDrag"
                                     Output="{Binding Output}" />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-            </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
         </ui:CardExpander>
 
         <!--  节点组  -->
@@ -533,7 +547,6 @@
             ExpandDirection="Left"
             IsExpanded="False">
             <ui:CardExpander.Header>
-
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -541,75 +554,86 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock
-                        Grid.Column="0"
-                        Margin="35,0,10,0"
-                        HorizontalAlignment="Center"
-                        VerticalAlignment="Center"
-                        Text="节点组" />
+                Grid.Column="0"
+                Margin="35,0,10,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="节点组" />
 
                     <StackPanel
-                        Grid.Column="1"
-                        HorizontalAlignment="Right"
-                        Orientation="Horizontal">
+                Grid.Column="1"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
                         <!--  Button for importing folder  -->
                         <ui:Button
-                            Margin="5,0,0,0"
-                            Padding="5"
-                            Foreground="{DynamicResource ForegroundBrush}"
-                            Command="{Binding ImportFolderCommand}"
-                            Content="&#xEC50;"
-                            FontFamily="Segoe MDL2 Assets"
-                            ToolTip="导入文件夹" />
+                    Margin="5,0,0,0"
+                    Padding="5"
+                    Foreground="{DynamicResource ForegroundBrush}"
+                    Command="{Binding ImportFolderCommand}"
+                    Content="&#xEC50;"
+                    FontFamily="Segoe MDL2 Assets"
+                    ToolTip="导入文件夹" />
                         <!--  Button for importing file  -->
                         <ui:Button
-                            Margin="5,0,0,0"
-                            Padding="5"
-                            Foreground="{DynamicResource ForegroundBrush}"
-                            Command="{Binding ImportFileCommand}"
-                            Content="&#xE8E5;"
-                            FontFamily="Segoe MDL2 Assets"
-                            ToolTip="导入文件" />
-
+                    Margin="5,0,0,0"
+                    Padding="5"
+                    Foreground="{DynamicResource ForegroundBrush}"
+                    Command="{Binding ImportFileCommand}"
+                    Content="&#xE8E5;"
+                    FontFamily="Segoe MDL2 Assets"
+                    ToolTip="导入文件" />
                     </StackPanel>
                 </Grid>
             </ui:CardExpander.Header>
 
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-            <Border
-                Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource SubtractConverter}, ConverterParameter=110}"
+                <!-- 搜索框 -->
+                <ui:TextBox Grid.Row="0"
+                    PlaceholderText="搜索节点组..."
+                    Margin="5"
+                    Icon="Search24"
+                    Text="{Binding NodeGroupSearchText, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Border Grid.Row="1"
+                Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource SubtractConverter}, ConverterParameter=200}"
                 MinWidth="200"
                 MaxWidth="300"
-                Margin="0,0,0,0"
+                Margin="0,5,0,0"
                 Padding="7,0,0,0"
                 HorizontalAlignment="Center"
                 BorderThickness="2"
                 CornerRadius="3">
-
-                <ScrollViewer Margin="0,0,0,8" Padding="0,0,0,0">
-                    <ItemsControl ItemsSource="{Binding Calculator.OperationsMenu.GraphOperations}">
-                        <ItemsControl.ItemContainerStyle>
-                            <Style>
-                                <Setter Property="FrameworkElement.Margin" Value="5" />
-                                <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
-                                <Setter Property="FrameworkElement.Cursor" Value="Hand" />
-                                <Setter Property="FrameworkElement.ToolTip" Value="Drag and drop into the editor" />
-                            </Style>
-                        </ItemsControl.ItemContainerStyle>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate DataType="{x:Type local:OperationGraphData}">
-                                <nodify:Node
-                                    Width="180"
-                                    Foreground="{DynamicResource ForegroundBrush}"
-                                    BorderBrush="{StaticResource AnimatedBrush}"
-                                    BorderThickness="2"
-                                    Content="{Binding SaveTime, Converter={StaticResource DateTimeConverter}}"
-                                    Header="{Binding Name}"
-                                    MouseMove="OnNodeDrag" />
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </ScrollViewer>
-            </Border>
+                    <ScrollViewer Margin="0,0,0,8" Padding="0,0,0,0">
+                        <ItemsControl ItemsSource="{Binding AvailableGraphOperations}">
+                            <ItemsControl.ItemContainerStyle>
+                                <Style>
+                                    <Setter Property="FrameworkElement.Margin" Value="5" />
+                                    <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+                                    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+                                    <Setter Property="FrameworkElement.ToolTip" Value="Drag and drop into the editor" />
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type local:OperationGraphData}">
+                                    <nodify:Node
+                                Width="180"
+                                Foreground="{DynamicResource ForegroundBrush}"
+                                BorderBrush="{StaticResource AnimatedBrush}"
+                                BorderThickness="2"
+                                Content="{Binding SaveTime, Converter={StaticResource DateTimeConverter}}"
+                                Header="{Binding Name}"
+                                MouseMove="OnNodeDrag" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
         </ui:CardExpander>
     </Grid>
 </UserControl>

@@ -265,7 +265,7 @@
                             <Rectangle
                                 Width="{TemplateBinding Width}"
                                 Height="{TemplateBinding Height}"
-                                Fill="{DynamicResource HighlightedBackgroundBrush}"
+                                Fill="{DynamicResource ForegroundBrush}"
                                 SnapsToDevicePixels="True" />
                         </ControlTemplate>
                     </Setter.Value>

@@ -22,6 +22,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Controls\ModernComboBoxStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Page\Hellp.xaml">
       <SubType>Designer</SubType>
     </Page>

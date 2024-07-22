@@ -88,7 +88,6 @@ namespace Aibot
             /// <returns></returns>
             public static T CastTo<T>(this object obj)
             {
-
                 if (obj is string)
                 {
                     return JsonConvert.DeserializeObject<T>((obj as string));

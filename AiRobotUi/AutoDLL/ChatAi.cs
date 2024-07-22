@@ -117,85 +117,93 @@ namespace AutoDLL
 
         public static List<ChatMessage> ParseChatRecord(List<PPOcrResult> records, int customerLeftX, int customerRightX, int assistantLeftX, int assistantRightX)
         {
-
             List<ChatMessage> messages = new List<ChatMessage>();
             int largeFrameLeftX = Math.Min(customerLeftX, assistantLeftX) - 10;
             int largeFrameRightX = Math.Max(customerRightX, assistantRightX) + 10;
-
             int center = (largeFrameLeftX + largeFrameRightX) / 2;
             PPOcrResult? before = null;
+            ChatMessage? currentMessage = null;
 
             foreach (var record in records)
             {
                 if (record.LeftCenterPoint.X < largeFrameLeftX || record.RightCenterPoint.X > largeFrameRightX)
                     continue; // 信息超过大框范围,pass掉
 
-                if (before != null)
-                {
-                    var adsY = Math.Abs(before.CenterPoint.Y - record.CenterPoint.Y);
-                    if (adsY < 50)
-                    {
-                        messages[^1].Text += $"\n{record.Text}";
-                        before = record;
-                        continue;
-                    }
-                }
-                // 在客户的框里，不在自己的框里，判断为 客户的信息
-                if ((record.LeftCenterPoint.X >= customerLeftX && record.RightCenterPoint.X <= customerRightX)
-                    && !(record.LeftCenterPoint.X >= assistantLeftX && record.RightCenterPoint.X <= assistantRightX))
-                {
-                    messages.Add(new ChatMessage { IsCustomer = true, Text = record.Text });
-                    before = record;
-                    continue;
-                }
-                if (!(record.LeftCenterPoint.X >= customerLeftX && record.RightCenterPoint.X <= customerRightX)
-                    && (record.LeftCenterPoint.X >= assistantLeftX && record.RightCenterPoint.X <= assistantRightX))
-                {
-                    messages.Add(new ChatMessage { IsCustomer = false, Text = record.Text });
-                    before = record;
-                    continue;
-                }
+                bool isCustomer = DetermineIfCustomer(record, customerLeftX, customerRightX, assistantLeftX, assistantRightX, center);
 
-                int distanceFromCustomerLeft = Math.Abs((int)record.LeftCenterPoint.X - customerLeftX);
-                int distanceFromCustomerRight = Math.Abs((int)record.RightCenterPoint.X - assistantRightX);
-                // 过滤中心的信息
-                if (!(distanceFromCustomerLeft < 100 || distanceFromCustomerRight < 100))
-                    continue;
-
-                int cha = (int)record.CenterPoint.X - center;
-
-
-                // 中心靠右的是自己的
-                if (cha > 100)
+                if (currentMessage != null && currentMessage.IsCustomer == isCustomer &&
+                    (before != null && Math.Abs(record.CenterPoint.Y - before.CenterPoint.Y) <= 50))
                 {
-                    messages.Add(new ChatMessage { IsCustomer = false, Text = record.Text });
-                    before = record;
-                    continue;
-                }
-                else if (cha < -100)
-                {
-                    messages.Add(new ChatMessage { IsCustomer = true, Text = record.Text });
-                    before = record;
-                    continue;
-                }
-
-                if (Math.Abs(customerLeftX - record.LeftCenterPoint.X) < 10)
-                {
-                    // 离客户边框距离较近,判定为客户的信息
-                    messages.Add(new ChatMessage { IsCustomer = true, Text = record.Text });
-                    before = record;
-                    continue;
+                    // 合并消息
+                    currentMessage.Text += " " + record.Text;
                 }
                 else
                 {
-                    // 离自己边框距离较近,判定为自己的信息
-                    messages.Add(new ChatMessage { IsCustomer = false, Text = record.Text });
-                    before = record;
-                    continue;
+                    // 创建新消息
+                    if (currentMessage != null)
+                    {
+                        messages.Add(currentMessage);
+                    }
+                    currentMessage = new ChatMessage { IsCustomer = isCustomer, Text = record.Text };
                 }
+
+                before = record;
+            }
+
+            // 添加最后一条消息
+            if (currentMessage != null)
+            {
+                messages.Add(currentMessage);
             }
 
             return messages;
+        }
+
+        private static bool DetermineIfCustomer(PPOcrResult record, int customerLeftX, int customerRightX, int assistantLeftX, int assistantRightX, int center)
+        {
+            // 在客户的框里，不在自己的框里，判断为客户的信息
+            if ((record.LeftCenterPoint.X >= customerLeftX && record.RightCenterPoint.X <= customerRightX)
+                && !(record.LeftCenterPoint.X >= assistantLeftX && record.RightCenterPoint.X <= assistantRightX))
+            {
+                return true;
+            }
+
+            // 在自己的框里，不在客户的框里，判断为自己的信息
+            if (!(record.LeftCenterPoint.X >= customerLeftX && record.RightCenterPoint.X <= customerRightX)
+                && (record.LeftCenterPoint.X >= assistantLeftX && record.RightCenterPoint.X <= assistantRightX))
+            {
+                return false;
+            }
+
+            int distanceFromCustomerLeft = Math.Abs((int)record.LeftCenterPoint.X - customerLeftX);
+            int distanceFromCustomerRight = Math.Abs((int)record.RightCenterPoint.X - assistantRightX);
+
+            // 过滤中心的信息
+            if (!(distanceFromCustomerLeft < 100 || distanceFromCustomerRight < 100))
+                return false;
+
+            int cha = (int)record.CenterPoint.X - center;
+
+            // 中心靠右的是自己的
+            if (cha > 100)
+            {
+                return false;
+            }
+            else if (cha < -100)
+            {
+                return true;
+            }
+
+            // 离客户边框距离较近,判定为客户的信息
+            if (Math.Abs(customerLeftX - record.LeftCenterPoint.X) < 10)
+            {
+                return true;
+            }
+            else
+            {
+                // 离自己边框距离较近,判定为自己的信息
+                return false;
+            }
         }
     }
 }

@@ -8,6 +8,38 @@ using System.IO;
 
 namespace Aibot
 {
+
+    [AibotItem("窗口-桌面截图", ActionType = ActionType.WindowsServer)]
+    public class ScreenshotDesktop : BaseAibotAction, IAibotAction
+    {
+
+        [AibotProperty("文件路径(String)", AibotKeyType.String, Usage = AibotKeyUsage.Output)]
+        public AibotProperty FilePath { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var bmp = Desktop.Screenshot();
+
+            var localDir = Path.Combine(Directory.GetCurrentDirectory(), "File");
+
+            if (!Directory.Exists(localDir))
+            {
+                Directory.CreateDirectory(localDir);
+            }
+
+            string savePath = Path.Combine(localDir, "Desktop.png");
+
+            bmp.Save(savePath);
+
+            blackboard[FilePath] = savePath;
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("FilePath" == n.PropertyName)
+                    n.Value = savePath;
+            });
+            return Task.CompletedTask;
+        }
+    }
     [AibotItem("窗口-焦点句柄", ActionType = ActionType.WindowsServer)]
     public class WindowsGetFocused : BaseAibotAction,IAibotAction
     {
@@ -118,8 +150,8 @@ namespace Aibot
             return Task.CompletedTask;
         }
     }
-    
-    [AibotItem("窗口-截图", ActionType = ActionType.WindowsServer)]
+
+    [AibotItem("窗口-应用截图", ActionType = ActionType.WindowsServer)]
     public class WindowsScreenshot : BaseAibotAction, IAibotAction
     {
         [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
@@ -207,27 +239,9 @@ namespace Aibot
         }
     }
 
-    [AibotItem("务栏隐-藏任", ActionType = ActionType.WindowsServer)]
-    public class WindowsHideTaskBar : BaseAibotAction, IAibotAction
-    {
-        public new Task Execute(AibotV blackboard)
-        {
-            Desktop.HideTaskBar();
-            return Task.CompletedTask;
-        }
-    }
 
-    [AibotItem("任务栏-显示", ActionType = ActionType.WindowsServer)]
-    public class WindowsShowTaskBar : BaseAibotAction, IAibotAction
-    {
-        public new Task Execute(AibotV blackboard)
-        {
-            Desktop.ShowTaskBar();
-            return Task.CompletedTask;
-        }
-    }
 
-    [AibotItem("桌面高宽获取", ActionType = ActionType.WindowsServer)]
+    [AibotItem("窗口-桌面高宽", ActionType = ActionType.WindowsServer)]
     public class WindowsWidthAndHeight : BaseAibotAction, IAibotAction
     {
         [AibotProperty("宽(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Output)]
@@ -244,6 +258,26 @@ namespace Aibot
                     x.Value = Desktop.GetHeight();
 
             });
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("任务栏-藏任", ActionType = ActionType.WindowsServer)]
+    public class WindowsHideTaskBar : BaseAibotAction, IAibotAction
+    {
+        public new Task Execute(AibotV blackboard)
+        {
+            Desktop.HideTaskBar();
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("任务栏-显示", ActionType = ActionType.WindowsServer)]
+    public class WindowsShowTaskBar : BaseAibotAction, IAibotAction
+    {
+        public new Task Execute(AibotV blackboard)
+        {
+            Desktop.ShowTaskBar();
             return Task.CompletedTask;
         }
     }

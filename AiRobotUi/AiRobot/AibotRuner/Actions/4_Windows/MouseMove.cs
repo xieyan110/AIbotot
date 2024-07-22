@@ -13,7 +13,7 @@ using System.Drawing;
 
 namespace Aibot
 {
-    [AibotItem("鼠标移动", ActionType = ActionType.WindowsServer)]
+    [AibotItem("鼠标-移动", ActionType = ActionType.WindowsServer)]
     public class MouseMove : BaseAibotAction,IAibotAction
     {
         [AibotProperty("X(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
@@ -30,8 +30,89 @@ namespace Aibot
             return Task.CompletedTask;
         }
     }
+    [AibotItem("鼠标-左击", ActionType = ActionType.WindowsServer)]
+    public class MouseLeftClick : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("点击次数(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Count { get; set; }
 
-    [AibotItem("鼠标简易拖动", ActionType = ActionType.WindowsServer)]
+        public new Task Execute(AibotV blackboard)
+        {
+            var cout = Count.Value?.TryInt();
+            cout = cout == 0 ? 1 : cout;
+            for (int i = 0; cout > i; i++)
+            {
+                Mouse.LeftClick();
+                Thread.Sleep(50);
+            }
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-左击(高级)", ActionType = ActionType.WindowsServer)]
+    public class MouseClick : BaseAibotAction, IAibotAction
+    {
+
+        [AibotProperty("X(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty X { get; set; }
+        [AibotProperty("Y(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Y { get; set; }
+
+        [AibotProperty("点击次数(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Count { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var x = X.Value?.TryInt() ?? 0;
+            var y = Y.Value?.TryInt() ?? 0;
+
+            Mouse.Move(x, y);
+
+            var cout = Count.Value?.TryInt();
+            cout = cout == 0 ? 1 : cout;
+            for (int i = 0; cout > i; i++)
+            {
+                Mouse.LeftClick();
+                Thread.Sleep(50);
+            }
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-滚动", ActionType = ActionType.WindowsServer)]
+    public class MouseLeftClickWheel : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("滚动[正上负下](Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Offset { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+
+            MouseKeyController.MoveMouseWheel(Offset.Value?.TryInt() ?? 0);
+
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-右击", ActionType = ActionType.WindowsServer)]
+    public class MouseRightClick : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("点击次数(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Count { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var cout = Count.Value?.TryInt();
+            cout = cout == 0 ? 1 : cout;
+            for (int i = 0; cout > i; i++)
+            {
+                Mouse.RightClick();
+                Thread.Sleep(50);
+            }
+            return Task.CompletedTask;
+        }
+    }
+    [AibotItem("鼠标-简易拖动", ActionType = ActionType.WindowsServer)]
     public class MouseELeftDrag : BaseAibotAction, IAibotAction
     {
         [AibotProperty("坐标1(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
@@ -53,7 +134,7 @@ namespace Aibot
         }
     }
 
-    [AibotItem("鼠标拖动", ActionType = ActionType.WindowsServer)]
+    [AibotItem("鼠标-拖动", ActionType = ActionType.WindowsServer)]
     public class MouseLeftDrag : BaseAibotAction, IAibotAction
     {
         [AibotProperty("StarX(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
@@ -79,4 +160,6 @@ namespace Aibot
             return Task.CompletedTask;
         }
     }
+
+
 }

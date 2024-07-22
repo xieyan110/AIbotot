@@ -188,6 +188,7 @@ namespace Aibot
         {
             RunAdbCommand(new[] { "install", "-r", apkPath  }, deviceName);
         }
+
         /// <summary>
         /// 使用ADB通过IP地址远程连接到Android设备进行调试
         /// </summary>
@@ -262,31 +263,48 @@ namespace Aibot
             }
             SwitchIme($"{adbKeyboardPackage}/.AdbIME", deviceName);
             Thread.Sleep(500);
-
-            // 使用正则表达式获取所有英文字符和非英文字符的匹配项
-            Regex regex = new Regex(@"[-]|[a-zA-Z]+|[\u4e00-\u9fa5]+|[\u0020-\u002F\u003A-\u0040\u005B-\u0060\u007B-\u007E]+|[^a-zA-Z]");
+            // 修改正则表达式以包含表情符号
+            // 修改正则表达式以包含换行符
+            Regex regex = new Regex(@"[-]|[a-zA-Z0-9]+|[\u4e00-\u9fa5]+|[\u0020-\u002F\u003A-\u0040\u005B-\u0060\u007B-\u007E]+|[\uD800-\uDBFF][\uDC00-\uDFFF]|[^\x00-\x7F]|\r?\n");
             MatchCollection matches = regex.Matches(text);
 
             foreach (Match match in matches)
             {
                 string part = match.Value;
-                if (Regex.IsMatch(part, @"[-]+|[a-zA-Z]+"))
+                if (Regex.IsMatch(part, @"[-a-zA-Z0-9@#$%^&*()_+]+"))
                 {
-                    // 如果是英文字符,切换到默认输入法
-                    RunAdbCommand(new[] { "shell", "input", "keyboard", "text", part  }, deviceName);
-                    //adb shell am broadcast -a ADB_INPUT_CODE--ei code 67
-
+                    // 如果是英文字符、数字或特殊字符，使用 ADB_INPUT_TEXT 命令
+                    string escapedPart = part.Replace("&", "\\&")
+                                             .Replace("(", "\\(")
+                                             .Replace(")", "\\)")
+                                             .Replace("<", "\\<")
+                                             .Replace(">", "\\>")
+                                             .Replace("|", "\\|")
+                                             .Replace("$", "\\$")
+                                             .Replace("\"", "\\\"")
+                                             .Replace("'", "\\'")
+                                             .Replace("`", "\\`")
+                                             .Replace(" ", "\\ ");
+                    RunAdbCommand(new[] { "shell", "am", "broadcast", "-a", "ADB_INPUT_TEXT", "--es", "msg", escapedPart }, deviceName);
                 }
-                else if(part == " ")
-                    RunAdbCommand(new[] { "shell", "am", "broadcast", "-a", "ADB_INPUT_CODE", "--ei", "code", "62"  }, deviceName);
-                else if (part == "\n")
-                    RunAdbCommand(new[] { "shell", "am", "broadcast", "-a", "ADB_INPUT_CODE", "--ei", "code", "66"  }, deviceName);
-
+                else if (part == " ")
+                {
+                    RunAdbCommand(new[] { "shell", "am", "broadcast", "-a", "ADB_INPUT_CODE", "--ei", "code", "62" }, deviceName);
+                }
+                else if (part == "\r\n" || part == "\n")
+                {
+                    RunAdbCommand(new[] { "shell", "am", "broadcast", "-a", "ADB_INPUT_CODE", "--ei", "code", "66" }, deviceName);
+                }
+                else if (char.IsSurrogatePair(part, 0) || part.Any(c => char.GetUnicodeCategory(c) == System.Globalization.UnicodeCategory.OtherSymbol))
+                {
+                    // 对于表情符号和其他特殊Unicode字符，使用 ADB_INPUT_CHARS 命令
+                    string unicodeValues = string.Join(",", part.Select(c => ((int)c).ToString()));
+                    RunAdbCommand(new[] { "shell", "am", "broadcast", "-a", "ADB_INPUT_CHARS", "--eia", "chars", unicodeValues }, deviceName);
+                }
                 else
                 {
-                    // 如果不是英文字符,使用 am broadcast -a ADB_INPUT_TEXT
-                    RunAdbCommand(new[] { "shell", "am", "broadcast", "-a", "ADB_INPUT_TEXT", "--es", "msg", part  }, deviceName);
-
+                    // 对于其他字符（包括中文），使用 ADB_INPUT_TEXT 命令
+                    RunAdbCommand(new[] { "shell", "am", "broadcast", "-a", "ADB_INPUT_TEXT", "--es", "msg", part }, deviceName);
                 }
             }
 

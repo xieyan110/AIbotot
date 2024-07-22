@@ -45,6 +45,21 @@ namespace Aibot
         }
     }
 
+    [AibotItem("EndFor", ActionType = ActionType.CommonServer)]
+    public class EndFor : IAibotAction
+    {
+        [AibotProperty("执行", AibotKeyType.Object, IsRoot = true, Usage = AibotKeyUsage.Input)]
+        public AibotProperty InputRoot { get; set; }
+
+        [AibotProperty("执行", AibotKeyType.Object, IsRoot = true, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutputRoot { get; set; }
+
+        public Task Execute(AibotV blackboard)
+        {
+            return Task.CompletedTask;
+        }
+    }
+
     [AibotItem("LoadJson", ActionViewType = ActionViewType.JsonView, ActionType = ActionType.CommonServer)]
     public class LoadJson : IAibotAction
     {
