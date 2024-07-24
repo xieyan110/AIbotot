@@ -32,7 +32,7 @@ namespace AutoDLL
 
             var chat = api.Chat.CreateConversation();
 
-            chat.Model = Model.GPT4;
+            chat.Model = new Model(info.Model);
             Random random = new Random();
             double randomNumber = random.Next(7, 9) * 0.1;
 

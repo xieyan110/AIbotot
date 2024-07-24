@@ -28,8 +28,8 @@ namespace Aibot
         {
             try
             {
-                var tempPath = TempPath.Value?.ToString() ?? "" ?? "";
-                var waferPath = WaferPath.Value?.ToString() ?? "" ?? "";
+                var tempPath = TempPath.Value?.ToString() ?? "";
+                var waferPath = WaferPath.Value?.ToString() ?? "";
                 var matchVal = MatchVal.Value?.Case<double>() ?? 0;
                 matchVal = matchVal == 0 ? 0.8 : matchVal;
 

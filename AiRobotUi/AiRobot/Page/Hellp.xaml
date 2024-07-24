@@ -11,6 +11,13 @@
              Background="{DynamicResource NodifyEditor.BackgroundBrush}"
              Foreground="{DynamicResource ForegroundBrush}"
              d:DesignHeight="450" d:DesignWidth="800">
+
+
+    <UserControl.DataContext>
+        <local:HelpViewModel />
+    </UserControl.DataContext>
+
+
     <ScrollViewer HorizontalScrollBarVisibility="Disabled">
         <StackPanel Margin="10" IsHitTestVisible="False">
             <StackPanel.Resources>
@@ -136,10 +143,12 @@
             <Run>使用 cron 表达式设置定时任务。例如：0-59 * * * * （每分钟执行一次），0 9 * * 1-5 （周一到周五每天9点0分执行一次）。注意：本软件的 cron 不支持秒。</Run>
                 <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
                     <Run>注意：本软件的 cron 不支持秒。更多 cron 表达式信息，请访问 </Run>
-                    <Hyperlink 
-                        NavigateUri="https://www.bejson.com/othertools/cron/">
-                        https://www.bejson.com/othertools/cron
-                    </Hyperlink>
+                    <ui:Button
+                        Content="https://www.bejson.com/othertools/cron"
+                        Icon="{ui:SymbolIcon Link24}"
+                        Command="{Binding OpenUrlCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+                    
                 </TextBlock>
                         </TextBlock>
                     </StackPanel>

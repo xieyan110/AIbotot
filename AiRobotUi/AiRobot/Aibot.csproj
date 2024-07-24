@@ -136,16 +136,28 @@
     <None Update="Workflow\4. 微信招聘信息推广回复.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Workflow\4. 微信招聘推广【去除ai整理】- 2.json">
+    <None Update="Workflow\4. 微信招聘信息推广回复2.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Workflow\4. 微信招聘推广【去除ai整理】.json">
+    <None Update="Workflow\4. 微信招聘推广【去除ai】2.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Workflow\4. 微信招聘推广【去除ai】.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Workflow\4.0 快手发送群消息.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Workflow\4.1 快手发送群消息.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Workflow\4.2 微信招聘信息推广%28pc%29.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Workflow\4.2 微信招聘信息推广%28pc_去ai%29.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Workflow\4.2 微信招聘信息推广回复%28pc%29.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Workflow\6. 微信设定聊天.json">

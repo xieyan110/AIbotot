@@ -7,11 +7,12 @@ using AutoDLL;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Documents;
+using Microsoft.KernelMemory;
 
 
 namespace Aibot
 {
-    [AibotItem("服务-Ai聊天", ActionType = ActionType.CommonServer)]
+    [AibotItem("OpenAi-聊天", ActionType = ActionType.CommonServer)]
     public class AiChat : BaseAibotAction, IAibotAction
     {
         [AibotProperty("ApiUrlFormat(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
@@ -20,14 +21,11 @@ namespace Aibot
         [AibotProperty("ApiKey(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
         public AibotProperty ApiKey { get; set; }
 
+        [AibotProperty("Model(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Model { get; set; }
+
         [AibotProperty("系统提示词(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
         public AibotProperty System { get; set; }
-
-        [AibotProperty("聊天示例(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
-        public AibotProperty ChatExample { get; set; }
-
-        [AibotProperty("聊天记录(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
-        public AibotProperty ChatHistorical { get; set; }
 
         [AibotProperty("用户输入(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
         public AibotProperty UserSpeak { get; set; }
@@ -43,20 +41,20 @@ namespace Aibot
             try
             {
 
-                var apiUrl = ApiUrl.Value?.ToString() ?? "" ?? "";
-                var apiKey = ApiKey.Value?.ToString() ?? "" ?? "";
-                var system = System.Value?.ToString() ?? "" ?? "";
-                var chatExample = ChatExample.Value?.ToString() ?? "" ?? "";
-                var chatHistorical = ChatHistorical.Value?.ToString() ?? "" ?? "";
-                var speak = UserSpeak.Value?.ToString() ?? "" ?? "";
+                var apiUrl = ApiUrl.Value?.ToString() ?? "";
+                var apiKey = ApiKey.Value?.ToString() ?? "";
+                var model = Model.Value?.ToString() ?? "";
+                var system = System.Value?.ToString() ?? "";
+                var speak = UserSpeak.Value?.ToString() ?? "";
 
                 var chatInfo = new ChatInfo()
                 {
                     ApiUrl = apiUrl,
                     ApiKey = apiKey,
+                    Model = model,
                     System = system,
-                    ChatExample = chatExample.CastTo<List<Chat>>() ?? new(),
-                    ChatHistorical = chatHistorical.CastTo<List<Chat>>() ?? new(),
+                    ChatExample = new(),
+                    ChatHistorical = new(),
                 };
 
                 var result = ChatAi.GetChat(chatInfo, ref speak);
@@ -85,7 +83,7 @@ namespace Aibot
 
 
 
-    [AibotItem("服务-Ai文档", ActionType = ActionType.CommonServer)]
+    [AibotItem("OpenAi-文档", ActionType = ActionType.CommonServer)]
     public class AiDocument : BaseAibotAction, IAibotAction
     {
         [AibotProperty("ApiUrl(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
@@ -93,6 +91,11 @@ namespace Aibot
 
         [AibotProperty("ApiKey(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
         public AibotProperty ApiKey { get; set; }
+        [AibotProperty("模型(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Model { get; set; }
+        [AibotProperty("Embedding模型(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Embedding { get; set; }
+
 
         [AibotProperty("文字文档(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
         public AibotProperty Document { get; set; }
@@ -103,25 +106,27 @@ namespace Aibot
         [AibotProperty("Ai回复(String)", AibotKeyType.String, Usage = AibotKeyUsage.Output)]
         public AibotProperty AiSpeak { get; set; }
 
-        public new Task Execute(AibotV blackboard)
+        public new async Task Execute(AibotV blackboard)
         {
             try
             {
 
-                var apiUrl = ApiUrl.Value?.ToString() ?? "" ?? "";
-                var apiKey = ApiKey.Value?.ToString() ?? "" ?? "";
-                var document = Document.Value?.ToString() ?? "" ?? "";
-                var speak = UserSpeak.Value?.ToString() ?? "" ?? "";
+                var apiUrl = ApiUrl.Value?.ToString() ?? "";
+                var apiKey = ApiKey.Value?.ToString() ?? "";
+                var document = Document.Value?.ToString() ?? "";
+                var speak = UserSpeak.Value?.ToString() ?? "";
 
                 var chatInfo = new ChatInfo()
                 {
                     ApiUrl = apiUrl,
                     ApiKey = apiKey,
+                    Model = Model.Value?.ToString() ?? "",
+                    Embedding = Embedding.Value?.ToString() ?? "",
                     System = "",
                     Document = document,
                 };
 
-                var result = ChatService.GetChatDocumentText(chatInfo, speak).Result;
+                var result = await ChatService.GetChatDocumentText(chatInfo, speak);
 
                 blackboard.Node!.Output.ForEach(output =>
                 {
@@ -137,15 +142,12 @@ namespace Aibot
                         output.Value = "";
                 });
             }
-
-
-            return Task.CompletedTask;
         }
     }
 
 
 
-    [AibotItem("服务-Ai文件查询", ActionType = ActionType.CommonServer)]
+    [AibotItem("OpenAi-文件查询", ActionType = ActionType.CommonServer)]
     public class AiDocumentFile : BaseAibotAction, IAibotAction
     {
         [AibotProperty("ApiUrl(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
@@ -153,6 +155,12 @@ namespace Aibot
 
         [AibotProperty("ApiKey(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
         public AibotProperty ApiKey { get; set; }
+
+        [AibotProperty("模型(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Model { get; set; }
+        [AibotProperty("Embedding模型(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Embedding { get; set; }
+
 
         [AibotProperty("文件路径(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
         public AibotProperty FilePath { get; set; }
@@ -163,26 +171,28 @@ namespace Aibot
         [AibotProperty("Ai回复(String)", AibotKeyType.String, Usage = AibotKeyUsage.Output)]
         public AibotProperty AiSpeak { get; set; }
 
-        public new Task Execute(AibotV blackboard)
+        public new async Task Execute(AibotV blackboard)
         {
             try
             {
 
-                var apiUrl = ApiUrl.Value?.ToString() ?? "" ?? "";
-                var apiKey = ApiKey.Value?.ToString() ?? "" ?? "";
-                var filePath = FilePath.Value?.ToString() ?? "" ?? "";
-                var speak = UserSpeak.Value?.ToString() ?? "" ?? "";
+                var apiUrl = ApiUrl.Value?.ToString() ?? "";
+                var apiKey = ApiKey.Value?.ToString() ?? "";
+                var filePath = FilePath.Value?.ToString() ?? "";
+                var speak = UserSpeak.Value?.ToString() ?? "";
 
                 var chatInfo = new ChatInfo()
                 {
                     ApiUrl = apiUrl,
                     ApiKey = apiKey,
+                    Model = Model.Value?.ToString() ?? "",
+                    Embedding = Embedding.Value?.ToString() ?? "",
                     System = "",
                     Document = filePath,
                     WebPageUrl = "",
                 };
 
-                var result = ChatService.GetChatDocumentFiLe(chatInfo, speak).Result;
+                var result = await ChatService.GetChatDocumentFiLe(chatInfo, speak);
 
                 blackboard.Node!.Output.ForEach(output =>
                 {
@@ -198,14 +208,11 @@ namespace Aibot
                         output.Value = "";
                 });
             }
-
-
-            return Task.CompletedTask;
         }
     }
 
 
-    [AibotItem("服务-Ai网页文档", ActionType = ActionType.CommonServer)]
+    [AibotItem("OpenAi-网页文档", ActionType = ActionType.CommonServer)]
     public class AiDocumentWeb : BaseAibotAction, IAibotAction
     {
         [AibotProperty("ApiUrl(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
@@ -213,6 +220,10 @@ namespace Aibot
 
         [AibotProperty("ApiKey(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
         public AibotProperty ApiKey { get; set; }
+        [AibotProperty("模型(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Model { get; set; }
+        [AibotProperty("Embedding模型(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Embedding { get; set; }
 
         [AibotProperty("网页地址(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
         public AibotProperty WebUrl { get; set; }
@@ -223,26 +234,28 @@ namespace Aibot
         [AibotProperty("Ai回复(String)", AibotKeyType.String, Usage = AibotKeyUsage.Output)]
         public AibotProperty AiSpeak { get; set; }
 
-        public new Task Execute(AibotV blackboard)
+        public new async Task Execute(AibotV blackboard)
         {
             try
             {
 
-                var apiUrl = ApiUrl.Value?.ToString() ?? "" ?? "";
-                var apiKey = ApiKey.Value?.ToString() ?? "" ?? "";
-                var webUrl = WebUrl.Value?.ToString() ?? "" ?? "";
-                var speak = UserSpeak.Value?.ToString() ?? "" ?? "";
+                var apiUrl = ApiUrl.Value?.ToString() ?? "";
+                var apiKey = ApiKey.Value?.ToString() ?? "";
+                var webUrl = WebUrl.Value?.ToString() ?? "";
+                var speak = UserSpeak.Value?.ToString() ?? "";
 
                 var chatInfo = new ChatInfo()
                 {
                     ApiUrl = apiUrl,
                     ApiKey = apiKey,
+                    Model = Model.Value?.ToString() ?? "",
+                    Embedding = Embedding.Value?.ToString() ?? "",
                     System = "",
                     Document = "",
                     WebPageUrl = webUrl,
                 };
 
-                var result = ChatService.GetChatWebPage(chatInfo, speak).Result;
+                var result = await ChatService.GetChatWebPage(chatInfo, speak);
 
                 blackboard.Node!.Output.ForEach(output =>
                 {
@@ -258,9 +271,6 @@ namespace Aibot
                         output.Value = "";
                 });
             }
-
-
-            return Task.CompletedTask;
         }
     }
 

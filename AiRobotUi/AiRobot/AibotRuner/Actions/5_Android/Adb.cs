@@ -85,7 +85,7 @@ namespace Aibot
         public new Task Execute(AibotV blackboard)
         {
             var deviceName = DeviceName.Value?.ToString() ?? "";
-            var filePath = AdbHelper.Screenshot(FileName.Value?.ToString() ?? "" ?? "",null, deviceName);
+            var filePath = AdbHelper.Screenshot(FileName.Value?.ToString() ?? "",null, deviceName);
 
             blackboard.Node!.Output.ForEach(node =>
             {

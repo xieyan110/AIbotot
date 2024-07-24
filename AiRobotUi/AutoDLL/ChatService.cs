@@ -19,14 +19,14 @@ public static class ChatService
         var openAIEmbeddingConfig = new OpenAIConfig
         {
             Endpoint = info.ApiUrl,
-            EmbeddingModel = "nomic-embed-text-v1.5-GGUF",
+            EmbeddingModel = info.Embedding,
             EmbeddingModelMaxTokenTotal = 8191,
             APIKey = info.ApiKey
         };
         var lmStudioConfig = new OpenAIConfig
         {
             Endpoint = info.ApiUrl,
-            TextModel = "local-model",
+            TextModel = info.Model,
             TextModelMaxTokenTotal = 8191,
             APIKey = info.ApiKey
         };
@@ -109,7 +109,7 @@ public static class ChatService
         var openAIEmbeddingConfig = new OpenAIConfig
         {
             Endpoint = info.ApiUrl,
-            EmbeddingModel = "nomic-embed-text-v1.5-GGUF",
+            EmbeddingModel = info.Embedding,
             EmbeddingModelMaxTokenTotal = 8191,
             APIKey = info.ApiKey
         };
@@ -117,7 +117,7 @@ public static class ChatService
         var lmStudioConfig = new OpenAIConfig
         {
             Endpoint = info.ApiUrl,
-            TextModel = "local-model",
+            TextModel = info.Model,
             TextModelMaxTokenTotal = 8191,
             APIKey = info.ApiKey
         };
@@ -150,14 +150,14 @@ public static class ChatService
         var openAIEmbeddingConfig = new OpenAIConfig
         {
             Endpoint = info.ApiUrl,
-            EmbeddingModel = "nomic-embed-text-v1.5-GGUF",
+            EmbeddingModel = info.Embedding,
             EmbeddingModelMaxTokenTotal = 8191,
             APIKey = info.ApiKey
         };
         var lmStudioConfig = new OpenAIConfig
         {
             Endpoint = info.ApiUrl,
-            TextModel = "local-model",
+            TextModel = info.Model,
             TextModelMaxTokenTotal = 8191,
             APIKey = info.ApiKey
         };

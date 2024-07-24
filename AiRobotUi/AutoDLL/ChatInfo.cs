@@ -13,6 +13,8 @@ namespace AutoDLL
 
         public string ApiUrl { get; set; } = "http://localhost:1234/{0}/{1}";
         public string ApiKey { get; set; } = "lm-studio";
+        public string Model { get; set; } = "gemma";
+        public string Embedding { get; set; } = "text-embedding-v2";
         public string System { get; set; } = "你正在和user聊天，你的名字叫莉莉";
         public string Document { get; set; } = "";
         public string WebPageUrl { get; set; } = "";
