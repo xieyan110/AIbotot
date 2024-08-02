@@ -2,7 +2,7 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugFramework>net8-windows</ActiveDebugFramework>
-    <_LastSelectedProfileId>D:\Work\CSharp\AiRobotUi\AiRobot\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+    <_LastSelectedProfileId>G:\_Workspace\C#_works\AIbotot\AiRobotUi\AiRobot\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
     <Compile Update="Page\Hellp.xaml.cs">

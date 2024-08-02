@@ -40,19 +40,53 @@ namespace Aibot
             return Task.CompletedTask;
         }
     }
+
+
     [AibotItem("窗口-焦点句柄", ActionType = ActionType.WindowsServer)]
-    public class WindowsGetFocused : BaseAibotAction,IAibotAction
+    public class WindowsGetFocused : BaseAibotAction, IAibotAction
     {
-        [AibotProperty("IntPtr", AibotKeyType.Object, Usage=AibotKeyUsage.Output)]
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
         public AibotProperty IntPtr { get; set; }
 
         public new Task Execute(AibotV blackboard)
         {
             var intPtr = Window.GetFocused();
 
-            blackboard.Node!.Output.ForEach(x => 
+            blackboard.Node!.Output.ForEach(x =>
             {
-                if(x.PropertyName == "IntPtr")
+                if (x.PropertyName == "IntPtr")
+                    x.Value = intPtr;
+            });
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("窗口-通过标题获取焦点", ActionType = ActionType.WindowsServer)]
+    public class WindowsTitleGetFocused : IF, IAibotAction
+    {
+
+        [AibotProperty("窗口标题(String)", AibotKeyType.String, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Title { get; set; }
+
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            IntPtr? intPtr = null;
+            try
+            {
+                intPtr = Window.Get(Title.Value?.ToString() ?? "");
+                (blackboard["IsSuccess"], blackboard["IsError"]) = (true, false);
+            }
+            catch
+            {
+                (blackboard["IsSuccess"], blackboard["IsError"]) = (false, true);
+            }
+
+            blackboard.Node!.Output.ForEach(x =>
+            {
+                if (x.PropertyName == "IntPtr")
                     x.Value = intPtr;
             });
             return Task.CompletedTask;

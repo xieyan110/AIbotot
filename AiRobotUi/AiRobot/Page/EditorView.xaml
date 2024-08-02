@@ -511,7 +511,7 @@
                                     <Setter Property="FrameworkElement.Margin" Value="5" />
                                     <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
                                     <Setter Property="FrameworkElement.Cursor" Value="Hand" />
-                                    <Setter Property="FrameworkElement.ToolTip" Value="Drag and drop into the editor" />
+                                    <Setter Property="FrameworkElement.ToolTip" Value="{Binding Title}" />
                                 </Style>
                             </ItemsControl.ItemContainerStyle>
                             <ItemsControl.ItemTemplate>
@@ -615,7 +615,7 @@
                                     <Setter Property="FrameworkElement.Margin" Value="5" />
                                     <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
                                     <Setter Property="FrameworkElement.Cursor" Value="Hand" />
-                                    <Setter Property="FrameworkElement.ToolTip" Value="Drag and drop into the editor" />
+                                    <Setter Property="FrameworkElement.ToolTip" Value="{Binding Name}" />
                                 </Style>
                             </ItemsControl.ItemContainerStyle>
                             <ItemsControl.ItemTemplate>

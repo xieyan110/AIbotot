@@ -42,7 +42,7 @@ namespace Aibot
             cout = cout == 0 ? 1 : cout;
             for (int i = 0; cout > i; i++)
             {
-                Mouse.LeftClick();
+                MouseKeyController.MouseLeftClick();
                 Thread.Sleep(50);
             }
             return Task.CompletedTask;
@@ -89,6 +89,7 @@ namespace Aibot
         {
 
             MouseKeyController.MoveMouseWheel(Offset.Value?.TryInt() ?? 0);
+            
 
             return Task.CompletedTask;
         }
@@ -161,5 +162,105 @@ namespace Aibot
         }
     }
 
+
+    [AibotItem("鼠标-[D]左键点击", ActionType = ActionType.WindowsServer)]
+    public class SendMouseLeftClick : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            MouseControl.LeftClick(intPtr);
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-[D]右键点击", ActionType = ActionType.WindowsServer)]
+    public class SendMouseRightClick : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            MouseControl.RightClick(intPtr);
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-[D]中键点击", ActionType = ActionType.WindowsServer)]
+    public class SendMouseMiddleClick : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            MouseControl.MiddleClick(intPtr);
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-[D]滚轮", ActionType = ActionType.WindowsServer)]
+    public class SendMouseScroll : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        [AibotProperty("滚动量(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Delta { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            var delta = Delta.Value!.TryInt();
+            MouseControl.Scroll(intPtr, delta);
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-[D]移动到指定位置", ActionType = ActionType.WindowsServer)]
+    public class SendMouseMoveTo : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        [AibotProperty("X坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty X { get; set; }
+
+        [AibotProperty("Y坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Y { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            var x = X.Value!.TryInt();
+            var y = Y.Value!.TryInt();
+            MouseControl.MoveTo(intPtr, x, y);
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-[D]相对移动", ActionType = ActionType.WindowsServer)]
+    public class SendMouseMoveRelative : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("X偏移量(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty DeltaX { get; set; }
+
+        [AibotProperty("Y偏移量(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty DeltaY { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var deltaX = DeltaX.Value!.TryInt();
+            var deltaY = DeltaY.Value!.TryInt();
+            MouseControl.MoveRelative(deltaX, deltaY);
+            return Task.CompletedTask;
+        }
+    }
 
 }

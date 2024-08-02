@@ -49,14 +49,17 @@
   <ItemGroup>
     <Compile Include="Conversion.cs" />
     <Compile Include="Draw.cs" />
+    <Compile Include="KeyboardSimulator.cs" />
     <Compile Include="MouseKeyController.cs" />
     <Compile Include="Mouse.cs" />
     <Compile Include="MouseDrag.cs" />
+    <Compile Include="MouseSimulator.cs" />
     <Compile Include="Structs.cs" />
     <Compile Include="WinAPI.cs" />
     <Compile Include="Desktop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Window.cs" />
+    <Compile Include="WindowFinder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
