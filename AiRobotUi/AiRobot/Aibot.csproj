@@ -28,20 +28,20 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.KernelMemory.AI.OpenAI" Version="0.65.240620.1" />
-    <PackageReference Include="Microsoft.KernelMemory.Core" Version="0.65.240620.1" />
+    <PackageReference Include="Microsoft.KernelMemory.AI.OpenAI" Version="0.69.240727.1" />
+    <PackageReference Include="Microsoft.KernelMemory.Core" Version="0.69.240727.1" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
     <PackageReference Include="NCrontab" Version="3.3.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-    <PackageReference Include="Nodify" Version="6.0.0" />
+    <PackageReference Include="Nodify" Version="6.3.0" />
     <PackageReference Include="OpenAI" Version="1.11.0" />
-    <PackageReference Include="OpenCvSharp4" Version="4.9.0.20240103" />
-    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.9.0.20240103" />
+    <PackageReference Include="OpenCvSharp4" Version="4.10.0.20240616" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20240616" />
     <PackageReference Include="PaddleOCRSharp" Version="4.3.0" />
     <PackageReference Include="StringMath" Version="4.1.2" />
-    <PackageReference Include="System.Drawing.Common" Version="8.0.5" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.7" />
     <PackageReference Include="System.Speech" Version="8.0.0" />
-    <PackageReference Include="WPF-UI" Version="3.0.4" />
+    <PackageReference Include="WPF-UI" Version="3.0.5" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AibotLibrary\AibotLibrary.csproj" />

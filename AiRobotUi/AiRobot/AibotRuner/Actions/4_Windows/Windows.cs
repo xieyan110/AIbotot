@@ -200,9 +200,9 @@ namespace Aibot
         public new Task Execute(AibotV blackboard)
         {
             var intPtr = IntPtr.Value!.Case<IntPtr>();
-            var fileName = FileName.Value?.ToString() ?? "Desktop.png";
+            var fileName = FileName.Value?.ToString() ?? "Window.png";
 
-            var bmp = Window.Screenshot(intPtr);
+            var bmp = WindowCapture.CaptureWindow(intPtr);
             var localDir = Path.Combine(Directory.GetCurrentDirectory(), "File");
 
             if (!Directory.Exists(localDir))
