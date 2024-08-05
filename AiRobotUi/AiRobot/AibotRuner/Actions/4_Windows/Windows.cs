@@ -93,14 +93,17 @@ namespace Aibot
         }
     }
 
-    [AibotItem("窗口-Title获取", ActionType = ActionType.WindowsServer)]
+    [AibotItem("窗口-标题获取", ActionType = ActionType.WindowsServer)]
     public class WindowsGetTitle : BaseAibotAction, IAibotAction
     {
         [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
         public AibotProperty IntPtr { get; set; }
 
-        [AibotProperty("Title(String)", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        [AibotProperty("标题(String)", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
         public AibotProperty Title { get; set; }
+
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
 
         public new Task Execute(AibotV blackboard)
         {
@@ -112,6 +115,10 @@ namespace Aibot
                 if (n.PropertyName == "Title")
                 {
                     n.Value = title;
+                }
+                if (n.PropertyName == "OutIntPtr")
+                {
+                    n.Value = intPtr;
                 }
             });
 
@@ -128,11 +135,89 @@ namespace Aibot
         [AibotProperty("Title(String)", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
         public AibotProperty Title { get; set; }
 
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
         public new Task Execute(AibotV blackboard)
         {
             var intPtr = IntPtr.Value!.Case<IntPtr>();
-            var title = IntPtr.Value!.ToString();
+            var title = Title.Value!.ToString();
             Window.SetTitle(intPtr, title);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if (n.PropertyName == "OutIntPtr")
+                {
+                    n.Value = intPtr;
+                }
+            });
+
+            return Task.CompletedTask;
+        }
+    }
+
+
+    [AibotItem("窗口-移动", ActionType = ActionType.WindowsServer)]
+    public class WindowsMove : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        [AibotProperty("X坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty X { get; set; }
+
+        [AibotProperty("Y坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Y { get; set; }
+
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.CastTo<IntPtr>();
+            var x = X.Value!.TryInt();
+            var y = Y.Value!.TryInt();
+
+            Window.Move(intPtr, x, y);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
+
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("窗口-调整大小", ActionType = ActionType.WindowsServer)]
+    public class WindowsResize : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        [AibotProperty("宽度(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Width { get; set; }
+
+        [AibotProperty("高度(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Height { get; set; }
+
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.CastTo<IntPtr>();
+            var width = Width.Value!.TryInt();
+            var height = Height.Value!.TryInt();
+
+            Window.Resize(intPtr, width, height);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
 
             return Task.CompletedTask;
         }
@@ -144,20 +229,33 @@ namespace Aibot
         [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
         public AibotProperty IntPtr { get; set; }
 
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
         public new Task Execute(AibotV blackboard)
         {
             var intPtr = IntPtr.Value!.Case<IntPtr>();
 
             Window.Maximize(intPtr);
 
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
+
             return Task.CompletedTask;
         }
     }
+
     [AibotItem("窗口-最小化", ActionType = ActionType.WindowsServer)]
     public class WindowsMinimize : BaseAibotAction, IAibotAction
     {
         [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
         public AibotProperty IntPtr { get; set; }
+
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
 
         public new Task Execute(AibotV blackboard)
         {
@@ -165,21 +263,36 @@ namespace Aibot
 
             Window.Minimize(intPtr);
 
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
+
             return Task.CompletedTask;
         }
     }
-    
+
     [AibotItem("窗口化", ActionType = ActionType.WindowsServer)]
     public class WindowsNormalize : BaseAibotAction, IAibotAction
     {
         [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
         public AibotProperty IntPtr { get; set; }
 
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
         public new Task Execute(AibotV blackboard)
         {
             var intPtr = IntPtr.Value!.Case<IntPtr>();
 
             Window.Normalize(intPtr);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
 
             return Task.CompletedTask;
         }
@@ -196,6 +309,9 @@ namespace Aibot
 
         [AibotProperty("文件路径", AibotKeyType.String, Usage = AibotKeyUsage.Output)]
         public AibotProperty FilePath { get; set; }
+
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
 
         public new Task Execute(AibotV blackboard)
         {
@@ -219,6 +335,8 @@ namespace Aibot
             {
                 if ("FilePath" == n.PropertyName)
                     n.Value = savePath;
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
             });
 
             return Task.CompletedTask;
@@ -231,11 +349,20 @@ namespace Aibot
         [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
         public AibotProperty IntPtr { get; set; }
 
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
         public new Task Execute(AibotV blackboard)
         {
             var intPtr = IntPtr.Value!.Case<IntPtr>();
 
             Window.Close(intPtr);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
 
             return Task.CompletedTask;
         }
@@ -247,11 +374,20 @@ namespace Aibot
         [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
         public AibotProperty IntPtr { get; set; }
 
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
         public new Task Execute(AibotV blackboard)
         {
             var intPtr = IntPtr.Value!.Case<IntPtr>();
 
             Window.FlipLeft(intPtr);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
 
             return Task.CompletedTask;
         }
@@ -263,11 +399,20 @@ namespace Aibot
         [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
         public AibotProperty IntPtr { get; set; }
 
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
         public new Task Execute(AibotV blackboard)
         {
             var intPtr = IntPtr.Value!.Case<IntPtr>();
 
             Window.FlipRight(intPtr);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
 
             return Task.CompletedTask;
         }
@@ -292,6 +437,55 @@ namespace Aibot
                     x.Value = Desktop.GetHeight();
 
             });
+            return Task.CompletedTask;
+        }
+    }
+
+
+    [AibotItem("窗口-隐藏", ActionType = ActionType.WindowsServer)]
+    public class WindowsHide : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.CastTo<IntPtr>();
+            Window.Hide(intPtr);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
+
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("窗口-显示", ActionType = ActionType.WindowsServer)]
+    public class WindowsShow : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.CastTo<IntPtr>();
+            Window.Show(intPtr);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
+
             return Task.CompletedTask;
         }
     }

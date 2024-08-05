@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using WindowsAPI;
 using Wpf.Ui.Controls;
 using System.Drawing;
+using Nodify;
 
 namespace Aibot
 {
@@ -161,70 +162,8 @@ namespace Aibot
             return Task.CompletedTask;
         }
     }
-
-
     [AibotItem("鼠标-[D]左键点击", ActionType = ActionType.WindowsServer)]
     public class SendMouseLeftClick : BaseAibotAction, IAibotAction
-    {
-        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
-        public AibotProperty IntPtr { get; set; }
-
-        public new Task Execute(AibotV blackboard)
-        {
-            var intPtr = IntPtr.Value!.Case<IntPtr>();
-            MouseControl.LeftClick(intPtr);
-            return Task.CompletedTask;
-        }
-    }
-
-    [AibotItem("鼠标-[D]右键点击", ActionType = ActionType.WindowsServer)]
-    public class SendMouseRightClick : BaseAibotAction, IAibotAction
-    {
-        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
-        public AibotProperty IntPtr { get; set; }
-
-        public new Task Execute(AibotV blackboard)
-        {
-            var intPtr = IntPtr.Value!.Case<IntPtr>();
-            MouseControl.RightClick(intPtr);
-            return Task.CompletedTask;
-        }
-    }
-
-    [AibotItem("鼠标-[D]中键点击", ActionType = ActionType.WindowsServer)]
-    public class SendMouseMiddleClick : BaseAibotAction, IAibotAction
-    {
-        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
-        public AibotProperty IntPtr { get; set; }
-
-        public new Task Execute(AibotV blackboard)
-        {
-            var intPtr = IntPtr.Value!.Case<IntPtr>();
-            MouseControl.MiddleClick(intPtr);
-            return Task.CompletedTask;
-        }
-    }
-
-    [AibotItem("鼠标-[D]滚轮", ActionType = ActionType.WindowsServer)]
-    public class SendMouseScroll : BaseAibotAction, IAibotAction
-    {
-        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
-        public AibotProperty IntPtr { get; set; }
-
-        [AibotProperty("滚动量(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
-        public AibotProperty Delta { get; set; }
-
-        public new Task Execute(AibotV blackboard)
-        {
-            var intPtr = IntPtr.Value!.Case<IntPtr>();
-            var delta = Delta.Value!.TryInt();
-            MouseControl.Scroll(intPtr, delta);
-            return Task.CompletedTask;
-        }
-    }
-
-    [AibotItem("鼠标-[D]移动到指定位置", ActionType = ActionType.WindowsServer)]
-    public class SendMouseMoveTo : BaseAibotAction, IAibotAction
     {
         [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
         public AibotProperty IntPtr { get; set; }
@@ -235,12 +174,127 @@ namespace Aibot
         [AibotProperty("Y坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
         public AibotProperty Y { get; set; }
 
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            var x = X.Value!.TryInt();
+            var y = Y.Value!.TryInt();
+            MouseControl.LeftClick(intPtr, x, y);
+
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
+            return Task.CompletedTask;
+        }
+    }
+    [AibotItem("鼠标-[D]右键点击", ActionType = ActionType.WindowsServer)]
+    public class SendMouseRightClick : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+        [AibotProperty("X坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty X { get; set; }
+        [AibotProperty("Y坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Y { get; set; }
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            var x = X.Value!.TryInt();
+            var y = Y.Value!.TryInt();
+            MouseControl.RightClick(intPtr, x, y);
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-[D]中键点击", ActionType = ActionType.WindowsServer)]
+    public class SendMouseMiddleClick : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+        [AibotProperty("X坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty X { get; set; }
+        [AibotProperty("Y坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Y { get; set; }
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            var x = X.Value!.TryInt();
+            var y = Y.Value!.TryInt();
+            MouseControl.MiddleClick(intPtr, x, y);
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-[D]滚轮", ActionType = ActionType.WindowsServer)]
+    public class SendMouseScroll : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+        [AibotProperty("X坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty X { get; set; }
+        [AibotProperty("Y坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Y { get; set; }
+        [AibotProperty("滚动量(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Delta { get; set; }
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
+        public new Task Execute(AibotV blackboard)
+        {
+            var intPtr = IntPtr.Value!.Case<IntPtr>();
+            var x = X.Value!.TryInt();
+            var y = Y.Value!.TryInt();
+            var delta = Delta.Value!.TryInt();
+            MouseControl.Scroll(intPtr, x, y, delta);
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
+            return Task.CompletedTask;
+        }
+    }
+
+    [AibotItem("鼠标-[D]移动到指定位置", ActionType = ActionType.WindowsServer)]
+    public class SendMouseMoveTo : BaseAibotAction, IAibotAction
+    {
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
+        public AibotProperty IntPtr { get; set; }
+        [AibotProperty("X坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty X { get; set; }
+        [AibotProperty("Y坐标(Int)", AibotKeyType.Integer, Usage = AibotKeyUsage.Input)]
+        public AibotProperty Y { get; set; }
+        [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Output)]
+        public AibotProperty OutIntPtr { get; set; }
         public new Task Execute(AibotV blackboard)
         {
             var intPtr = IntPtr.Value!.Case<IntPtr>();
             var x = X.Value!.TryInt();
             var y = Y.Value!.TryInt();
             MouseControl.MoveTo(intPtr, x, y);
+            blackboard.Node!.Output.ForEach(n =>
+            {
+                if ("OutIntPtr" == n.PropertyName)
+                    n.Value = intPtr;
+            });
             return Task.CompletedTask;
         }
     }
