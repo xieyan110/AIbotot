@@ -9,22 +9,6 @@ using System.Windows.Media.Media3D;
 
 namespace Aibot
 {
-    //[AibotItem("ForeachData",ActionViewType=ActionViewType.ForView,ActionType=ActionType.CommonServer)]
-    //public class ForeachData : IAibotAction
-    //{
-    //    [AibotProperty("执行", AibotKeyType.Object, IsRoot = true, Usage = AibotKeyUsage.Input)]
-    //    public AibotProperty InputRoot { get; set; }
-
-    //    [AibotProperty("执行", AibotKeyType.Object, IsRoot = true, Usage = AibotKeyUsage.Output)]
-    //    public AibotProperty OutputRoot { get; set; }
-
-    //    public Task Execute(AibotV blackboard)
-    //    {
-    //        (blackboard.Node as Foreach)?.InitEnumerator();
-    //        (blackboard.Node as Foreach)?.Next();
-    //        return Task.CompletedTask;
-    //    }
-    //}
 
     [AibotItem("ForeachJson", ActionViewType = ActionViewType.ForJsonView, ActionType = ActionType.CommonServer)]
     public class ForeachJson : IAibotAction
@@ -74,7 +58,14 @@ namespace Aibot
 
         public Task Execute(AibotV blackboard)
         {
-            (blackboard.Node as JsonDataViewModel)?.InitLoad();
+            try
+            {
+                (blackboard.Node as JsonDataViewModel)?.InitLoad();
+            }
+            catch
+            {
+                // 小问题
+            }
 
             return Task.CompletedTask;
         }
