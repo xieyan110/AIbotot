@@ -106,6 +106,38 @@ namespace AutoDLL
             return chatMessages;
         }
 
+        public List<ChatMessage> GetChatMessages(int leftX, int rightX, string imagePath, string customerColorStr, string assistantColorStr, int colorTolerance = 55, int yTolerance = 20)
+        {
+            var ocrResults = GetOcrResults(imagePath);
+            var chatMessages = new List<ChatMessage>();
+
+            Color customerColor = ColorTranslator.FromHtml(customerColorStr);
+            Color assistantColor = ColorTranslator.FromHtml(assistantColorStr);
+
+            using (var bitmap = new Bitmap(imagePath))
+            {
+                var mergedResults = MergeAdjacentBlocks(ocrResults, bitmap, customerColor, assistantColor, colorTolerance, yTolerance);
+
+                foreach (var result in mergedResults)
+                {
+                    if(result.BoxPoints[0].X >= leftX && result.BoxPoints[1].X <= rightX)
+                    {
+                        var bubbleColor = GetDominantColor(bitmap, result.BoxPoints);
+                        bool isCustomer = ColorDistance(bubbleColor, customerColor) < ColorDistance(bubbleColor, assistantColor);
+
+                        chatMessages.Add(new ChatMessage
+                        {
+                            IsCustomer = isCustomer,
+                            Text = result.Text
+                        });
+                    }
+
+                }
+            }
+
+            return chatMessages;
+        }
+
         private List<PPOcrResult> MergeAdjacentBlocks(List<PPOcrResult> results, Bitmap bitmap, Color customerColor, Color assistantColor, int colorTolerance, int yTolerance)
         {
             var mergedResults = new List<PPOcrResult>();
