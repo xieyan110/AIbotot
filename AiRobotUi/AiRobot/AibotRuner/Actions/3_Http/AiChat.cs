@@ -307,18 +307,10 @@ namespace Aibot
             var assistantRightX = AssistantRightX.Value?.TryInt() ?? 0;
             var result = ChatAi.ParseChatRecord(records, customerLeftX, customerRightX, assistantLeftX, assistantRightX);
 
-            int lastTrueIndex = result.FindLastIndex(x => !x.IsCustomer);
-            var customerSpeak = "";
-            if (lastTrueIndex != -1)
+            string customerSpeak = "";
+            if (result.Count > 0 && result[^1].IsCustomer)
             {
-                if (result[^1].IsCustomer)
-                {
-                    var mess = result
-                        .Skip(lastTrueIndex + 1) // 跳过最后一个 isOK 为 true 的项及其之前的所有元素
-                        .Where(item => item.IsCustomer) // 过滤出 isOK 为 false 的数据
-                        .Select(item => item.Text);
-                    customerSpeak = string.Join(",", mess);
-                }
+                customerSpeak = result[^1].Text;
             }
 
             blackboard.Node!.Output.ForEach(output =>
