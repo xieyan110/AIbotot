@@ -17,6 +17,12 @@ namespace Aibot
             InitializeComponent();
         }
 
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+            CustomOverlayManager.ShutdownApplication();
+        }
+
         protected override void OnSourceInitialized(EventArgs e)
         {
 

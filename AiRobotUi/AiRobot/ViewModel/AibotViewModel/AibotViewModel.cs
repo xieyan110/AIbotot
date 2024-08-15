@@ -283,6 +283,7 @@ namespace Aibot
                         var param = Runner.CreateAibot(node.Action);
                         param.Node = node;
                         NodeTitle = $"({node.Title}):执行中...";
+                        CustomOverlayManager.AddLogMessage($"[{DateTime.Now.ToString("MM/dd HH:mm:ss")}]:({node.Title})执行中...");
                         await Task.Run(async () => await action.Execute(param));
 
                         node.NodeStatus = NodeStatus.Executed;

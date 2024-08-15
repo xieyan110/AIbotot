@@ -24,6 +24,8 @@ namespace Aibot
                 new MenuItem { Name = "使用说明", View = new Hellp(), IconSource = "/Images/hellp.png" },
             };
             SelectedMenuItem = MenuItems.FirstOrDefault();
+            // 获取或创建 CustomOverlayWindow 实例
+            CustomOverlayManager.GetInstance();
         }
 
         public ObservableCollection<MenuItem> MenuItems { get; set; } = new();

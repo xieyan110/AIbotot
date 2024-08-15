@@ -14,7 +14,8 @@ namespace Aibot
         public new Task Execute(AibotV Aibot)
         {
             var isClear = IsClear.Value.Case<bool>();
-            if(isClear)
+            CustomOverlayManager.ClearLog();
+            if (isClear)
                 Aibot.Node!.Name = "";
 
             if (Aibot.Node?.Name?.Split('\n').Length > 30)
@@ -22,6 +23,9 @@ namespace Aibot
             
             Aibot.Node!.Name += $"\n{Source.Value}";
             Aibot.Node!.Name = Aibot.Node!.Name.Trim('\n');
+
+
+            CustomOverlayManager.AddLogMessage(Aibot.Node!.Name);
             return Task.CompletedTask;
         }
     }

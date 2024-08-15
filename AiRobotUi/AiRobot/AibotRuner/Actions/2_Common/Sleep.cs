@@ -36,11 +36,15 @@ namespace Aibot
                 var schedule = NCrontab.CrontabSchedule.Parse(cron);
                 var nextRun = schedule.GetNextOccurrence(DateTime.Now);
                 blackboard.Node.Title = $"定时执行({nextRun.ToString("yyyy-MM-dd HH:mm:ss")})";
+                CustomOverlayManager.AddLogMessage($"[{DateTime.Now.ToString("MM/dd HH:mm:ss")}]:({blackboard.Node.Title})");
+
                 WaitUntil(nextRun).Wait();
             }
             catch
             {
                 blackboard.Node.Title = $"定时执行(Cron表达式 解析失败)";
+                CustomOverlayManager.AddLogMessage($"[{DateTime.Now.ToString("MM/dd HH:mm:ss")}]:({blackboard.Node.Title})");
+
             }
 
             return Task.CompletedTask;
