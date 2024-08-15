@@ -36,6 +36,7 @@ namespace Aibot.AibotRuner.Actions._2_Common
 
             CustomOverlayManager.Show();
             CustomOverlayManager.SetTopmost(true);
+            CustomOverlayManager.ForceTopmost();
             CustomOverlayManager.SetShowLogs(false);
             CustomOverlayManager.SetSize(Width.Value.TryInt(), Height.Value.TryInt());
             CustomOverlayManager.SetPosition(X.Value.TryInt(), Y.Value.TryInt());
@@ -75,6 +76,7 @@ namespace Aibot.AibotRuner.Actions._2_Common
 
             CustomOverlayManager.Show();
             CustomOverlayManager.SetTopmost(true);
+            CustomOverlayManager.ForceTopmost();
             CustomOverlayManager.SetTitle("【日志】");
             CustomOverlayManager.SetSize(Width.Value.TryInt(), Height.Value.TryInt());
             CustomOverlayManager.SetPosition(X.Value.TryInt(), Y.Value.TryInt());

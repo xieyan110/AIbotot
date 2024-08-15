@@ -80,6 +80,15 @@ namespace Aibot
             });
         }
 
+
+        public static void ForceTopmost()
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                GetInstance().ForceTopmost();
+            });
+        }
+
         public static void SetTopmost(bool isTopmost)
         {
             Application.Current.Dispatcher.Invoke(() =>
