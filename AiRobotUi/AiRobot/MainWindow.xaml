@@ -8,6 +8,7 @@
     xmlns:nodify="https://miroiu.github.io/nodify"
     xmlns:shared="clr-namespace:Nodify;assembly=Nodify.Shared"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:tray="http://schemas.lepo.co/wpfui/2022/xaml/tray"
     Title="AiTo++"
     Width="1200"
     Height="650"
@@ -17,39 +18,45 @@
     <Window.DataContext>
         <local:MainViewModel />
     </Window.DataContext>
-
     <Window.InputBindings>
         <KeyBinding
             Key="T"
             Command="{Binding Source={x:Static shared:ThemeManager.SetNextThemeCommand}}"
             Modifiers="Ctrl" />
-
     </Window.InputBindings>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- 左侧菜单 -->
+            <ui:ListView Grid.Column="0" 
+                ItemsSource="{Binding MenuItems}" 
+                SelectedItem="{Binding SelectedMenuItem}"
+                Width="40">
+                <ui:ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Image Source="{Binding IconSource}"
+                                Width="28" 
+                                Height="28" 
+                                ToolTip="{Binding Name}"/>
+                        </Grid>
+                    </DataTemplate>
+                </ui:ListView.ItemTemplate>
+            </ui:ListView>
+            <!-- 右侧内容 -->
+            <ContentControl Grid.Column="1" Content="{Binding CurrentView}"/>
 
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-
-        <!-- 左侧菜单 -->
-        <ui:ListView Grid.Column="0" 
-             ItemsSource="{Binding MenuItems}" 
-             SelectedItem="{Binding SelectedMenuItem}"
-             Width="40">
-            <ui:ListView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Image Source="{Binding IconSource}"
-                           Width="28" 
-                           Height="28" 
-                           ToolTip="{Binding Name}"/>
-                    </Grid>
-                </DataTemplate>
-            </ui:ListView.ItemTemplate>
-        </ui:ListView>
-
-        <!-- 右侧内容 -->
-        <ContentControl Grid.Column="1" Content="{Binding CurrentView}"/>
+        <!-- 添加系统托盘图标 -->
+        <tray:NotifyIcon
+            FocusOnLeftClick="False"
+            Icon="pack://application:,,,/App.ico"
+            MenuOnRightClick="True"
+            TooltipText="AiTo++"
+            LeftDoubleClick="OnNotifyIconLeftDoubleClick">
+        </tray:NotifyIcon>
+        <!-- 添加灰色覆盖层 -->
+        <Rectangle Fill="#80808080" Visibility="{Binding IsGrayedOut, Converter={StaticResource BooleanToVisibilityConverter}}" />
     </Grid>
 </Window>

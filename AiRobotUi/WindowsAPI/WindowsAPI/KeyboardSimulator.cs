@@ -122,16 +122,38 @@ namespace WindowsAPI
             }
         }
 
-        // 获取键码
+        /// <summary>
+        /// 获取键码
+        /// </summary>
+        /// <param name="key"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentException"></exception>
         private static Keys GetKeyCode(string key)
         {
-            if (SpecialKeys.ContainsKey(key))
+            // 对特殊键进行大小写不敏感的匹配
+            var specialKey = SpecialKeys.FirstOrDefault(k => k.Key.Equals(key, StringComparison.OrdinalIgnoreCase));
+            if (!specialKey.Equals(default(KeyValuePair<string, Keys>)))
             {
-                return SpecialKeys[key];
+                return specialKey.Value;
             }
-            else if (key.Length == 1 && char.IsLetterOrDigit(key[0]))
+            else if (key.Length == 1)
             {
-                return (Keys)char.ToUpper(key[0]);
+                key = key.ToUpper();
+                char c = key[0];
+                if (char.IsLetter(c))
+                {
+                    // 保持字母的原有大小写
+                    return (Keys)c;
+                }
+                else if (char.IsDigit(c))
+                {
+                    return (Keys)c;
+                }
+                else
+                {
+                    // 对于其他字符，尝试直接转换
+                    return (Keys)c;
+                }
             }
             else
             {

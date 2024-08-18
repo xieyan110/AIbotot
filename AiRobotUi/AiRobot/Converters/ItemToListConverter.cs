@@ -46,5 +46,22 @@ namespace Aibot
             throw new NotImplementedException();
         }
     }
+    public class ContentConverter : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (values.Length < 2) return string.Empty;
+
+            string nodeTitle = values[0] as string;
+            string name = values[1] as string;
+
+            return nodeTitle == "选择" ? $"{name}" : nodeTitle;
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
+        }
+    }
 
 }

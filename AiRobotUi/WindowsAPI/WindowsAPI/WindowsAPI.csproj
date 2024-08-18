@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Conversion.cs" />
     <Compile Include="Draw.cs" />
+    <Compile Include="InputSimulator.cs" />
     <Compile Include="KeyboardSimulator.cs" />
     <Compile Include="MouseKeyController.cs" />
     <Compile Include="Mouse.cs" />

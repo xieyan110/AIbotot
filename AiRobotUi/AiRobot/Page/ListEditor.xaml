@@ -29,6 +29,7 @@
             </Style>
             <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
             <local:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter"/>
+            <local:ContentConverter x:Key="ContentConverter"/>
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -143,10 +144,17 @@
                                     <ColumnDefinition Width="Auto"/>
                                     <ColumnDefinition Width="*"/>
                                 </Grid.ColumnDefinitions>
-                                <CheckBox Grid.Column="0" IsChecked="{Binding IsSelected}" 
-                                  Content="{Binding NodeTitle}" 
-                                  VerticalAlignment="Center" 
-                                  Margin="5,0,5,0"/>
+                                <CheckBox Grid.Column="0" 
+                                      IsChecked="{Binding IsSelected}" 
+                                      VerticalAlignment="Center" 
+                                      Margin="5,0,5,0">
+                                    <CheckBox.Content>
+                                        <MultiBinding Converter="{StaticResource ContentConverter}">
+                                            <Binding Path="NodeTitle" />
+                                            <Binding Path="Name" />
+                                        </MultiBinding>
+                                    </CheckBox.Content>
+                                </CheckBox>
                                 <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Padding="0,5">
                                     <ItemsControl ItemsSource="{Binding Operations}">
                                         <ItemsControl.ItemsPanel>

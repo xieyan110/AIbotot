@@ -27,7 +27,7 @@ namespace Aibot
         }
     }
 
-    [AibotItem("窗口-[D]键盘输入", ActionType = ActionType.WindowsServer)]
+    [AibotItem("窗口-[D]游戏键盘输入", ActionType = ActionType.WindowsServer)]
     public class SendInputString : BaseAibotAction, IAibotAction
     {
         [AibotProperty("IntPtr", AibotKeyType.Object, Usage = AibotKeyUsage.Input)]
@@ -39,7 +39,7 @@ namespace Aibot
         public new Task Execute(AibotV blackboard)
         {
             var intPtr = IntPtr.Value!.Case<IntPtr>();
-            KeyboardControl.InputString(intPtr, Text.Value?.ToString() ?? "");
+            InputSimulator.ExecuteInputSequence(intPtr, Text.Value?.ToString() ?? "");
             blackboard.Node!.Output.ForEach(n =>
             {
                 if ("OutIntPtr" == n.PropertyName)
@@ -70,7 +70,6 @@ namespace Aibot
             return Task.CompletedTask;
         }
     }
-
     [AibotItem("窗口-[D]键盘松开", ActionType = ActionType.WindowsServer)]
     public class SendKeyDown : BaseAibotAction, IAibotAction
     {

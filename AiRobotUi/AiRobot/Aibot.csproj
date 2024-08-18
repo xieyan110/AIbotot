@@ -16,7 +16,9 @@
     <None Remove="Images\workfows.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App.ico" />
+    <Content Include="App.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\hellp.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -28,6 +30,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
     <PackageReference Include="Microsoft.KernelMemory.AI.OpenAI" Version="0.69.240727.1" />
     <PackageReference Include="Microsoft.KernelMemory.Core" Version="0.69.240727.1" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.122" />
@@ -41,18 +44,15 @@
     <PackageReference Include="StringMath" Version="4.1.2" />
     <PackageReference Include="System.Drawing.Common" Version="8.0.7" />
     <PackageReference Include="System.Speech" Version="8.0.0" />
+    <PackageReference Include="Vanara.PInvoke.User32" Version="4.0.3" />
     <PackageReference Include="WPF-UI" Version="3.0.5" />
+    <PackageReference Include="WPF-UI.Tray" Version="3.0.5" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AibotLibrary\AibotLibrary.csproj" />
     <ProjectReference Include="..\AutoDLL\AutoDLL.csproj" />
     <ProjectReference Include="..\Nodify.Shared\Nodify.Shared.csproj" />
     <ProjectReference Include="..\WindowsAPI\WindowsAPI\WindowsAPI.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="System.Windows.Forms">
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Windows.Forms.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Update="config\basic.json">
