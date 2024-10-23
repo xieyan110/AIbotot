@@ -316,7 +316,7 @@ namespace Aibot
                     }
 
                     var graph = newWork.OpenOperation(new Point(0, 0));
-
+                    aibotView.Name = newWork.Name;
                     aibotView.Operations.AddRange(graph.Operations);
 
                     foreach (var op in graph.Connections)

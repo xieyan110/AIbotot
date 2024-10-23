@@ -11,8 +11,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutoDLL", "..\AutoDLL\AutoD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsAPI", "..\WindowsAPI\WindowsAPI\WindowsAPI.csproj", "{FDE778E3-6E79-4442-ABCE-3165768F0B4C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AibotLibrary", "..\AibotLibrary\AibotLibrary.csproj", "{95B23AF2-E84D-4469-B49A-7CDE778FC031}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,10 +33,6 @@ Global
 		{FDE778E3-6E79-4442-ABCE-3165768F0B4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDE778E3-6E79-4442-ABCE-3165768F0B4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDE778E3-6E79-4442-ABCE-3165768F0B4C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{95B23AF2-E84D-4469-B49A-7CDE778FC031}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{95B23AF2-E84D-4469-B49A-7CDE778FC031}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{95B23AF2-E84D-4469-B49A-7CDE778FC031}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{95B23AF2-E84D-4469-B49A-7CDE778FC031}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

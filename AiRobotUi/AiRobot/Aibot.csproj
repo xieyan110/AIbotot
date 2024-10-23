@@ -49,7 +49,6 @@
     <PackageReference Include="WPF-UI.Tray" Version="3.0.5" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AibotLibrary\AibotLibrary.csproj" />
     <ProjectReference Include="..\AutoDLL\AutoDLL.csproj" />
     <ProjectReference Include="..\Nodify.Shared\Nodify.Shared.csproj" />
     <ProjectReference Include="..\WindowsAPI\WindowsAPI\WindowsAPI.csproj" />
