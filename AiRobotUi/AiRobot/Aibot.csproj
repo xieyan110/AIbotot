@@ -33,6 +33,7 @@
     <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="2.0.1" />
     <PackageReference Include="Microsoft.KernelMemory.AI.OpenAI" Version="0.69.240727.1" />
     <PackageReference Include="Microsoft.KernelMemory.Core" Version="0.69.240727.1" />
+    <PackageReference Include="Microsoft.Playwright" Version="1.48.0" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.135" />
     <PackageReference Include="NCrontab" Version="3.3.3" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
