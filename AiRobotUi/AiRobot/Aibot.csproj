@@ -41,7 +41,7 @@
     <PackageReference Include="OpenAI" Version="1.11.0" />
     <PackageReference Include="OpenCvSharp4" Version="4.10.0.20240616" />
     <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20240616" />
-    <PackageReference Include="PaddleOCRSharp" Version="4.4.0.1" />
+    <PackageReference Include="PaddleOCRSharp" Version="4.4.0.2" />
     <PackageReference Include="StringMath" Version="4.1.2" />
     <PackageReference Include="System.Drawing.Common" Version="8.0.10" />
     <PackageReference Include="System.Speech" Version="8.0.0" />
@@ -118,52 +118,7 @@
     <None Update="File\首页.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Workflow\1.0 ai 在通讯录和客户聊天.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\1.1 %28远程%29ai 在通讯录和客户聊天.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\2.0 微信主页回答用户问题.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\3. 微信电脑端 聊天记录提取.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\4. 微信招聘信息推广.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\4. 微信招聘信息推广回复.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\4. 微信招聘信息推广回复2.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Workflow\4. 微信招聘推广【去除ai】2.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\4. 微信招聘推广【去除ai】.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\4.0 快手发送群消息.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\4.1 快手发送群消息.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\4.2 微信招聘信息推广%28pc%29.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\4.2 微信招聘信息推广%28pc_去ai%29.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\4.2 微信招聘信息推广回复%28pc%29.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\6. 微信设定聊天.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Workflow\7 微信联系人群发消息.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Workflow\8. 抖音定时点赞.json">

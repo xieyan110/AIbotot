@@ -127,7 +127,7 @@
     <PackageReference Include="Microsoft.KernelMemory.Core" Version="0.69.240727.1" />
     <PackageReference Include="OpenAI" Version="1.11.0" />
     <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20240616" />
-    <PackageReference Include="PaddleOCRSharp" Version="4.4.0.1" />
+    <PackageReference Include="PaddleOCRSharp" Version="4.4.0.2" />
   </ItemGroup>
 
 </Project>
