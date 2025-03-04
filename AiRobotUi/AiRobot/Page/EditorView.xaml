@@ -1,0 +1,639 @@
+﻿<UserControl
+    x:Class="Aibot.EditorView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Aibot"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:nodify="https://miroiu.github.io/nodify"
+    xmlns:shared="clr-namespace:Nodify;assembly=Nodify.Shared"
+    xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    d:DataContext="{d:DesignInstance Type=local:EditorViewModel}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <UserControl.InputBindings>
+        <KeyBinding
+            Key="S"
+            Command="{Binding SaveNodeCommand}"
+            Modifiers="Ctrl" />
+        <KeyBinding
+            Key="C"
+            Command="{Binding CopyCommand}"
+            Modifiers="Ctrl" />
+    </UserControl.InputBindings>
+
+    <UserControl.Resources>
+
+        <GeometryDrawing
+            x:Key="SmallGridGeometry"
+            Brush="{DynamicResource GridLinesBrush}"
+            Geometry="M0,0 L0,1 0.03,1 0.03,0.03 1,0.03 1,0 Z" />
+
+        <GeometryDrawing
+            x:Key="LargeGridGeometry"
+            Brush="{DynamicResource GridLinesBrush}"
+            Geometry="M0,0 L0,1 0.015,1 0.015,0.015 1,0.015 1,0 Z" />
+
+        <DrawingBrush
+            x:Key="SmallGridLinesDrawingBrush"
+            Drawing="{StaticResource SmallGridGeometry}"
+            TileMode="Tile"
+            Transform="{Binding ViewportTransform, ElementName=Editor}"
+            Viewport="0 0 15 15"
+            ViewportUnits="Absolute" />
+
+        <DrawingBrush
+            x:Key="LargeGridLinesDrawingBrush"
+            Drawing="{StaticResource LargeGridGeometry}"
+            Opacity="0.5"
+            TileMode="Tile"
+            Transform="{Binding ViewportTransform, ElementName=Editor}"
+            Viewport="0 0 150 150"
+            ViewportUnits="Absolute" />
+
+        <LinearGradientBrush x:Key="AnimatedBrush" StartPoint="0 0" EndPoint="1 0">
+            <GradientStop Offset="0" Color="#5495c4" />
+            <GradientStop Offset="0.5" Color="#3e6e91" />
+            <GradientStop Offset="1" Color="#81b9c0" />
+        </LinearGradientBrush>
+        <Border x:Key="AnimatedBorderPlaceholder" BorderBrush="{StaticResource AnimatedBrush}" />
+
+        <Storyboard x:Key="AnimateBorder" RepeatBehavior="Forever">
+            <PointAnimation
+                Storyboard.Target="{StaticResource AnimatedBorderPlaceholder}"
+                Storyboard.TargetProperty="BorderBrush.(LinearGradientBrush.StartPoint)"
+                To="1 0"
+                Duration="0:0:2" />
+            <PointAnimation
+                BeginTime="0:0:2"
+                Storyboard.Target="{StaticResource AnimatedBorderPlaceholder}"
+                Storyboard.TargetProperty="BorderBrush.(LinearGradientBrush.StartPoint)"
+                To="1 1"
+                Duration="0:0:2" />
+            <PointAnimation
+                BeginTime="0:0:4"
+                Storyboard.Target="{StaticResource AnimatedBorderPlaceholder}"
+                Storyboard.TargetProperty="BorderBrush.(LinearGradientBrush.StartPoint)"
+                To="0 1"
+                Duration="0:0:2" />
+            <PointAnimation
+                BeginTime="0:0:6"
+                Storyboard.Target="{StaticResource AnimatedBorderPlaceholder}"
+                Storyboard.TargetProperty="BorderBrush.(LinearGradientBrush.StartPoint)"
+                To="0 0"
+                Duration="0:0:2" />
+            <PointAnimation
+                Storyboard.Target="{StaticResource AnimatedBorderPlaceholder}"
+                Storyboard.TargetProperty="BorderBrush.(LinearGradientBrush.EndPoint)"
+                To="1 1"
+                Duration="0:0:2" />
+            <PointAnimation
+                BeginTime="0:0:2"
+                Storyboard.Target="{StaticResource AnimatedBorderPlaceholder}"
+                Storyboard.TargetProperty="BorderBrush.(LinearGradientBrush.EndPoint)"
+                To="0 1"
+                Duration="0:0:2" />
+            <PointAnimation
+                BeginTime="0:0:4"
+                Storyboard.Target="{StaticResource AnimatedBorderPlaceholder}"
+                Storyboard.TargetProperty="BorderBrush.(LinearGradientBrush.EndPoint)"
+                To="0 0"
+                Duration="0:0:2" />
+            <PointAnimation
+                BeginTime="0:0:6"
+                Storyboard.Target="{StaticResource AnimatedBorderPlaceholder}"
+                Storyboard.TargetProperty="BorderBrush.(LinearGradientBrush.EndPoint)"
+                To="1 0"
+                Duration="0:0:2" />
+        </Storyboard>
+
+        <local:ItemToListConverter x:Key="ItemToListConverter" />
+        <local:SubtractValueConverter x:Key="SubtractConverter" />
+        <local:DateTimeConverter x:Key="DateTimeConverter" />
+
+        <DataTemplate x:Key="ConnectionTemplate" DataType="{x:Type local:ConnectionViewModel}">
+            <nodify:Connection Source="{Binding Output.Anchor}" 
+                               Target="{Binding Input.Anchor}">
+            </nodify:Connection>
+        </DataTemplate>
+
+        <DataTemplate x:Key="PendingConnectionTemplate" DataType="{x:Type local:PendingConnectionViewModel}">
+            <nodify:PendingConnection
+                CompletedCommand="{Binding DataContext.CreateConnectionCommand, RelativeSource={RelativeSource AncestorType={x:Type nodify:NodifyEditor}}}"
+                IsVisible="{Binding IsVisible}"
+                Source="{Binding Source, Mode=OneWayToSource}"
+                StartedCommand="{Binding DataContext.StartConnectionCommand, RelativeSource={RelativeSource AncestorType={x:Type nodify:NodifyEditor}}}"
+                Target="{Binding Target, Mode=OneWayToSource}"
+                TargetAnchor="{Binding TargetLocation, Mode=OneWayToSource}" />
+        </DataTemplate>
+
+        <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="{DynamicResource ForegroundBrush}" />
+        </Style>
+
+        <Style
+            x:Key="ItemContainerStyle"
+            BasedOn="{StaticResource {x:Type nodify:ItemContainer}}"
+            TargetType="{x:Type nodify:ItemContainer}">
+            <Setter Property="Location" Value="{Binding Location}" />
+            <Setter Property="IsSelected" Value="{Binding IsSelected}" />
+            <Setter Property="ActualSize" Value="{Binding Size, Mode=OneWayToSource}" />
+            <Setter Property="BorderBrush" Value="{Binding BorderBrush, Source={StaticResource AnimatedBorderPlaceholder}}" />
+            <Setter Property="BorderThickness" Value="2" />
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Panel.ZIndex" Value="1" />
+                </Trigger>
+                <DataTrigger Binding="{Binding IsActive}" Value="True">
+                    <Setter Property="BorderBrush" Value="Red" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+    </UserControl.Resources>
+
+    <Grid>
+        <nodify:NodifyEditor
+            x:Name="Editor"
+            AllowDrop="True"
+            Background="{StaticResource SmallGridLinesDrawingBrush}"
+            ConnectionTemplate="{StaticResource ConnectionTemplate}"
+            Connections="{Binding Connections}"
+            DataContext="{Binding Calculator}"
+            DisconnectConnectorCommand="{Binding DisconnectConnectorCommand}"
+            DisplayConnectionsOnTop="True"
+            Drop="OnDropNode"
+            GridCellSize="15"
+            ItemContainerStyle="{StaticResource ItemContainerStyle}"
+            ItemsSource="{Binding Operations}"
+            PendingConnection="{Binding PendingConnection}"
+            PendingConnectionTemplate="{StaticResource PendingConnectionTemplate}"
+            SelectedItems="{Binding SelectedOperations}">
+
+
+            <nodify:NodifyEditor.Resources>
+                <Style BasedOn="{StaticResource {x:Type nodify:NodeInput}}" TargetType="{x:Type nodify:NodeInput}">
+                    <Setter Property="Header" Value="{Binding}" />
+                    <Setter Property="IsConnected" Value="{Binding IsConnected}" />
+                    <Setter Property="Anchor" Value="{Binding Anchor, Mode=OneWayToSource}" />
+                    <Setter Property="ToolTip" Value="{Binding Value}" />
+                    <Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate DataType="{x:Type local:ConnectorViewModel}">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:TextBlock 
+                                        Margin="0,0,5,0"
+                                        VerticalAlignment="Center"
+                                        Text="{Binding Title}" />
+
+                                    <ui:ToggleSwitch
+                                        OnContent="公开"
+                                        OffContent=""
+                                        Margin="1"
+                                        IsChecked="{Binding IsPublic, Mode=TwoWay}"
+                                        Visibility="{Binding IsConnected, Converter={shared:BooleanToVisibilityConverter Negate=True}}" />
+
+                                    <TextBox
+                                        MaxWidth="400"
+                                        MaxHeight="500"
+                                        AcceptsReturn="True"
+                                        Text="{Binding Value}"
+                                        TextWrapping="Wrap"
+                                        Visibility="{Binding IsConnected, Converter={shared:BooleanToVisibilityConverter Negate=True}}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+
+                <Style BasedOn="{StaticResource {x:Type nodify:NodeOutput}}" TargetType="{x:Type nodify:NodeOutput}">
+                    <Setter Property="Header" Value="{Binding}" />
+                    <Setter Property="IsConnected" Value="{Binding IsConnected}" />
+                    <Setter Property="Anchor" Value="{Binding Anchor, Mode=OneWayToSource}" />
+                    <Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate DataType="{x:Type local:ConnectorViewModel}">
+                                <StackPanel Orientation="Horizontal">
+                                    <ui:TextBlock Margin="0,0,5,0" Text="{Binding Title}" />
+                                    <!--<TextBox IsEnabled="False" Text="{Binding Value}" />-->
+                                </StackPanel>
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+
+
+
+                <Style BasedOn="{StaticResource {x:Type nodify:Node}}" TargetType="{x:Type nodify:Node}">
+                    <Setter Property="Header" Value="{Binding}" />
+                    <Setter Property="MinWidth" Value="180" />
+                    <Setter Property="MinHeight" Value="60" />
+                    <Setter Property="HeaderTemplate">
+                        <Setter.Value>
+                            <DataTemplate DataType="{x:Type local:OperationViewModel}">
+                                <ui:TextBlock Text="{Binding Title}" />
+                            </DataTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+
+                <DataTemplate DataType="{x:Type local:OperationGroupViewModel}">
+                    <nodify:GroupingNode ActualSize="{Binding GroupSize, Mode=TwoWay}" Header="{Binding Title}" />
+                </DataTemplate>
+
+
+                <DataTemplate DataType="{x:Type local:ForeachDataViewModel}">
+                    <nodify:Node
+                        Content="{Binding}"
+                        Input="{Binding Input}"
+                        Output="{Binding Output}">
+                        <nodify:Node.ContentTemplate>
+                            <DataTemplate DataType="{x:Type local:ForeachDataViewModel}">
+                                <StackPanel>
+                                    <ui:Button Command="{Binding OpenFileCommand}" Content="导入json数据" />
+                                    <ui:ListView ItemsSource="{Binding DataLine}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </nodify:Node.ContentTemplate>
+                    </nodify:Node>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type local:JsonDataViewModel}">
+                    <nodify:Node
+                        Content="{Binding}"
+                        Input="{Binding Input}"
+                        Output="{Binding Output}">
+                        <nodify:Node.ContentTemplate>
+                            <DataTemplate DataType="{x:Type local:JsonDataViewModel}">
+                                <StackPanel>
+                                    <ui:Button
+                                        VerticalContentAlignment="Center"
+                                        Command="{Binding LoadJsonCommand}"
+                                        Content="转换json数据" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </nodify:Node.ContentTemplate>
+                    </nodify:Node>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type local:ForeachJsonDataViewModel}">
+                    <nodify:Node
+                        Content="{Binding}"
+                        Input="{Binding Input}"
+                        Output="{Binding Output}">
+                        <nodify:Node.ContentTemplate>
+                            <DataTemplate DataType="{x:Type local:ForeachJsonDataViewModel}">
+                                <StackPanel>
+                                    <ui:Button
+                                        VerticalContentAlignment="Center"
+                                        Command="{Binding LoadJsonCommand}"
+                                        Content="转换json数据" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </nodify:Node.ContentTemplate>
+                    </nodify:Node>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type local:PrintViewModel}">
+                    <nodify:Node Input="{Binding Input}" Output="{Binding Output}">
+                        <nodify:Node.Content>
+                            <StackPanel>
+                                <TextBox
+                                    MaxWidth="400"
+                                    MaxHeight="500"
+                                    Margin="10"
+                                    Padding="5"
+                                    AcceptsReturn="True"
+                                    BorderThickness="1"
+                                    FontFamily="Segoe UI"
+                                    Text="{Binding Name}"
+                                    TextWrapping="Wrap"
+                                    VerticalScrollBarVisibility="Auto" />
+                            </StackPanel>
+                        </nodify:Node.Content>
+                    </nodify:Node>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type local:SetStrViewModel}">
+                    <nodify:Node Output="{Binding Output}">
+                        <nodify:Node.Content>
+                            <StackPanel>
+                                <TextBox
+                                    MinWidth="250"
+                                    MinHeight="150"
+                                    MaxWidth="400"
+                                    MaxHeight="500"
+                                    Margin="10"
+                                    Padding="5"
+                                    AcceptsReturn="True"
+                                    BorderThickness="1"
+                                    FontFamily="Segoe UI"
+                                    Text="{Binding SetStr}"
+                                    TextWrapping="Wrap"
+                                    VerticalScrollBarVisibility="Auto" />
+                            </StackPanel>
+
+                        </nodify:Node.Content>
+                    </nodify:Node>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type local:OperationViewModel}">
+                    <nodify:Node Input="{Binding Input}" Output="{Binding Output}" />
+                </DataTemplate>
+
+                <!--  Header="{Binding Title}"  -->
+
+            </nodify:NodifyEditor.Resources>
+
+            <nodify:NodifyEditor.InputBindings>
+                <KeyBinding Key="V" 
+                            Command="{Binding PasteCommand}" 
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=nodify:NodifyEditor}}" 
+                            Modifiers="Control" />
+
+                <KeyBinding Key="Delete" Command="{Binding DeleteSelectionCommand}" />
+                <KeyBinding
+                    Key="G"
+                    Command="{Binding GroupSelectionCommand}"
+                    Modifiers="Control" />
+            </nodify:NodifyEditor.InputBindings>
+
+            <nodify:NodifyEditor.Triggers>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard Name="AnimateBorder" Storyboard="{StaticResource AnimateBorder}" />
+                </EventTrigger>
+            </nodify:NodifyEditor.Triggers>
+
+            <CompositeCollection>
+                <nodify:DecoratorContainer DataContext="{Binding OperationsMenu}" Location="{Binding Location}">
+                    <local:OperationsMenuView />
+                </nodify:DecoratorContainer>
+            </CompositeCollection>
+        </nodify:NodifyEditor>
+
+        <Grid Panel.ZIndex="-2" Background="{StaticResource LargeGridLinesDrawingBrush}" />
+
+        <Border
+            Grid.Column="1"
+            Margin="10,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Background="{DynamicResource PanelBackgroundBrush}"
+            BorderThickness="0,0,0,1"
+            CornerRadius="2">
+            <StackPanel Orientation="Horizontal">
+
+                <Button Command="{Binding Calculator.PauseCommand}">
+                    <Button.Style>
+                        <Style BasedOn="{StaticResource IconButton}" TargetType="{x:Type Button}">
+                            <Setter Property="Content" Value="{StaticResource PauseIcon}" />
+                            <Setter Property="ToolTip" Value="Pause" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Calculator.RunnerState}" Value="Stopped">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Calculator.RunnerState}" Value="Paused">
+                                    <Setter Property="Content" Value="{StaticResource UnpauseIcon}" />
+                                    <Setter Property="ToolTip" Value="Continue" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button Command="{Binding Calculator.RunCommand}">
+                    <Button.Style>
+                        <Style BasedOn="{StaticResource IconButton}" TargetType="{x:Type Button}">
+                            <Setter Property="Content" Value="{StaticResource RunIcon}" />
+                            <Setter Property="ToolTip" Value="Pause" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Calculator.RunnerState}" Value="Running">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Calculator.RunnerState}" Value="Stopped">
+                                    <Setter Property="Content" Value="{StaticResource UnpauseIcon}" />
+                                    <Setter Property="ToolTip" Value="开始" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+                <Button Command="{Binding Calculator.RunCommand}">
+                    <Button.Style>
+                        <Style BasedOn="{StaticResource IconButton}" TargetType="{x:Type Button}">
+                            <Setter Property="Content" Value="{StaticResource StopIcon}" />
+                            <Setter Property="ToolTip" Value="Pause" />
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Calculator.RunnerState}" Value="Stopped">
+                                    <Setter Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Calculator.RunnerState}" Value="Running">
+                                    <Setter Property="Content" Value="{StaticResource StopIcon}" />
+                                    <Setter Property="ToolTip" Value="停止" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+
+
+                <Separator Height="Auto" BorderThickness="0,0,1,0" />
+
+                <Button
+                    Command="{x:Static nodify:EditorCommands.ZoomIn}"
+                    CommandTarget="{Binding ElementName=Editor}"
+                    Content="{StaticResource ZoomInIcon}"
+                    Style="{StaticResource IconButton}"
+                    ToolTip="Zoom In" />
+
+                <Button
+                    Command="{x:Static nodify:EditorCommands.ZoomOut}"
+                    CommandTarget="{Binding ElementName=Editor}"
+                    Content="{StaticResource ZoomOutIcon}"
+                    Style="{StaticResource IconButton}"
+                    ToolTip="Zoom Out" />
+
+                <Button
+                    Command="{Binding Source={x:Static shared:ThemeManager.SetNextThemeCommand}}"
+                    Content="{StaticResource ThemeIcon}"
+                    Style="{StaticResource IconButton}"
+                    ToolTip="Change theme" />
+            </StackPanel>
+        </Border>
+
+        <!--  节点  -->
+        <ui:CardExpander
+    Width="240"
+    MaxWidth="300"
+    Margin="0,0,0,0"
+    Padding="0,5,0,0"
+    HorizontalAlignment="Right"
+    VerticalAlignment="Stretch"
+    HorizontalContentAlignment="Right"
+    VerticalContentAlignment="Top"
+    Background="{DynamicResource HighlightedBackgroundBrush}"
+    BorderBrush="{DynamicResource BackgroundBrush}"
+    Foreground="{DynamicResource ForegroundBrush}"
+    ExpandDirection="Right"
+    IsExpanded="True">
+            <ui:CardExpander.Header>
+                <TextBlock HorizontalAlignment="Center" Text="节点" />
+            </ui:CardExpander.Header>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- 搜索框 -->
+                <ui:TextBox Grid.Row="0"
+                    PlaceholderText="搜索节点..."
+                    Margin="5"
+                    Icon="Search24"
+                    Text="{Binding NodeSearchText, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Border Grid.Row="1"
+                Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource SubtractConverter}, ConverterParameter=200}"
+                MinWidth="200"
+                MaxWidth="300"
+                Margin="0,5,0,0"
+                Padding="7,0,0,0"
+                HorizontalAlignment="Center"
+                BorderThickness="2"
+                CornerRadius="3">
+                    <ScrollViewer Margin="0,0,0,8" Padding="0,0,0,0">
+                        <ItemsControl ItemsSource="{Binding AvailableOperations}">
+                            <ItemsControl.ItemContainerStyle>
+                                <Style>
+                                    <Setter Property="FrameworkElement.Margin" Value="5" />
+                                    <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+                                    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+                                    <Setter Property="FrameworkElement.ToolTip" Value="{Binding Title}" />
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type local:OperationViewModel}">
+                                    <nodify:Node
+                                    Width="180"
+                                    BorderBrush="{StaticResource AnimatedBrush}"
+                                    BorderThickness="2"
+                                    Content="{Binding Title}"
+                                    Input="{Binding Input}"
+                                    MouseMove="OnNodeDrag"
+                                    Output="{Binding Output}" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+        </ui:CardExpander>
+
+        <!--  节点组  -->
+        <ui:CardExpander
+            Width="230"
+            MaxWidth="300"
+            Padding="0,5,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Stretch"
+            HorizontalContentAlignment="Left"
+            VerticalContentAlignment="Top"
+            Background="{DynamicResource HighlightedBackgroundBrush}"
+            BorderBrush="{DynamicResource BackgroundBrush}"
+            Foreground="{DynamicResource ForegroundBrush}"
+            ExpandDirection="Left"
+            IsExpanded="False">
+            <ui:CardExpander.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock
+                Grid.Column="0"
+                Margin="35,0,10,0"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Text="节点组" />
+
+                    <StackPanel
+                Grid.Column="1"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                        <!--  Button for importing folder  -->
+                        <ui:Button
+                    Margin="5,0,0,0"
+                    Padding="5"
+                    Foreground="{DynamicResource ForegroundBrush}"
+                    Command="{Binding ImportFolderCommand}"
+                    Content="&#xEC50;"
+                    FontFamily="Segoe MDL2 Assets"
+                    ToolTip="导入文件夹" />
+                        <!--  Button for importing file  -->
+                        <ui:Button
+                    Margin="5,0,0,0"
+                    Padding="5"
+                    Foreground="{DynamicResource ForegroundBrush}"
+                    Command="{Binding ImportFileCommand}"
+                    Content="&#xE8E5;"
+                    FontFamily="Segoe MDL2 Assets"
+                    ToolTip="导入文件" />
+                    </StackPanel>
+                </Grid>
+            </ui:CardExpander.Header>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- 搜索框 -->
+                <ui:TextBox Grid.Row="0"
+                    PlaceholderText="搜索节点组..."
+                    Margin="5"
+                    Icon="Search24"
+                    Text="{Binding NodeGroupSearchText, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <Border Grid.Row="1"
+                Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource SubtractConverter}, ConverterParameter=200}"
+                MinWidth="200"
+                MaxWidth="300"
+                Margin="0,5,0,0"
+                Padding="7,0,0,0"
+                HorizontalAlignment="Center"
+                BorderThickness="2"
+                CornerRadius="3">
+                    <ScrollViewer Margin="0,0,0,8" Padding="0,0,0,0">
+                        <ItemsControl ItemsSource="{Binding AvailableGraphOperations}">
+                            <ItemsControl.ItemContainerStyle>
+                                <Style>
+                                    <Setter Property="FrameworkElement.Margin" Value="5" />
+                                    <Setter Property="FrameworkElement.HorizontalAlignment" Value="Left" />
+                                    <Setter Property="FrameworkElement.Cursor" Value="Hand" />
+                                    <Setter Property="FrameworkElement.ToolTip" Value="{Binding Name}" />
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate DataType="{x:Type local:OperationGraphData}">
+                                    <nodify:Node
+                                Width="180"
+                                Foreground="{DynamicResource ForegroundBrush}"
+                                BorderBrush="{StaticResource AnimatedBrush}"
+                                BorderThickness="2"
+                                Content="{Binding SaveTime, Converter={StaticResource DateTimeConverter}}"
+                                Header="{Binding Name}"
+                                MouseMove="OnNodeDrag" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Border>
+            </Grid>
+        </ui:CardExpander>
+    </Grid>
+</UserControl>

@@ -1,0 +1,143 @@
+﻿<UserControl x:Class="Aibot.MainEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Aibot"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:nodify="https://miroiu.github.io/nodify"
+             xmlns:shared="clr-namespace:Nodify;assembly=Nodify.Shared"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             mc:Ignorable="d" 
+             Background="{DynamicResource NodifyEditor.BackgroundBrush}"
+             Foreground="{DynamicResource ForegroundBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.DataContext>
+        <local:ApplicationViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.InputBindings>
+        <KeyBinding
+        Key="N"
+        Command="{Binding AddEditorCommand}"
+        Modifiers="Ctrl" />
+        <KeyBinding
+        Key="W"
+        Command="{Binding CloseEditorCommand}"
+        CommandParameter="{Binding SelectedEditor.Id}"
+        Modifiers="Ctrl" />
+
+    </UserControl.InputBindings>
+
+    <UserControl.Resources>
+        <shared:BindingProxy x:Key="Proxy" DataContext="{Binding}" />
+
+        <DataTemplate DataType="{x:Type local:EditorViewModel}">
+            <local:EditorView />
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <shared:TabControlEx
+        AddTabCommand="{Binding AddEditorCommand}"
+        AutoScrollToEnd="{Binding AutoSelectNewEditor}"
+        ItemsSource="{Binding Editors}"
+        SelectedItem="{Binding SelectedEditor}">
+            <shared:TabControlEx.ItemContainerStyle>
+                <Style BasedOn="{StaticResource {x:Type shared:TabItemEx}}" TargetType="{x:Type shared:TabItemEx}">
+                    <Setter Property="Header" Value="{Binding Name}" />
+                    <Setter Property="CloseTabCommand" Value="{Binding DataContext.CloseEditorCommand, Source={StaticResource Proxy}}" />
+                    <Setter Property="CloseTabCommandParameter" Value="{Binding Id}" />
+                </Style>
+            </shared:TabControlEx.ItemContainerStyle>
+        </shared:TabControlEx>
+
+        <Expander
+        Margin="10"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Bottom"
+        Header="Click to hide/show"
+        IsExpanded="False">
+            <Border
+            MaxWidth="325"
+            MaxHeight="300"
+            CornerRadius="3">
+                <Border.Background>
+                    <SolidColorBrush Opacity="0.7" Color="{DynamicResource BackgroundColor}" />
+                </Border.Background>
+                <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="10" IsHitTestVisible="False">
+                        <StackPanel.Resources>
+                            <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                                <Setter Property="Margin" Value="0,0,0,5" />
+                            </Style>
+                        </StackPanel.Resources>
+
+                        <StackPanel Margin="0,0,0,20">
+                            <TextBlock
+                            FontWeight="Bold"
+                            Foreground="{DynamicResource NodeInput.BorderBrush}"
+                            Text="(New)从工具箱中拖放节点"
+                            TextWrapping="Wrap" />
+                        </StackPanel>
+                        <TextBlock TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">CTRL + N/W</Run>
+                        <Run>: 打开/关闭 editor</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">Shif + W</Run>
+                        <Run>: 全局 停止执行</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">ALT + 点击</Run>
+                        <Run>: 断开节点连接</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">右击鼠标</Run>
+                        <Run>: 打开菜单创建节点</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">Delete键</Run>
+                        <Run>:  删除</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">CTRL + T</Run>
+                        <Run>: 切换主题</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">CTRL + S</Run>
+                        <Run>: 保存节点</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">CTRL + C</Run>
+                        <Run>: 复制节点</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">CTRL + V</Run>
+                        <Run>: 粘贴节点</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">CTRL + G</Run>
+                        <Run>: 组选择（按住SHIFT并鼠标拖动标题可单独移动组节点）</Run>
+                        </TextBlock>
+                        <TextBlock
+                        FontWeight="Bold"
+                        Text="创建操作图并向其添加操作"
+                        TextWrapping="Wrap" />
+                        <TextBlock
+                        FontWeight="Bold"
+                        Text=" 节点必须放在开头才可执行"
+                        TextWrapping="Wrap">
+                        <Run FontWeight="Bold" Foreground="Red">StartRoot</Run>
+                        </TextBlock>
+                        <TextBlock
+                        FontWeight="Bold"
+                        Text="拖动连接并将其放在编辑器上"
+                        TextWrapping="Wrap" />
+
+                    </StackPanel>
+                </ScrollViewer>
+            </Border>
+        </Expander>
+    </Grid>
+</UserControl>

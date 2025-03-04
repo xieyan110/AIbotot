@@ -1,0 +1,4323 @@
+{
+  "Name": "获取微信用户聊天信息",
+  "SaveTime": "2024-05-26 16:47:09",
+  "Operations": [
+    {
+      "Title": "LoadJson",
+      "ActionReference": {
+        "Name": "LoadJson",
+        "Type": "Aibot.LoadJson, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 3
+      },
+      "Location": "720,3060",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "be27e013-42d7-487c-8d43-a9714bd142c7",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "733,3094.8600000000006",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "ee9a44ae-341c-4b39-9a9a-20d18af9e505",
+            "Title": "JsonData",
+            "PropertyName": "JsonData",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": "{\r\n    \"wx\":\"com.tencent.mm\",\r\n}",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "6c5852d6-2a3f-42ba-84b9-1db4632588d6",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1183.4066666666665,3094.8600000000006",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "2e017b06-329a-406c-9cad-5afde1f41292",
+            "Title": "wx",
+            "PropertyName": "wx",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1183.4066666666665,3114.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "com.tencent.mm",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb设备列表",
+      "ActionReference": {
+        "Name": "Adb设备列表",
+        "Type": "Aibot.AdbGetAdbDeviceList, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "1185,2955",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "1b662382-35d0-4600-9b27-1c0988bfebc9",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1198,2989.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "8a8b1c51-e60d-4f1a-9e6b-df59ecce9fe5",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1362.2566666666664,2989.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "c4e9fa22-8fc0-4454-ac7a-3c7bdfd3950c",
+            "Title": "设备(String)",
+            "PropertyName": "Device",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1362.2566666666664,3009.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "of, 1553601796000ZT",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "1305,2775",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "f9f01520-1458-4c5a-b311-41ac727204a1",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1318,2809.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "21404910-0213-4d07-b63a-7fb97112b952",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1318,2829.1000000000004",
+            "Operation": null,
+            "Type": 3,
+            "Value": "of, 1553601796000ZT",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "6a6141bd-3355-4075-a201-b3e3622dab37",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "c8f7d9e3-73f9-4812-aa64-80ec48831eba",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1690.4666666666667,2809.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb关闭应用",
+      "ActionReference": {
+        "Name": "Adb关闭应用",
+        "Type": "Aibot.AdbKillApp, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "1470,2955",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "d5f40711-8c5b-4b0a-917a-2e49bd60c5ac",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1483,2989.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "2c1f21d0-3774-465a-9ea0-4a6ed386e20e",
+            "Title": "包名(String)",
+            "PropertyName": "PackageName",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1483,3009.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "com.tencent.mm",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "91fd66be-fb7c-4d03-aac1-9ed128651537",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1647.2566666666667,2989.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb打开应用",
+      "ActionReference": {
+        "Name": "Adb打开应用",
+        "Type": "Aibot.AdbOpenApp, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "1470,3060",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "c94da0f0-e935-4ad6-94d1-5bfac3bb3752",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1483,3094.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "88452ada-f6be-4495-bf9e-a74642351831",
+            "Title": "包名(String)",
+            "PropertyName": "PackageName",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1483,3114.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "com.tencent.mm",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "9a41f089-ea7e-46e1-b99c-7a9c5b241755",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1647.2566666666667,3094.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "等待",
+      "ActionReference": {
+        "Name": "等待",
+        "Type": "Aibot.Sleep, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "1440,3150",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "0dcc0088-3650-4f1e-aa3c-a8ea8f934c2a",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1453,3184.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "41d0dcf1-0ea8-4d84-95c1-cac852927714",
+            "Title": "毫秒(Int)",
+            "PropertyName": "SleepTime",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 500,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "ff4db914-a315-4f72-a561-8abc45fb7e80",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "1637.033333333333,3184.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb截取屏幕",
+      "ActionReference": {
+        "Name": "Adb截取屏幕",
+        "Type": "Aibot.AdbScreenshot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "1710,2775",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "47250297-5561-41f8-86c9-84cac288b1ba",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1723,2809.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "ac4d1fe4-bb75-4a5d-a92b-d17b95820dd1",
+            "Title": "文件名[空为随机](String)",
+            "PropertyName": "FileName",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "xx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "7fdb5de5-4c5a-47f6-8fb4-b1f44037d009",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2079.6133333333332,2809.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "8bcb9ae3-42b4-45fb-a682-97bf42aa2a24",
+            "Title": "文件路径(String)",
+            "PropertyName": "FilePath",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2079.6133333333332,2829.1000000000004",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "定位文字",
+      "ActionReference": {
+        "Name": "定位文字",
+        "Type": "Aibot.GpsText, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "1740,3075",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "85e70fa1-83bc-480c-a3ba-70982ecbcfd6",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1753,3109.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "6368590f-9c44-47c8-906a-22e47cddbeda",
+            "Title": "大图(String)",
+            "PropertyName": "TempPath",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1753,3129.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "5cf38f9d-e814-4796-9e2b-d7c3d1fb0106",
+            "Title": "文字(String)",
+            "PropertyName": "Text",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "通讯录",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "35402379-4e70-40be-91c3-c492acaece4d",
+            "Title": "自上而下(Bool)",
+            "PropertyName": "IsReverse",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "c8488eda-9e89-4f6a-8150-5b324b0d40cb",
+            "Title": "Index(Int)",
+            "PropertyName": "Index",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 0,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "eb640c51-9fed-43bc-abb8-882a063df630",
+            "Title": "成功(Bool)",
+            "PropertyName": "IsSuccess",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2014.3166666666666,3109.86",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "8ace78ae-8a11-46e5-989c-9e8926f1bb02",
+            "Title": "失败(Bool)",
+            "PropertyName": "IsError",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "e5dda7f3-1509-42f5-b26b-42417bd5c583",
+            "Title": "X(Int)",
+            "PropertyName": "X",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2014.3166666666666,3148.34",
+            "Operation": null,
+            "Type": 1,
+            "Value": 405.3868,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "4b9f31ba-723f-463a-8010-8ddbea410a6b",
+            "Title": "Y(Int)",
+            "PropertyName": "Y",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2014.3166666666666,3167.58",
+            "Operation": null,
+            "Type": 1,
+            "Value": 2334.8423,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "获取图片JsonData",
+      "ActionReference": {
+        "Name": "获取图片JsonData",
+        "Type": "Aibot.GetImageData, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "1770,2895",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "e66af5c6-5e89-4ad3-93aa-13150d582e3b",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1783,2929.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "e500ce01-a2de-45ea-87fa-57cf006d42db",
+            "Title": "图片(String)",
+            "PropertyName": "TempPath",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1783,2949.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "5776ac2f-e886-416e-8d7f-905530b3213b",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2017.72,2929.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "7bffc0f0-52b8-4404-9dd1-a0086aca73ee",
+            "Title": "JsonData(String)",
+            "PropertyName": "JsonData",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2017.72,2949.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9223154187202454,\r\n    \"X\": 140.02865600585938,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"P+9+\",\r\n    \"Score\": 0.41888755559921265,\r\n    \"X\": 906.7218627929688,\r\n    \"Y\": 59.075294494628906\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.6737495064735413,\r\n    \"X\": 875.7593383789062,\r\n    \"Y\": 167.10601806640625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9976617097854614,\r\n    \"X\": 542.3209228515625,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"④\",\r\n    \"Score\": 0.5408624410629272,\r\n    \"X\": 996.447021484375,\r\n    \"Y\": 169.42694091796875\r\n  },\r\n  {\r\n    \"Text\": \"16:07\",\r\n    \"Score\": 0.9532138705253601,\r\n    \"X\": 995.67333984375,\r\n    \"Y\": 311.7764892578125\r\n  },\r\n  {\r\n    \"Text\": \"订阅号消息\",\r\n    \"Score\": 0.990810215473175,\r\n    \"X\": 331.11749267578125,\r\n    \"Y\": 316.4183349609375\r\n  },\r\n  {\r\n    \"Text\": \".l\",\r\n    \"Score\": 0.41976022720336914,\r\n    \"X\": 112.17765045166016,\r\n    \"Y\": 338.8538818359375\r\n  },\r\n  {\r\n    \"Text\": \"华人夫妻被杀害并焚尸，日本男演员涉嫌杀\",\r\n    \"Score\": 0.9883580207824707,\r\n    \"X\": 538.4526977539062,\r\n    \"Y\": 380.63037109375\r\n  },\r\n  {\r\n    \"Text\": \"10:51\",\r\n    \"Score\": 0.9425276517868042,\r\n    \"X\": 1000.315185546875,\r\n    \"Y\": 528.3953857421875\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9998220205307007,\r\n    \"X\": 269.2263488769531,\r\n    \"Y\": 533.0372314453125\r\n  },\r\n  {\r\n    \"Text\": \"5.87复制打开抖音，看看【醉尘仙的作品\",\r\n    \"Score\": 0.9136756658554077,\r\n    \"X\": 529.9320068359375,\r\n    \"Y\": 595.8666381835938\r\n  },\r\n  {\r\n    \"Text\": \"周五\",\r\n    \"Score\": 0.9992787837982178,\r\n    \"X\": 994.1260986328125,\r\n    \"Y\": 743.467041015625\r\n  },\r\n  {\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.9865982532501221,\r\n    \"X\": 270.7736511230469,\r\n    \"Y\": 748.10888671875\r\n  },\r\n  {\r\n    \"Text\": \"你好，你好，你好，你好，你好，你好，你…．\",\r\n    \"Score\": 0.9182204008102417,\r\n    \"X\": 539.2263793945312,\r\n    \"Y\": 813.0945434570312\r\n  },\r\n  {\r\n    \"Text\": \"α\",\r\n    \"Score\": 0.254952609539032,\r\n    \"X\": 946.1604614257812,\r\n    \"Y\": 2269.0830078125\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.8796948790550232,\r\n    \"X\": 405.3868103027344,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"发现\",\r\n    \"Score\": 0.9996346235275269,\r\n    \"X\": 676.93408203125,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9977483749389648,\r\n    \"X\": 135.43499755859375,\r\n    \"Y\": 2335.613037109375\r\n  },\r\n  {\r\n    \"Text\": \"我\",\r\n    \"Score\": 0.9988929629325867,\r\n    \"X\": 945.3868408203125,\r\n    \"Y\": 2335.615966796875\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "1410,3330",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "9e1ff51b-5663-4de3-9043-9ccaab75c8f8",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1423,3364.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "cb7b7ff7-117a-4d34-b9cc-a0692f4399be",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "1423,3384.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9223154187202454,\r\n    \"X\": 140.02865600585938,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"P+9+\",\r\n    \"Score\": 0.41888755559921265,\r\n    \"X\": 906.7218627929688,\r\n    \"Y\": 59.075294494628906\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.6737495064735413,\r\n    \"X\": 875.7593383789062,\r\n    \"Y\": 167.10601806640625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9976617097854614,\r\n    \"X\": 542.3209228515625,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"④\",\r\n    \"Score\": 0.5408624410629272,\r\n    \"X\": 996.447021484375,\r\n    \"Y\": 169.42694091796875\r\n  },\r\n  {\r\n    \"Text\": \"16:07\",\r\n    \"Score\": 0.9532138705253601,\r\n    \"X\": 995.67333984375,\r\n    \"Y\": 311.7764892578125\r\n  },\r\n  {\r\n    \"Text\": \"订阅号消息\",\r\n    \"Score\": 0.990810215473175,\r\n    \"X\": 331.11749267578125,\r\n    \"Y\": 316.4183349609375\r\n  },\r\n  {\r\n    \"Text\": \".l\",\r\n    \"Score\": 0.41976022720336914,\r\n    \"X\": 112.17765045166016,\r\n    \"Y\": 338.8538818359375\r\n  },\r\n  {\r\n    \"Text\": \"华人夫妻被杀害并焚尸，日本男演员涉嫌杀\",\r\n    \"Score\": 0.9883580207824707,\r\n    \"X\": 538.4526977539062,\r\n    \"Y\": 380.63037109375\r\n  },\r\n  {\r\n    \"Text\": \"10:51\",\r\n    \"Score\": 0.9425276517868042,\r\n    \"X\": 1000.315185546875,\r\n    \"Y\": 528.3953857421875\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9998220205307007,\r\n    \"X\": 269.2263488769531,\r\n    \"Y\": 533.0372314453125\r\n  },\r\n  {\r\n    \"Text\": \"5.87复制打开抖音，看看【醉尘仙的作品\",\r\n    \"Score\": 0.9136756658554077,\r\n    \"X\": 529.9320068359375,\r\n    \"Y\": 595.8666381835938\r\n  },\r\n  {\r\n    \"Text\": \"周五\",\r\n    \"Score\": 0.9992787837982178,\r\n    \"X\": 994.1260986328125,\r\n    \"Y\": 743.467041015625\r\n  },\r\n  {\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.9865982532501221,\r\n    \"X\": 270.7736511230469,\r\n    \"Y\": 748.10888671875\r\n  },\r\n  {\r\n    \"Text\": \"你好，你好，你好，你好，你好，你好，你…．\",\r\n    \"Score\": 0.9182204008102417,\r\n    \"X\": 539.2263793945312,\r\n    \"Y\": 813.0945434570312\r\n  },\r\n  {\r\n    \"Text\": \"α\",\r\n    \"Score\": 0.254952609539032,\r\n    \"X\": 946.1604614257812,\r\n    \"Y\": 2269.0830078125\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.8796948790550232,\r\n    \"X\": 405.3868103027344,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"发现\",\r\n    \"Score\": 0.9996346235275269,\r\n    \"X\": 676.93408203125,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9977483749389648,\r\n    \"X\": 135.43499755859375,\r\n    \"Y\": 2335.613037109375\r\n  },\r\n  {\r\n    \"Text\": \"我\",\r\n    \"Score\": 0.9988929629325867,\r\n    \"X\": 945.3868408203125,\r\n    \"Y\": 2335.615966796875\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "5423cbf3-056b-4c17-b955-3a9e78bbb955",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": true,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "32597df0-c15c-4a1e-ab75-0c4d6f6afd3c",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2020.8566666666666,3364.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb点击",
+      "ActionReference": {
+        "Name": "Adb点击",
+        "Type": "Aibot.AdbClick, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "2190,2775",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "f49a67c6-daaf-4458-a131-2e5d15441e1b",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2203,2809.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "4d92fe3b-932d-4e22-9713-66fef39db71e",
+            "Title": "X坐标(Int)",
+            "PropertyName": "X",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2203,2829.1000000000004",
+            "Operation": null,
+            "Type": 1,
+            "Value": 405.3868,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "e7160b79-883e-465f-bd60-b35165893fec",
+            "Title": "Y坐标(Int)",
+            "PropertyName": "Y",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2203,2848.3400000000006",
+            "Operation": null,
+            "Type": 1,
+            "Value": 2334.8423,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "abff5ab5-de15-45d1-af1f-b7c503ef5d41",
+            "Title": "点击次数(Int)",
+            "PropertyName": "Count",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 0,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "7b704a89-6ce3-44e7-8187-928deb1c6529",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2394.6133333333337,2809.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "等待",
+      "ActionReference": {
+        "Name": "等待",
+        "Type": "Aibot.Sleep, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "2190,2970",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "8eeac705-6a52-406e-a6ab-b4703f4e80a7",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2203,3004.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "b3606b4e-635e-47c1-b991-77b312e9d98e",
+            "Title": "毫秒(Int)",
+            "PropertyName": "SleepTime",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 500,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "4c4866e9-dbca-47a1-9d6b-8dfcb57db7b3",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2387.0333333333338,3004.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb截取屏幕",
+      "ActionReference": {
+        "Name": "Adb截取屏幕",
+        "Type": "Aibot.AdbScreenshot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "2175,3105",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "d0997f50-7b89-4fe9-b47b-3d54c847d6de",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2188,3139.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "a04289be-f5c5-4a1c-ac29-fb531c62b945",
+            "Title": "文件名[空为随机](String)",
+            "PropertyName": "FileName",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "xx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "9692398c-2a6a-40fd-98bf-50d3260c3f11",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2544.6133333333332,3139.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "583d1f3a-c8f5-4fbd-91fe-de7eeb24775a",
+            "Title": "文件路径(String)",
+            "PropertyName": "FilePath",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2544.6133333333332,3159.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "获取图片JsonData",
+      "ActionReference": {
+        "Name": "获取图片JsonData",
+        "Type": "Aibot.GetImageData, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "2220,3210",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "85dbefdc-7079-4ac4-b6f3-7206aff9646c",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2233,3244.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "c177c348-e0c9-455b-bcb2-8992568e7e0d",
+            "Title": "图片(String)",
+            "PropertyName": "TempPath",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2233,3264.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "1107b0b5-7732-4171-a41d-ccef6be9f60d",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2467.7200000000003,3244.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "b5e0b8d1-1c86-47bd-b821-c0067da478bb",
+            "Title": "JsonData(String)",
+            "PropertyName": "JsonData",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2467.7200000000003,3264.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9207533001899719,\r\n    \"X\": 140.80226135253906,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"PN+5\",\r\n    \"Score\": 0.41359174251556396,\r\n    \"X\": 906.7265625,\r\n    \"Y\": 59.9431037902832\r\n  },\r\n  {\r\n    \"Text\": \"Q\",\r\n    \"Score\": 0.4229925870895386,\r\n    \"X\": 875.7593383789062,\r\n    \"Y\": 165.55874633789062\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.9681625366210938,\r\n    \"X\": 539.2263793945312,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"田\",\r\n    \"Score\": 0.587546169757843,\r\n    \"X\": 996.447021484375,\r\n    \"Y\": 168.65328979492188\r\n  },\r\n  {\r\n    \"Text\": \"新的朋友\",\r\n    \"Score\": 0.9983634352684021,\r\n    \"X\": 297.8509521484375,\r\n    \"Y\": 324.9283752441406\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 482.7507019042969\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 112.17765045166016,\r\n    \"Y\": 488.16619873046875\r\n  },\r\n  {\r\n    \"Text\": \"群聊\",\r\n    \"Score\": 0.9979088306427002,\r\n    \"X\": 257.5059509277344,\r\n    \"Y\": 492.5298156738281\r\n  },\r\n  {\r\n    \"Text\": \"☆\",\r\n    \"Score\": 0.9835163950920105,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 535.358154296875\r\n  },\r\n  {\r\n    \"Text\": \"A\",\r\n    \"Score\": 0.903715193271637,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 589.5128784179688\r\n  },\r\n  {\r\n    \"Text\": \"B\",\r\n    \"Score\": 0.6336751580238342,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 639.7994384765625\r\n  },\r\n  {\r\n    \"Text\": \"标签\",\r\n    \"Score\": 0.9992554783821106,\r\n    \"X\": 256.9683837890625,\r\n    \"Y\": 659.6521606445312\r\n  },\r\n  {\r\n    \"Text\": \"（\",\r\n    \"Score\": 0.8544014096260071,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 693.1805419921875\r\n  },\r\n  {\r\n    \"Text\": \"Ｄ\",\r\n    \"Score\": 0.6952758431434631,\r\n    \"X\": 1049.054443359375,\r\n    \"Y\": 745.7879638671875\r\n  },\r\n  {\r\n    \"Text\": \"E\",\r\n    \"Score\": 0.39387622475624084,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 798.3953857421875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 106.76217651367188,\r\n    \"Y\": 827.0200805664062\r\n  },\r\n  {\r\n    \"Text\": \"公众号\",\r\n    \"Score\": 0.8736531138420105,\r\n    \"X\": 278.5100402832031,\r\n    \"Y\": 827.793701171875\r\n  },\r\n  {\r\n    \"Text\": \"F\",\r\n    \"Score\": 0.5715973377227783,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 851.0028686523438\r\n  },\r\n  {\r\n    \"Text\": \"Ｇ\",\r\n    \"Score\": 0.45758742094039917,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 902.0630493164062\r\n  },\r\n  {\r\n    \"Text\": \"H\",\r\n    \"Score\": 0.6478720307350159,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 956.2177734375\r\n  },\r\n  {\r\n    \"Text\": \"A\",\r\n    \"Score\": 0.7608993649482727,\r\n    \"X\": 57.24928283691406,\r\n    \"Y\": 961.6332397460938\r\n  },\r\n  {\r\n    \"Text\": \"+\",\r\n    \"Score\": 0.18384681642055511,\r\n    \"X\": 1048.28076171875,\r\n    \"Y\": 1008.8251953125\r\n  },\r\n  {\r\n    \"Text\": \"」\",\r\n    \"Score\": 0.7109828591346741,\r\n    \"X\": 1048.28076171875,\r\n    \"Y\": 1062.97998046875\r\n  },\r\n  {\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.9791970252990723,\r\n    \"X\": 258.3954162597656,\r\n    \"Y\": 1093.15185546875\r\n  },\r\n  {\r\n    \"Text\": \"K\",\r\n    \"Score\": 0.5564833879470825,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1116.361083984375\r\n  },\r\n  {\r\n    \"Text\": \"L\",\r\n    \"Score\": 0.9117615222930908,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1167.421142578125\r\n  },\r\n  {\r\n    \"Text\": \"M\",\r\n    \"Score\": 0.89208984375,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1220.80224609375\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 56.475643157958984,\r\n    \"Y\": 1225.444091796875\r\n  },\r\n  {\r\n    \"Text\": \"Ｎ\",\r\n    \"Score\": 0.5432594418525696,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1272.6361083984375\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.6699748039245605,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1326.790771484375\r\n  },\r\n  {\r\n    \"Text\": \"平常心\",\r\n    \"Score\": 0.9940481781959534,\r\n    \"X\": 278.5100402832031,\r\n    \"Y\": 1357.7364501953125\r\n  },\r\n  {\r\n    \"Text\": \"p\",\r\n    \"Score\": 0.4040622115135193,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1380.171875\r\n  },\r\n  {\r\n    \"Text\": \"Q\",\r\n    \"Score\": 0.9997441172599792,\r\n    \"X\": 1051.3753662109375,\r\n    \"Y\": 1432.0057373046875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1484.6131591796875\r\n  },\r\n  {\r\n    \"Text\": \"w\",\r\n    \"Score\": 0.51580411195755,\r\n    \"X\": 61.891117095947266,\r\n    \"Y\": 1491.575927734375\r\n  },\r\n  {\r\n    \"Text\": \"（）\",\r\n    \"Score\": 0.8522242903709412,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1537.2205810546875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1590.6016845703125\r\n  },\r\n  {\r\n    \"Text\": \"微信团队\",\r\n    \"Score\": 0.9974311590194702,\r\n    \"X\": 298.6246032714844,\r\n    \"Y\": 1623.0943603515625\r\n  },\r\n  {\r\n    \"Text\": \"Ｕ\",\r\n    \"Score\": 0.39524373412132263,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1643.209228515625\r\n  },\r\n  {\r\n    \"Text\": \"V\",\r\n    \"Score\": 0.6523734331130981,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1693.4957275390625\r\n  },\r\n  {\r\n    \"Text\": \"W\",\r\n    \"Score\": 0.6245388984680176,\r\n    \"X\": 1049.054443359375,\r\n    \"Y\": 1748.424072265625\r\n  },\r\n  {\r\n    \"Text\": \"文件传输助手\",\r\n    \"Score\": 0.9626491069793701,\r\n    \"X\": 339.62750244140625,\r\n    \"Y\": 1791.747802734375\r\n  },\r\n  {\r\n    \"Text\": \"x\",\r\n    \"Score\": 0.2879961431026459,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1801.031494140625\r\n  },\r\n  {\r\n    \"Text\": \"Y\",\r\n    \"Score\": 0.5449697375297546,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1853.638916015625\r\n  },\r\n  {\r\n    \"Text\": \"Z\",\r\n    \"Score\": 0.3527730107307434,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1907.793701171875\r\n  },\r\n  {\r\n    \"Text\": \"X\",\r\n    \"Score\": 0.5471229553222656,\r\n    \"X\": 57.24928283691406,\r\n    \"Y\": 1924.813720703125\r\n  },\r\n  {\r\n    \"Text\": \"＃\",\r\n    \"Score\": 0.560279905796051,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1958.8538818359375\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9998689889907837,\r\n    \"X\": 256.84814453125,\r\n    \"Y\": 2057.10595703125\r\n  },\r\n  {\r\n    \"Text\": \"Y\",\r\n    \"Score\": 0.3481239080429077,\r\n    \"X\": 58.02292251586914,\r\n    \"Y\": 2187.077392578125\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 946.93408203125,\r\n    \"Y\": 2269.0830078125\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.9306322336196899,\r\n    \"X\": 134.61317443847656,\r\n    \"Y\": 2272.951171875\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.9992617964744568,\r\n    \"X\": 405.3868103027344,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9955251812934875,\r\n    \"X\": 136.16046142578125,\r\n    \"Y\": 2335.615966796875\r\n  },\r\n  {\r\n    \"Text\": \"发现\",\r\n    \"Score\": 0.8636053800582886,\r\n    \"X\": 676.93408203125,\r\n    \"Y\": 2335.615966796875\r\n  },\r\n  {\r\n    \"Text\": \"我\",\r\n    \"Score\": 0.9992340803146362,\r\n    \"X\": 945.3868408203125,\r\n    \"Y\": 2335.615966796875\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "2160,3330",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "d0f1a174-85c4-4e0f-bd1e-09aca7deb585",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2173,3364.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "10565e81-903e-4cc9-ab49-38cb75304c9d",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2173,3384.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9207533001899719,\r\n    \"X\": 140.80226135253906,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"PN+5\",\r\n    \"Score\": 0.41359174251556396,\r\n    \"X\": 906.7265625,\r\n    \"Y\": 59.9431037902832\r\n  },\r\n  {\r\n    \"Text\": \"Q\",\r\n    \"Score\": 0.4229925870895386,\r\n    \"X\": 875.7593383789062,\r\n    \"Y\": 165.55874633789062\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.9681625366210938,\r\n    \"X\": 539.2263793945312,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"田\",\r\n    \"Score\": 0.587546169757843,\r\n    \"X\": 996.447021484375,\r\n    \"Y\": 168.65328979492188\r\n  },\r\n  {\r\n    \"Text\": \"新的朋友\",\r\n    \"Score\": 0.9983634352684021,\r\n    \"X\": 297.8509521484375,\r\n    \"Y\": 324.9283752441406\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 482.7507019042969\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 112.17765045166016,\r\n    \"Y\": 488.16619873046875\r\n  },\r\n  {\r\n    \"Text\": \"群聊\",\r\n    \"Score\": 0.9979088306427002,\r\n    \"X\": 257.5059509277344,\r\n    \"Y\": 492.5298156738281\r\n  },\r\n  {\r\n    \"Text\": \"☆\",\r\n    \"Score\": 0.9835163950920105,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 535.358154296875\r\n  },\r\n  {\r\n    \"Text\": \"A\",\r\n    \"Score\": 0.903715193271637,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 589.5128784179688\r\n  },\r\n  {\r\n    \"Text\": \"B\",\r\n    \"Score\": 0.6336751580238342,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 639.7994384765625\r\n  },\r\n  {\r\n    \"Text\": \"标签\",\r\n    \"Score\": 0.9992554783821106,\r\n    \"X\": 256.9683837890625,\r\n    \"Y\": 659.6521606445312\r\n  },\r\n  {\r\n    \"Text\": \"（\",\r\n    \"Score\": 0.8544014096260071,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 693.1805419921875\r\n  },\r\n  {\r\n    \"Text\": \"Ｄ\",\r\n    \"Score\": 0.6952758431434631,\r\n    \"X\": 1049.054443359375,\r\n    \"Y\": 745.7879638671875\r\n  },\r\n  {\r\n    \"Text\": \"E\",\r\n    \"Score\": 0.39387622475624084,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 798.3953857421875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 106.76217651367188,\r\n    \"Y\": 827.0200805664062\r\n  },\r\n  {\r\n    \"Text\": \"公众号\",\r\n    \"Score\": 0.8736531138420105,\r\n    \"X\": 278.5100402832031,\r\n    \"Y\": 827.793701171875\r\n  },\r\n  {\r\n    \"Text\": \"F\",\r\n    \"Score\": 0.5715973377227783,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 851.0028686523438\r\n  },\r\n  {\r\n    \"Text\": \"Ｇ\",\r\n    \"Score\": 0.45758742094039917,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 902.0630493164062\r\n  },\r\n  {\r\n    \"Text\": \"H\",\r\n    \"Score\": 0.6478720307350159,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 956.2177734375\r\n  },\r\n  {\r\n    \"Text\": \"A\",\r\n    \"Score\": 0.7608993649482727,\r\n    \"X\": 57.24928283691406,\r\n    \"Y\": 961.6332397460938\r\n  },\r\n  {\r\n    \"Text\": \"+\",\r\n    \"Score\": 0.18384681642055511,\r\n    \"X\": 1048.28076171875,\r\n    \"Y\": 1008.8251953125\r\n  },\r\n  {\r\n    \"Text\": \"」\",\r\n    \"Score\": 0.7109828591346741,\r\n    \"X\": 1048.28076171875,\r\n    \"Y\": 1062.97998046875\r\n  },\r\n  {\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.9791970252990723,\r\n    \"X\": 258.3954162597656,\r\n    \"Y\": 1093.15185546875\r\n  },\r\n  {\r\n    \"Text\": \"K\",\r\n    \"Score\": 0.5564833879470825,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1116.361083984375\r\n  },\r\n  {\r\n    \"Text\": \"L\",\r\n    \"Score\": 0.9117615222930908,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1167.421142578125\r\n  },\r\n  {\r\n    \"Text\": \"M\",\r\n    \"Score\": 0.89208984375,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1220.80224609375\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 56.475643157958984,\r\n    \"Y\": 1225.444091796875\r\n  },\r\n  {\r\n    \"Text\": \"Ｎ\",\r\n    \"Score\": 0.5432594418525696,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1272.6361083984375\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.6699748039245605,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1326.790771484375\r\n  },\r\n  {\r\n    \"Text\": \"平常心\",\r\n    \"Score\": 0.9940481781959534,\r\n    \"X\": 278.5100402832031,\r\n    \"Y\": 1357.7364501953125\r\n  },\r\n  {\r\n    \"Text\": \"p\",\r\n    \"Score\": 0.4040622115135193,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1380.171875\r\n  },\r\n  {\r\n    \"Text\": \"Q\",\r\n    \"Score\": 0.9997441172599792,\r\n    \"X\": 1051.3753662109375,\r\n    \"Y\": 1432.0057373046875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1484.6131591796875\r\n  },\r\n  {\r\n    \"Text\": \"w\",\r\n    \"Score\": 0.51580411195755,\r\n    \"X\": 61.891117095947266,\r\n    \"Y\": 1491.575927734375\r\n  },\r\n  {\r\n    \"Text\": \"（）\",\r\n    \"Score\": 0.8522242903709412,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1537.2205810546875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1590.6016845703125\r\n  },\r\n  {\r\n    \"Text\": \"微信团队\",\r\n    \"Score\": 0.9974311590194702,\r\n    \"X\": 298.6246032714844,\r\n    \"Y\": 1623.0943603515625\r\n  },\r\n  {\r\n    \"Text\": \"Ｕ\",\r\n    \"Score\": 0.39524373412132263,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1643.209228515625\r\n  },\r\n  {\r\n    \"Text\": \"V\",\r\n    \"Score\": 0.6523734331130981,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1693.4957275390625\r\n  },\r\n  {\r\n    \"Text\": \"W\",\r\n    \"Score\": 0.6245388984680176,\r\n    \"X\": 1049.054443359375,\r\n    \"Y\": 1748.424072265625\r\n  },\r\n  {\r\n    \"Text\": \"文件传输助手\",\r\n    \"Score\": 0.9626491069793701,\r\n    \"X\": 339.62750244140625,\r\n    \"Y\": 1791.747802734375\r\n  },\r\n  {\r\n    \"Text\": \"x\",\r\n    \"Score\": 0.2879961431026459,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1801.031494140625\r\n  },\r\n  {\r\n    \"Text\": \"Y\",\r\n    \"Score\": 0.5449697375297546,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1853.638916015625\r\n  },\r\n  {\r\n    \"Text\": \"Z\",\r\n    \"Score\": 0.3527730107307434,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1907.793701171875\r\n  },\r\n  {\r\n    \"Text\": \"X\",\r\n    \"Score\": 0.5471229553222656,\r\n    \"X\": 57.24928283691406,\r\n    \"Y\": 1924.813720703125\r\n  },\r\n  {\r\n    \"Text\": \"＃\",\r\n    \"Score\": 0.560279905796051,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1958.8538818359375\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9998689889907837,\r\n    \"X\": 256.84814453125,\r\n    \"Y\": 2057.10595703125\r\n  },\r\n  {\r\n    \"Text\": \"Y\",\r\n    \"Score\": 0.3481239080429077,\r\n    \"X\": 58.02292251586914,\r\n    \"Y\": 2187.077392578125\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 946.93408203125,\r\n    \"Y\": 2269.0830078125\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.9306322336196899,\r\n    \"X\": 134.61317443847656,\r\n    \"Y\": 2272.951171875\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.9992617964744568,\r\n    \"X\": 405.3868103027344,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9955251812934875,\r\n    \"X\": 136.16046142578125,\r\n    \"Y\": 2335.615966796875\r\n  },\r\n  {\r\n    \"Text\": \"发现\",\r\n    \"Score\": 0.8636053800582886,\r\n    \"X\": 676.93408203125,\r\n    \"Y\": 2335.615966796875\r\n  },\r\n  {\r\n    \"Text\": \"我\",\r\n    \"Score\": 0.9992340803146362,\r\n    \"X\": 945.3868408203125,\r\n    \"Y\": 2335.615966796875\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "6bd95487-6343-4a95-86bc-c13a7aa2ce33",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": true,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "3cd325c9-054b-4197-8094-feaa68db956b",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "2618.33,3364.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "ForeachJson",
+      "ActionReference": {
+        "Name": "ForeachJson",
+        "Type": "Aibot.ForeachJson, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 2
+      },
+      "Location": "2685,2700",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "836c0a30-e7af-491e-b773-cd19173404bf",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2698,2734.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "263446e4-0dbf-4b30-9fe4-d32ac29c23e3",
+            "Title": "JsonData",
+            "PropertyName": "JsonData",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": "[\r\n    {\r\n        \"wxUser\": \"阿呆\",\r\n        \"userInfo\": \"阿呆先生为人正义\",\r\n        \"System\":\"你正在和user聊天，你称呼user为阿呆先生，你的工作是咨询阿呆先生身体健康，向阿呆先生推荐你的减肥药物，要关心阿呆先生的身体健康，下面的内容是工作指南参考<工作指南>工作中必须称呼客户为 名称加尊称 比如阿呆先生</工作指南>，如果客户咨询的内容和工作指南参考无关请回复‘阿呆先生，不好意思这个我不太了解’\"\r\n    },\r\n    {\r\n        \"wxUser\": \"小明\",\r\n        \"userInfo\": \"小明先生为人正义\",\r\n        \"System\":\"你正在和user聊天，你称呼user为小明先生，你的工作是咨询小明先生身体健康，向小明先生推荐你的减肥药物，要关心小明先生的身体健康，下面的内容是工作指南参考<工作指南>工作中必须称呼客户为 名称加尊称 比如小明先生</工作指南>，如果客户咨询的内容和工作指南参考无关请回复‘小明先生，不好意思这个我不太了解’\"\r\n    },\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "dbd84b92-472f-45b7-8ff0-a9571d59b45e",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "3379.003333333333,2734.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "f4072d1e-eed5-460e-84e3-612be4a71c35",
+            "Title": "wxUser",
+            "PropertyName": "wxUser",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "3379.003333333333,2754.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "小明",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "113018ac-aea8-46b1-975b-c05ab22c75df",
+            "Title": "userInfo",
+            "PropertyName": "userInfo",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "小明先生为人正义",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "340d7631-68c6-4d3d-8c99-50a8b364ed63",
+            "Title": "System",
+            "PropertyName": "System",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "你正在和user聊天，你称呼user为小明先生，你的工作是咨询小明先生身体健康，向小明先生推荐你的减肥药物，要关心小明先生的身体健康，下面的内容是工作指南参考<工作指南>工作中必须称呼客户为 名称加尊称 比如小明先生</工作指南>，如果客户咨询的内容和工作指南参考无关请回复‘小明先生，不好意思这个我不太了解’",
+            "ValueIsKey": true,
+            "CanChangeType": true,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb滑动操作",
+      "ActionReference": {
+        "Name": "Adb滑动操作",
+        "Type": "Aibot.AdbVerticalSwipe, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "2790,3570",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "a8b2046d-8685-4e33-8f25-757bd828e832",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2803,3604.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "e9ad7bd7-4339-4506-9d4b-073f35bc109a",
+            "Title": "起始X坐标(Int)",
+            "PropertyName": "StartX",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 500,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "cf6fcb01-21f8-406f-9278-7dc73b697fea",
+            "Title": "起始Y坐标(Int)",
+            "PropertyName": "StartY",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 500,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "cd3a4a4c-7004-4994-8de8-4558e37449b3",
+            "Title": "Y移动距离[上正下负](Int)",
+            "PropertyName": "MoveY",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": -500,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "0d1c43dd-1c48-4412-97ab-2e2f3efd28ad",
+            "Title": "滑动时间(毫秒)",
+            "PropertyName": "Duration",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 500,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "769f5e50-76d4-4ff7-9705-243c21993235",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "3080.3466666666673,3604.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb截取屏幕",
+      "ActionReference": {
+        "Name": "Adb截取屏幕",
+        "Type": "Aibot.AdbScreenshot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "2790,3195",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "daf00db7-37c9-4d5a-b49e-153540c15ae8",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2803,3229.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "b4baf055-6afd-4ee4-a688-570e9b61c085",
+            "Title": "文件名[空为随机](String)",
+            "PropertyName": "FileName",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "XX.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "5ea1a663-3cbf-4466-84d7-36d9348f077b",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "3163.48,3229.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "8b212095-af0a-43e0-8b9d-2843e09a4578",
+            "Title": "文件路径(String)",
+            "PropertyName": "FilePath",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "3163.48,3249.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\XX.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "定位文字",
+      "ActionReference": {
+        "Name": "定位文字",
+        "Type": "Aibot.GpsText, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "2805,3375",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "ae518d26-2b15-4599-a776-5318ba7988b4",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2818,3409.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "2d519453-c5a6-4425-a093-7bfe88a671a2",
+            "Title": "大图(String)",
+            "PropertyName": "TempPath",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2818,3429.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\XX.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "c23aeb2d-ac5b-42e7-9882-565902014a30",
+            "Title": "文字(String)",
+            "PropertyName": "Text",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "2818,3448.34",
+            "Operation": null,
+            "Type": 3,
+            "Value": "小明",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "77c38b75-89f8-40a1-ab95-f2ef5eb94966",
+            "Title": "自上而下(Bool)",
+            "PropertyName": "IsReverse",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": true,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "4bcc604a-57aa-46e5-b895-f72343e6a300",
+            "Title": "Index(Int)",
+            "PropertyName": "Index",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 0,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "1a078b4f-6904-4b20-97db-bbe9064f3594",
+            "Title": "成功(Bool)",
+            "PropertyName": "IsSuccess",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "3075.9366666666665,3409.86",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "459eafd5-c025-4131-b00e-50fa04b64727",
+            "Title": "失败(Bool)",
+            "PropertyName": "IsError",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "3075.9366666666665,3429.1",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "b25a35e6-12fb-4eaf-baee-dfd11e84ca45",
+            "Title": "X(Int)",
+            "PropertyName": "X",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "3075.9366666666665,3448.34",
+            "Operation": null,
+            "Type": 1,
+            "Value": 142.34956,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "5904f3a3-6699-47a2-b1bb-34ac4eecdd57",
+            "Title": "Y(Int)",
+            "PropertyName": "Y",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "3075.9366666666665,3467.58",
+            "Operation": null,
+            "Type": 1,
+            "Value": 2057.106,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb点击",
+      "ActionReference": {
+        "Name": "Adb点击",
+        "Type": "Aibot.AdbClick, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "4035,3045",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "abe1b37c-6e28-4e0f-8393-16ba285a8934",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4047.9999999999995,3079.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "10283bc3-ed15-4d81-95dc-74f8cb508f4a",
+            "Title": "X坐标(Int)",
+            "PropertyName": "X",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4047.9999999999995,3099.0999999999995",
+            "Operation": null,
+            "Type": 1,
+            "Value": 142.34956,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "7b2116df-a563-422c-92af-ab59082c67a6",
+            "Title": "Y坐标(Int)",
+            "PropertyName": "Y",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4047.9999999999995,3118.3399999999997",
+            "Operation": null,
+            "Type": 1,
+            "Value": 2057.106,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "208434ed-879b-4d6d-838b-f247255feb7f",
+            "Title": "点击次数(Int)",
+            "PropertyName": "Count",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 0,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "f89f9fd3-739a-43c7-8a4a-d779a4b6ba75",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4239.613333333333,3079.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb截取屏幕",
+      "ActionReference": {
+        "Name": "Adb截取屏幕",
+        "Type": "Aibot.AdbScreenshot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "3945,3330",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "b2cdccc4-f901-4034-9b67-016316930d94",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "3958,3364.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "ec5271fb-6099-4a54-93fa-aebded361301",
+            "Title": "文件名[空为随机](String)",
+            "PropertyName": "FileName",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "XX.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "e400dc49-7c47-41ad-9647-c59b948b0aea",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4318.48,3364.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "6850714c-f60e-4158-ab39-67ccc970fcc3",
+            "Title": "文件路径(String)",
+            "PropertyName": "FilePath",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4318.48,3384.0999999999995",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\XX.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "定位文字",
+      "ActionReference": {
+        "Name": "定位文字",
+        "Type": "Aibot.GpsText, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "3990,3480",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "8ca751f9-03e8-4922-b63a-060308dc3f14",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4002.9999999999995,3514.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "ff03d0ba-4ac9-4cc7-a038-0d30b848d48f",
+            "Title": "大图(String)",
+            "PropertyName": "TempPath",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4002.9999999999995,3534.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\XX.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "00d122ec-01e9-4942-8912-08c8e7103f0f",
+            "Title": "文字(String)",
+            "PropertyName": "Text",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "3958,3671.48",
+            "Operation": null,
+            "Type": 3,
+            "Value": "发消息",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "0477fffb-2854-4fda-8656-35c674b0cb20",
+            "Title": "自上而下(Bool)",
+            "PropertyName": "IsReverse",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "3493,3600.7199999999993",
+            "Operation": null,
+            "Type": 0,
+            "Value": true,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "2f3d05ed-242c-490a-8c84-96162170550d",
+            "Title": "Index(Int)",
+            "PropertyName": "Index",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "3493,3628.7199999999993",
+            "Operation": null,
+            "Type": 1,
+            "Value": 0,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "205c2352-4c80-477b-9200-2ec0590dd27e",
+            "Title": "成功(Bool)",
+            "PropertyName": "IsSuccess",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4260.9366666666665,3514.8599999999997",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "c1552f4a-8ccd-43d8-bb3c-99f26378b78f",
+            "Title": "失败(Bool)",
+            "PropertyName": "IsError",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "4215.9366666666665,3564.1",
+            "Operation": null,
+            "Type": 0,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "3f4e5773-e8db-47c6-b7ff-4e40497851b3",
+            "Title": "X(Int)",
+            "PropertyName": "X",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4260.9366666666665,3553.34",
+            "Operation": null,
+            "Type": 1,
+            "Value": 584.0974,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "d152a381-12f0-41df-a0c1-eb0d37bf744e",
+            "Title": "Y(Int)",
+            "PropertyName": "Y",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4260.9366666666665,3572.58",
+            "Operation": null,
+            "Type": 1,
+            "Value": 1894.6418,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb点击",
+      "ActionReference": {
+        "Name": "Adb点击",
+        "Type": "Aibot.AdbClick, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "4035,3660",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "316c00fa-6e82-418f-b103-dc674b55a3d4",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4047.9999999999995,3694.8600000000006",
+            "Operation": null,
+            "Type": 5,
+            "Value": false,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "1cc9fa8d-f597-4c88-832e-694c4792f3ab",
+            "Title": "X坐标(Int)",
+            "PropertyName": "X",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4047.9999999999995,3714.1",
+            "Operation": null,
+            "Type": 1,
+            "Value": 584.0974,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "38f3c86f-af9d-4ea4-b1dc-4b3db4e9770f",
+            "Title": "Y坐标(Int)",
+            "PropertyName": "Y",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4047.9999999999995,3733.3400000000006",
+            "Operation": null,
+            "Type": 1,
+            "Value": 1894.6418,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "664f7ae0-b2f5-4da6-8de9-421256382ed9",
+            "Title": "点击次数(Int)",
+            "PropertyName": "Count",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "3583,3771.959999999999",
+            "Operation": null,
+            "Type": 1,
+            "Value": 0,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "55ba4b66-484c-4406-a36f-2c27b4efffff",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4239.613333333333,3694.8600000000006",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "等待",
+      "ActionReference": {
+        "Name": "等待",
+        "Type": "Aibot.Sleep, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "4020,3195",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "0acba8ad-8110-4c0e-b76a-76529d165410",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4033,3229.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "8f467b80-4b54-46d9-9893-20034d3b05bd",
+            "Title": "毫秒(Int)",
+            "PropertyName": "SleepTime",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 1000,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "873bab76-a822-4cdc-abc3-4528ec99f5dd",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4225.243333333334,3229.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "等待",
+      "ActionReference": {
+        "Name": "等待",
+        "Type": "Aibot.Sleep, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "4035,3795",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "325b2064-eb70-4d75-9648-efaa077875ee",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4047.9999999999995,3829.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "43f2fc12-1260-45da-99cd-ebf087914652",
+            "Title": "毫秒(Int)",
+            "PropertyName": "SleepTime",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "3583,3868.48",
+            "Operation": null,
+            "Type": 1,
+            "Value": 1000,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "7f31a6c2-b265-4f01-8498-26d9b7fed9e8",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4240.243333333334,3829.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb点击",
+      "ActionReference": {
+        "Name": "Adb点击",
+        "Type": "Aibot.AdbClick, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "3615,2880",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "758aa2f4-f943-4edd-be44-ce62828b008b",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "3b52d410-eca8-4046-aa30-daea037207b3",
+            "Title": "X坐标(Int)",
+            "PropertyName": "X",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "3628,2942.86",
+            "Operation": null,
+            "Type": 1,
+            "Value": 405.3868,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "356e2f1b-c8a6-4d54-93b6-8ef7747dcf85",
+            "Title": "Y坐标(Int)",
+            "PropertyName": "Y",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "3628,2962.1",
+            "Operation": null,
+            "Type": 1,
+            "Value": 2334.8423,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "803703e8-53a8-48a3-af6c-191c7386aea9",
+            "Title": "点击次数(Int)",
+            "PropertyName": "Count",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 0,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "b9b232be-7393-4293-aa1e-7466dcbe08fa",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Operations",
+      "ActionReference": null,
+      "Location": "3915,3015",
+      "NodeInfo": {
+        "Input": [],
+        "Output": []
+      }
+    },
+    {
+      "Title": "Adb截取屏幕",
+      "ActionReference": {
+        "Name": "Adb截取屏幕",
+        "Type": "Aibot.AdbScreenshot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "4710,3120",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "05451a02-0648-465a-a2ed-499617568966",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4723,3154.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "8d53d0c0-ad68-4c10-a189-ba8ffd1d031f",
+            "Title": "文件名[空为随机](String)",
+            "PropertyName": "FileName",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 3,
+            "Value": "xx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "ed8a61fd-6c87-4e8a-a7ed-cbed73ffc950",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "5079.613333333334,3154.86",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "4df0d491-3d42-42a7-ae22-7433273a8305",
+            "Title": "文件路径(String)",
+            "PropertyName": "FilePath",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "5079.613333333334,3174.0999999999995",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "获取图片JsonData",
+      "ActionReference": {
+        "Name": "获取图片JsonData",
+        "Type": "Aibot.GetImageData, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "4725,3255",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "2b936625-ba96-4abc-9d5d-a0f381130860",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4738,3289.8600000000006",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "faa9f365-5a1d-4646-aaf6-f8a8b79bdfa2",
+            "Title": "图片(String)",
+            "PropertyName": "TempPath",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4738,3309.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "07c394a5-54b1-46bc-9644-fe2497ec57e4",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4972.72,3289.8600000000006",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "cd4fc6ba-246a-49bc-b9bf-54a8492026b9",
+            "Title": "JsonData(String)",
+            "PropertyName": "JsonData",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4972.72,3309.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9222350120544434,\r\n    \"X\": 140.02865600585938,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"PN+5\",\r\n    \"Score\": 0.5030852556228638,\r\n    \"X\": 906.709228515625,\r\n    \"Y\": 59.28461456298828\r\n  },\r\n  {\r\n    \"Text\": \"<\",\r\n    \"Score\": 0.9191229343414307,\r\n    \"X\": 64.98567199707031,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9993205070495605,\r\n    \"X\": 534.5089111328125,\r\n    \"Y\": 169.449462890625\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.5572852492332458,\r\n    \"X\": 790.6589965820312,\r\n    \"Y\": 249.11175537109375\r\n  },\r\n  {\r\n    \"Text\": \" Alice\",\r\n    \"Score\": 0.8406857848167419,\r\n    \"X\": 782.922607421875,\r\n    \"Y\": 313.32379150390625\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.9845319390296936,\r\n    \"X\": 774.41259765625,\r\n    \"Y\": 386.04583740234375\r\n  },\r\n  {\r\n    \"Text\": \"Charlie\",\r\n    \"Score\": 0.9263668060302734,\r\n    \"X\": 799.1690673828125,\r\n    \"Y\": 461.0888366699219\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.9919532537460327,\r\n    \"X\": 789.7935791015625,\r\n    \"Y\": 535.1624755859375\r\n  },\r\n  {\r\n    \"Text\": \"AliceAlice\",\r\n    \"Score\": 0.9377743601799011,\r\n    \"X\": 775.2587280273438,\r\n    \"Y\": 692.6559448242188\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.9028651118278503,\r\n    \"X\": 821.6046142578125,\r\n    \"Y\": 850.229248046875\r\n  },\r\n  {\r\n    \"Text\": \"CharlieDavid\",\r\n    \"Score\": 0.9385690689086914,\r\n    \"X\": 752.7388916015625,\r\n    \"Y\": 1009.235107421875\r\n  },\r\n  {\r\n    \"Text\": \" Alice\",\r\n    \"Score\": 0.8468602299690247,\r\n    \"X\": 816.34228515625,\r\n    \"Y\": 1167.30810546875\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.895742654800415,\r\n    \"X\": 822.3782348632812,\r\n    \"Y\": 1324.469970703125\r\n  },\r\n  {\r\n    \"Text\": \"Charlie\",\r\n    \"Score\": 0.9059718251228333,\r\n    \"X\": 799.1882934570312,\r\n    \"Y\": 1483.02978515625\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.9331012964248657,\r\n    \"X\": 809.2263793945312,\r\n    \"Y\": 1641.661865234375\r\n  },\r\n  {\r\n    \"Text\": \"10:51\",\r\n    \"Score\": 0.8923929929733276,\r\n    \"X\": 541.5473022460938,\r\n    \"Y\": 1809.54150390625\r\n  },\r\n  {\r\n    \"Text\": \"5.87复制打开抖音，看看【醉尘仙的\",\r\n    \"Score\": 0.9325231909751892,\r\n    \"X\": 520.6589965820312,\r\n    \"Y\": 1964.269287109375\r\n  },\r\n  {\r\n    \"Text\": \"作品】AI翻唱——实战教程 #醉尘\",\r\n    \"Score\": 0.8776522278785706,\r\n    \"X\": 500.5444030761719,\r\n    \"Y\": 2038.5386962890625\r\n  },\r\n  {\r\n    \"Text\": \"仙...更多信息\",\r\n    \"Score\": 0.8906785845756531,\r\n    \"X\": 309.4555969238281,\r\n    \"Y\": 2112.034423828125\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "打印信息",
+      "ActionReference": {
+        "Name": "打印信息",
+        "Type": "Aibot.Print, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 4
+      },
+      "Location": "4725,3360",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "60508d70-f3ae-425f-89c6-d8f1f9ea11c4",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4738,3394.8600000000006",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "21579cde-0430-4709-b330-803ef3f68c9b",
+            "Title": "Source(String)",
+            "PropertyName": "Source",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4738,3414.1",
+            "Operation": null,
+            "Type": 3,
+            "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9222350120544434,\r\n    \"X\": 140.02865600585938,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"PN+5\",\r\n    \"Score\": 0.5030852556228638,\r\n    \"X\": 906.709228515625,\r\n    \"Y\": 59.28461456298828\r\n  },\r\n  {\r\n    \"Text\": \"<\",\r\n    \"Score\": 0.9191229343414307,\r\n    \"X\": 64.98567199707031,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9993205070495605,\r\n    \"X\": 534.5089111328125,\r\n    \"Y\": 169.449462890625\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.5572852492332458,\r\n    \"X\": 790.6589965820312,\r\n    \"Y\": 249.11175537109375\r\n  },\r\n  {\r\n    \"Text\": \" Alice\",\r\n    \"Score\": 0.8406857848167419,\r\n    \"X\": 782.922607421875,\r\n    \"Y\": 313.32379150390625\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.9845319390296936,\r\n    \"X\": 774.41259765625,\r\n    \"Y\": 386.04583740234375\r\n  },\r\n  {\r\n    \"Text\": \"Charlie\",\r\n    \"Score\": 0.9263668060302734,\r\n    \"X\": 799.1690673828125,\r\n    \"Y\": 461.0888366699219\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.9919532537460327,\r\n    \"X\": 789.7935791015625,\r\n    \"Y\": 535.1624755859375\r\n  },\r\n  {\r\n    \"Text\": \"AliceAlice\",\r\n    \"Score\": 0.9377743601799011,\r\n    \"X\": 775.2587280273438,\r\n    \"Y\": 692.6559448242188\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.9028651118278503,\r\n    \"X\": 821.6046142578125,\r\n    \"Y\": 850.229248046875\r\n  },\r\n  {\r\n    \"Text\": \"CharlieDavid\",\r\n    \"Score\": 0.9385690689086914,\r\n    \"X\": 752.7388916015625,\r\n    \"Y\": 1009.235107421875\r\n  },\r\n  {\r\n    \"Text\": \" Alice\",\r\n    \"Score\": 0.8468602299690247,\r\n    \"X\": 816.34228515625,\r\n    \"Y\": 1167.30810546875\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.895742654800415,\r\n    \"X\": 822.3782348632812,\r\n    \"Y\": 1324.469970703125\r\n  },\r\n  {\r\n    \"Text\": \"Charlie\",\r\n    \"Score\": 0.9059718251228333,\r\n    \"X\": 799.1882934570312,\r\n    \"Y\": 1483.02978515625\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.9331012964248657,\r\n    \"X\": 809.2263793945312,\r\n    \"Y\": 1641.661865234375\r\n  },\r\n  {\r\n    \"Text\": \"10:51\",\r\n    \"Score\": 0.8923929929733276,\r\n    \"X\": 541.5473022460938,\r\n    \"Y\": 1809.54150390625\r\n  },\r\n  {\r\n    \"Text\": \"5.87复制打开抖音，看看【醉尘仙的\",\r\n    \"Score\": 0.9325231909751892,\r\n    \"X\": 520.6589965820312,\r\n    \"Y\": 1964.269287109375\r\n  },\r\n  {\r\n    \"Text\": \"作品】AI翻唱——实战教程 #醉尘\",\r\n    \"Score\": 0.8776522278785706,\r\n    \"X\": 500.5444030761719,\r\n    \"Y\": 2038.5386962890625\r\n  },\r\n  {\r\n    \"Text\": \"仙...更多信息\",\r\n    \"Score\": 0.8906785845756531,\r\n    \"X\": 309.4555969238281,\r\n    \"Y\": 2112.034423828125\r\n  }\r\n]",
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          },
+          {
+            "Id": "4b29493d-c649-4ddc-863d-5bb92d32fef6",
+            "Title": "清除(Bool)",
+            "PropertyName": "IsClear",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 0,
+            "Value": true,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "2be89c44-7f84-4df3-bdf6-a19cd7b6600c",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "5260.2733333333335,3394.8600000000006",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Adb返回操作",
+      "ActionReference": {
+        "Name": "Adb返回操作",
+        "Type": "Aibot.AdbGoBack, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 4,
+        "ActionViewType": 0
+      },
+      "Location": "4740,3960",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "1dfd717b-6477-4107-8378-a8ae1855e871",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "4753,3994.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          },
+          {
+            "Id": "ffe58835-e2c8-4ef0-a5ca-5c89d72e2985",
+            "Title": "次数(Int)",
+            "PropertyName": "Count",
+            "IsConnected": false,
+            "IsInput": true,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 1,
+            "Value": 2,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": false,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "714dbeeb-7591-4378-996e-6699b0087bcb",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "4920.613333333334,3994.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "Operations",
+      "ActionReference": null,
+      "Location": "4650,3060",
+      "NodeInfo": {
+        "Input": [],
+        "Output": []
+      }
+    },
+    {
+      "Title": "EndFor",
+      "ActionReference": {
+        "Name": "EndFor",
+        "Type": "Aibot.EndFor, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 1,
+        "ActionViewType": 0
+      },
+      "Location": "5100,3960",
+      "NodeInfo": {
+        "Input": [
+          {
+            "Id": "ace82dc5-bdb0-4aa4-b768-19ae0d087bc4",
+            "Title": "执行",
+            "PropertyName": "InputRoot",
+            "IsConnected": true,
+            "IsInput": true,
+            "Anchor": "5113,3994.8599999999997",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ],
+        "Output": [
+          {
+            "Id": "6bddb615-1050-4b2f-a2a3-35d7e2a8ced5",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": false,
+            "IsInput": false,
+            "Anchor": "0,0",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    },
+    {
+      "Title": "StartRoot",
+      "ActionReference": {
+        "Name": "StartRoot",
+        "Type": "Aibot.StartRoot, Aibot, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+        "ActionType": 0,
+        "ActionViewType": 0
+      },
+      "Location": "690,2925",
+      "NodeInfo": {
+        "Input": [],
+        "Output": [
+          {
+            "Id": "2b92ba13-5637-43a3-8453-1ecf372f3cdd",
+            "Title": "执行",
+            "PropertyName": "OutputRoot",
+            "IsConnected": true,
+            "IsInput": false,
+            "Anchor": "860.9999999999998,2959.8600000000006",
+            "Operation": null,
+            "Type": 5,
+            "Value": null,
+            "ValueIsKey": true,
+            "CanChangeType": false,
+            "IsRoot": true,
+            "IsDirty": true
+          }
+        ]
+      }
+    }
+  ],
+  "Connections": [
+    {
+      "Input": {
+        "Id": "1b662382-35d0-4600-9b27-1c0988bfebc9",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1198,2989.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "6c5852d6-2a3f-42ba-84b9-1db4632588d6",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1183.4066666666665,3094.8600000000006",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "f9f01520-1458-4c5a-b311-41ac727204a1",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1318,2809.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "8a8b1c51-e60d-4f1a-9e6b-df59ecce9fe5",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1362.2566666666664,2989.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "21404910-0213-4d07-b63a-7fb97112b952",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1318,2829.1000000000004",
+        "Operation": null,
+        "Type": 3,
+        "Value": "of, 1553601796000ZT",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "c4e9fa22-8fc0-4454-ac7a-3c7bdfd3950c",
+        "Title": "设备(String)",
+        "PropertyName": "Device",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1362.2566666666664,3009.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "of, 1553601796000ZT",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "d5f40711-8c5b-4b0a-917a-2e49bd60c5ac",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1483,2989.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "c8f7d9e3-73f9-4812-aa64-80ec48831eba",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1690.4666666666667,2809.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "2c1f21d0-3774-465a-9ea0-4a6ed386e20e",
+        "Title": "包名(String)",
+        "PropertyName": "PackageName",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1483,3009.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "com.tencent.mm",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "2e017b06-329a-406c-9cad-5afde1f41292",
+        "Title": "wx",
+        "PropertyName": "wx",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1183.4066666666665,3114.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "com.tencent.mm",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "c94da0f0-e935-4ad6-94d1-5bfac3bb3752",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1483,3094.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "91fd66be-fb7c-4d03-aac1-9ed128651537",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1647.2566666666667,2989.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "88452ada-f6be-4495-bf9e-a74642351831",
+        "Title": "包名(String)",
+        "PropertyName": "PackageName",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1483,3114.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "com.tencent.mm",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "2e017b06-329a-406c-9cad-5afde1f41292",
+        "Title": "wx",
+        "PropertyName": "wx",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1183.4066666666665,3114.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "com.tencent.mm",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "0dcc0088-3650-4f1e-aa3c-a8ea8f934c2a",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1453,3184.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "9a41f089-ea7e-46e1-b99c-7a9c5b241755",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1647.2566666666667,3094.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "47250297-5561-41f8-86c9-84cac288b1ba",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1723,2809.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "ff4db914-a315-4f72-a561-8abc45fb7e80",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "1637.033333333333,3184.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "6368590f-9c44-47c8-906a-22e47cddbeda",
+        "Title": "大图(String)",
+        "PropertyName": "TempPath",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1753,3129.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "8bcb9ae3-42b4-45fb-a682-97bf42aa2a24",
+        "Title": "文件路径(String)",
+        "PropertyName": "FilePath",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2079.6133333333332,2829.1000000000004",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "e66af5c6-5e89-4ad3-93aa-13150d582e3b",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1783,2929.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "7fdb5de5-4c5a-47f6-8fb4-b1f44037d009",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2079.6133333333332,2809.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "e500ce01-a2de-45ea-87fa-57cf006d42db",
+        "Title": "图片(String)",
+        "PropertyName": "TempPath",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1783,2949.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "8bcb9ae3-42b4-45fb-a682-97bf42aa2a24",
+        "Title": "文件路径(String)",
+        "PropertyName": "FilePath",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2079.6133333333332,2829.1000000000004",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "85e70fa1-83bc-480c-a3ba-70982ecbcfd6",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1753,3109.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "5776ac2f-e886-416e-8d7f-905530b3213b",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2017.72,2929.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "9e1ff51b-5663-4de3-9043-9ccaab75c8f8",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1423,3364.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": false,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "eb640c51-9fed-43bc-abb8-882a063df630",
+        "Title": "成功(Bool)",
+        "PropertyName": "IsSuccess",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2014.3166666666666,3109.86",
+        "Operation": null,
+        "Type": 0,
+        "Value": false,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "cb7b7ff7-117a-4d34-b9cc-a0692f4399be",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "1423,3384.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9223154187202454,\r\n    \"X\": 140.02865600585938,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"P+9+\",\r\n    \"Score\": 0.41888755559921265,\r\n    \"X\": 906.7218627929688,\r\n    \"Y\": 59.075294494628906\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.6737495064735413,\r\n    \"X\": 875.7593383789062,\r\n    \"Y\": 167.10601806640625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9976617097854614,\r\n    \"X\": 542.3209228515625,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"④\",\r\n    \"Score\": 0.5408624410629272,\r\n    \"X\": 996.447021484375,\r\n    \"Y\": 169.42694091796875\r\n  },\r\n  {\r\n    \"Text\": \"16:07\",\r\n    \"Score\": 0.9532138705253601,\r\n    \"X\": 995.67333984375,\r\n    \"Y\": 311.7764892578125\r\n  },\r\n  {\r\n    \"Text\": \"订阅号消息\",\r\n    \"Score\": 0.990810215473175,\r\n    \"X\": 331.11749267578125,\r\n    \"Y\": 316.4183349609375\r\n  },\r\n  {\r\n    \"Text\": \".l\",\r\n    \"Score\": 0.41976022720336914,\r\n    \"X\": 112.17765045166016,\r\n    \"Y\": 338.8538818359375\r\n  },\r\n  {\r\n    \"Text\": \"华人夫妻被杀害并焚尸，日本男演员涉嫌杀\",\r\n    \"Score\": 0.9883580207824707,\r\n    \"X\": 538.4526977539062,\r\n    \"Y\": 380.63037109375\r\n  },\r\n  {\r\n    \"Text\": \"10:51\",\r\n    \"Score\": 0.9425276517868042,\r\n    \"X\": 1000.315185546875,\r\n    \"Y\": 528.3953857421875\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9998220205307007,\r\n    \"X\": 269.2263488769531,\r\n    \"Y\": 533.0372314453125\r\n  },\r\n  {\r\n    \"Text\": \"5.87复制打开抖音，看看【醉尘仙的作品\",\r\n    \"Score\": 0.9136756658554077,\r\n    \"X\": 529.9320068359375,\r\n    \"Y\": 595.8666381835938\r\n  },\r\n  {\r\n    \"Text\": \"周五\",\r\n    \"Score\": 0.9992787837982178,\r\n    \"X\": 994.1260986328125,\r\n    \"Y\": 743.467041015625\r\n  },\r\n  {\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.9865982532501221,\r\n    \"X\": 270.7736511230469,\r\n    \"Y\": 748.10888671875\r\n  },\r\n  {\r\n    \"Text\": \"你好，你好，你好，你好，你好，你好，你…．\",\r\n    \"Score\": 0.9182204008102417,\r\n    \"X\": 539.2263793945312,\r\n    \"Y\": 813.0945434570312\r\n  },\r\n  {\r\n    \"Text\": \"α\",\r\n    \"Score\": 0.254952609539032,\r\n    \"X\": 946.1604614257812,\r\n    \"Y\": 2269.0830078125\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.8796948790550232,\r\n    \"X\": 405.3868103027344,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"发现\",\r\n    \"Score\": 0.9996346235275269,\r\n    \"X\": 676.93408203125,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9977483749389648,\r\n    \"X\": 135.43499755859375,\r\n    \"Y\": 2335.613037109375\r\n  },\r\n  {\r\n    \"Text\": \"我\",\r\n    \"Score\": 0.9988929629325867,\r\n    \"X\": 945.3868408203125,\r\n    \"Y\": 2335.615966796875\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "7bffc0f0-52b8-4404-9dd1-a0086aca73ee",
+        "Title": "JsonData(String)",
+        "PropertyName": "JsonData",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2017.72,2949.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9223154187202454,\r\n    \"X\": 140.02865600585938,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"P+9+\",\r\n    \"Score\": 0.41888755559921265,\r\n    \"X\": 906.7218627929688,\r\n    \"Y\": 59.075294494628906\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.6737495064735413,\r\n    \"X\": 875.7593383789062,\r\n    \"Y\": 167.10601806640625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9976617097854614,\r\n    \"X\": 542.3209228515625,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"④\",\r\n    \"Score\": 0.5408624410629272,\r\n    \"X\": 996.447021484375,\r\n    \"Y\": 169.42694091796875\r\n  },\r\n  {\r\n    \"Text\": \"16:07\",\r\n    \"Score\": 0.9532138705253601,\r\n    \"X\": 995.67333984375,\r\n    \"Y\": 311.7764892578125\r\n  },\r\n  {\r\n    \"Text\": \"订阅号消息\",\r\n    \"Score\": 0.990810215473175,\r\n    \"X\": 331.11749267578125,\r\n    \"Y\": 316.4183349609375\r\n  },\r\n  {\r\n    \"Text\": \".l\",\r\n    \"Score\": 0.41976022720336914,\r\n    \"X\": 112.17765045166016,\r\n    \"Y\": 338.8538818359375\r\n  },\r\n  {\r\n    \"Text\": \"华人夫妻被杀害并焚尸，日本男演员涉嫌杀\",\r\n    \"Score\": 0.9883580207824707,\r\n    \"X\": 538.4526977539062,\r\n    \"Y\": 380.63037109375\r\n  },\r\n  {\r\n    \"Text\": \"10:51\",\r\n    \"Score\": 0.9425276517868042,\r\n    \"X\": 1000.315185546875,\r\n    \"Y\": 528.3953857421875\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9998220205307007,\r\n    \"X\": 269.2263488769531,\r\n    \"Y\": 533.0372314453125\r\n  },\r\n  {\r\n    \"Text\": \"5.87复制打开抖音，看看【醉尘仙的作品\",\r\n    \"Score\": 0.9136756658554077,\r\n    \"X\": 529.9320068359375,\r\n    \"Y\": 595.8666381835938\r\n  },\r\n  {\r\n    \"Text\": \"周五\",\r\n    \"Score\": 0.9992787837982178,\r\n    \"X\": 994.1260986328125,\r\n    \"Y\": 743.467041015625\r\n  },\r\n  {\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.9865982532501221,\r\n    \"X\": 270.7736511230469,\r\n    \"Y\": 748.10888671875\r\n  },\r\n  {\r\n    \"Text\": \"你好，你好，你好，你好，你好，你好，你…．\",\r\n    \"Score\": 0.9182204008102417,\r\n    \"X\": 539.2263793945312,\r\n    \"Y\": 813.0945434570312\r\n  },\r\n  {\r\n    \"Text\": \"α\",\r\n    \"Score\": 0.254952609539032,\r\n    \"X\": 946.1604614257812,\r\n    \"Y\": 2269.0830078125\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.8796948790550232,\r\n    \"X\": 405.3868103027344,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"发现\",\r\n    \"Score\": 0.9996346235275269,\r\n    \"X\": 676.93408203125,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9977483749389648,\r\n    \"X\": 135.43499755859375,\r\n    \"Y\": 2335.613037109375\r\n  },\r\n  {\r\n    \"Text\": \"我\",\r\n    \"Score\": 0.9988929629325867,\r\n    \"X\": 945.3868408203125,\r\n    \"Y\": 2335.615966796875\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "f49a67c6-daaf-4458-a131-2e5d15441e1b",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2203,2809.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "32597df0-c15c-4a1e-ab75-0c4d6f6afd3c",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2020.8566666666666,3364.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "4d92fe3b-932d-4e22-9713-66fef39db71e",
+        "Title": "X坐标(Int)",
+        "PropertyName": "X",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2203,2829.1000000000004",
+        "Operation": null,
+        "Type": 1,
+        "Value": 405.3868,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "e5dda7f3-1509-42f5-b26b-42417bd5c583",
+        "Title": "X(Int)",
+        "PropertyName": "X",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2014.3166666666666,3148.34",
+        "Operation": null,
+        "Type": 1,
+        "Value": 405.3868,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "e7160b79-883e-465f-bd60-b35165893fec",
+        "Title": "Y坐标(Int)",
+        "PropertyName": "Y",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2203,2848.3400000000006",
+        "Operation": null,
+        "Type": 1,
+        "Value": 2334.8423,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "4b9f31ba-723f-463a-8010-8ddbea410a6b",
+        "Title": "Y(Int)",
+        "PropertyName": "Y",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2014.3166666666666,3167.58",
+        "Operation": null,
+        "Type": 1,
+        "Value": 2334.8423,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "8eeac705-6a52-406e-a6ab-b4703f4e80a7",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2203,3004.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "7b704a89-6ce3-44e7-8187-928deb1c6529",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2394.6133333333337,2809.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "d0997f50-7b89-4fe9-b47b-3d54c847d6de",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2188,3139.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "4c4866e9-dbca-47a1-9d6b-8dfcb57db7b3",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2387.0333333333338,3004.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "85dbefdc-7079-4ac4-b6f3-7206aff9646c",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2233,3244.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "9692398c-2a6a-40fd-98bf-50d3260c3f11",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2544.6133333333332,3139.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "c177c348-e0c9-455b-bcb2-8992568e7e0d",
+        "Title": "图片(String)",
+        "PropertyName": "TempPath",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2233,3264.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "583d1f3a-c8f5-4fbd-91fe-de7eeb24775a",
+        "Title": "文件路径(String)",
+        "PropertyName": "FilePath",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2544.6133333333332,3159.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "d0f1a174-85c4-4e0f-bd1e-09aca7deb585",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2173,3364.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "1107b0b5-7732-4171-a41d-ccef6be9f60d",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2467.7200000000003,3244.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "10565e81-903e-4cc9-ab49-38cb75304c9d",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2173,3384.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9207533001899719,\r\n    \"X\": 140.80226135253906,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"PN+5\",\r\n    \"Score\": 0.41359174251556396,\r\n    \"X\": 906.7265625,\r\n    \"Y\": 59.9431037902832\r\n  },\r\n  {\r\n    \"Text\": \"Q\",\r\n    \"Score\": 0.4229925870895386,\r\n    \"X\": 875.7593383789062,\r\n    \"Y\": 165.55874633789062\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.9681625366210938,\r\n    \"X\": 539.2263793945312,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"田\",\r\n    \"Score\": 0.587546169757843,\r\n    \"X\": 996.447021484375,\r\n    \"Y\": 168.65328979492188\r\n  },\r\n  {\r\n    \"Text\": \"新的朋友\",\r\n    \"Score\": 0.9983634352684021,\r\n    \"X\": 297.8509521484375,\r\n    \"Y\": 324.9283752441406\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 482.7507019042969\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 112.17765045166016,\r\n    \"Y\": 488.16619873046875\r\n  },\r\n  {\r\n    \"Text\": \"群聊\",\r\n    \"Score\": 0.9979088306427002,\r\n    \"X\": 257.5059509277344,\r\n    \"Y\": 492.5298156738281\r\n  },\r\n  {\r\n    \"Text\": \"☆\",\r\n    \"Score\": 0.9835163950920105,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 535.358154296875\r\n  },\r\n  {\r\n    \"Text\": \"A\",\r\n    \"Score\": 0.903715193271637,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 589.5128784179688\r\n  },\r\n  {\r\n    \"Text\": \"B\",\r\n    \"Score\": 0.6336751580238342,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 639.7994384765625\r\n  },\r\n  {\r\n    \"Text\": \"标签\",\r\n    \"Score\": 0.9992554783821106,\r\n    \"X\": 256.9683837890625,\r\n    \"Y\": 659.6521606445312\r\n  },\r\n  {\r\n    \"Text\": \"（\",\r\n    \"Score\": 0.8544014096260071,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 693.1805419921875\r\n  },\r\n  {\r\n    \"Text\": \"Ｄ\",\r\n    \"Score\": 0.6952758431434631,\r\n    \"X\": 1049.054443359375,\r\n    \"Y\": 745.7879638671875\r\n  },\r\n  {\r\n    \"Text\": \"E\",\r\n    \"Score\": 0.39387622475624084,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 798.3953857421875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 106.76217651367188,\r\n    \"Y\": 827.0200805664062\r\n  },\r\n  {\r\n    \"Text\": \"公众号\",\r\n    \"Score\": 0.8736531138420105,\r\n    \"X\": 278.5100402832031,\r\n    \"Y\": 827.793701171875\r\n  },\r\n  {\r\n    \"Text\": \"F\",\r\n    \"Score\": 0.5715973377227783,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 851.0028686523438\r\n  },\r\n  {\r\n    \"Text\": \"Ｇ\",\r\n    \"Score\": 0.45758742094039917,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 902.0630493164062\r\n  },\r\n  {\r\n    \"Text\": \"H\",\r\n    \"Score\": 0.6478720307350159,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 956.2177734375\r\n  },\r\n  {\r\n    \"Text\": \"A\",\r\n    \"Score\": 0.7608993649482727,\r\n    \"X\": 57.24928283691406,\r\n    \"Y\": 961.6332397460938\r\n  },\r\n  {\r\n    \"Text\": \"+\",\r\n    \"Score\": 0.18384681642055511,\r\n    \"X\": 1048.28076171875,\r\n    \"Y\": 1008.8251953125\r\n  },\r\n  {\r\n    \"Text\": \"」\",\r\n    \"Score\": 0.7109828591346741,\r\n    \"X\": 1048.28076171875,\r\n    \"Y\": 1062.97998046875\r\n  },\r\n  {\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.9791970252990723,\r\n    \"X\": 258.3954162597656,\r\n    \"Y\": 1093.15185546875\r\n  },\r\n  {\r\n    \"Text\": \"K\",\r\n    \"Score\": 0.5564833879470825,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1116.361083984375\r\n  },\r\n  {\r\n    \"Text\": \"L\",\r\n    \"Score\": 0.9117615222930908,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1167.421142578125\r\n  },\r\n  {\r\n    \"Text\": \"M\",\r\n    \"Score\": 0.89208984375,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1220.80224609375\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 56.475643157958984,\r\n    \"Y\": 1225.444091796875\r\n  },\r\n  {\r\n    \"Text\": \"Ｎ\",\r\n    \"Score\": 0.5432594418525696,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1272.6361083984375\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.6699748039245605,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1326.790771484375\r\n  },\r\n  {\r\n    \"Text\": \"平常心\",\r\n    \"Score\": 0.9940481781959534,\r\n    \"X\": 278.5100402832031,\r\n    \"Y\": 1357.7364501953125\r\n  },\r\n  {\r\n    \"Text\": \"p\",\r\n    \"Score\": 0.4040622115135193,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1380.171875\r\n  },\r\n  {\r\n    \"Text\": \"Q\",\r\n    \"Score\": 0.9997441172599792,\r\n    \"X\": 1051.3753662109375,\r\n    \"Y\": 1432.0057373046875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1484.6131591796875\r\n  },\r\n  {\r\n    \"Text\": \"w\",\r\n    \"Score\": 0.51580411195755,\r\n    \"X\": 61.891117095947266,\r\n    \"Y\": 1491.575927734375\r\n  },\r\n  {\r\n    \"Text\": \"（）\",\r\n    \"Score\": 0.8522242903709412,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1537.2205810546875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1590.6016845703125\r\n  },\r\n  {\r\n    \"Text\": \"微信团队\",\r\n    \"Score\": 0.9974311590194702,\r\n    \"X\": 298.6246032714844,\r\n    \"Y\": 1623.0943603515625\r\n  },\r\n  {\r\n    \"Text\": \"Ｕ\",\r\n    \"Score\": 0.39524373412132263,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1643.209228515625\r\n  },\r\n  {\r\n    \"Text\": \"V\",\r\n    \"Score\": 0.6523734331130981,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1693.4957275390625\r\n  },\r\n  {\r\n    \"Text\": \"W\",\r\n    \"Score\": 0.6245388984680176,\r\n    \"X\": 1049.054443359375,\r\n    \"Y\": 1748.424072265625\r\n  },\r\n  {\r\n    \"Text\": \"文件传输助手\",\r\n    \"Score\": 0.9626491069793701,\r\n    \"X\": 339.62750244140625,\r\n    \"Y\": 1791.747802734375\r\n  },\r\n  {\r\n    \"Text\": \"x\",\r\n    \"Score\": 0.2879961431026459,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1801.031494140625\r\n  },\r\n  {\r\n    \"Text\": \"Y\",\r\n    \"Score\": 0.5449697375297546,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1853.638916015625\r\n  },\r\n  {\r\n    \"Text\": \"Z\",\r\n    \"Score\": 0.3527730107307434,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1907.793701171875\r\n  },\r\n  {\r\n    \"Text\": \"X\",\r\n    \"Score\": 0.5471229553222656,\r\n    \"X\": 57.24928283691406,\r\n    \"Y\": 1924.813720703125\r\n  },\r\n  {\r\n    \"Text\": \"＃\",\r\n    \"Score\": 0.560279905796051,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1958.8538818359375\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9998689889907837,\r\n    \"X\": 256.84814453125,\r\n    \"Y\": 2057.10595703125\r\n  },\r\n  {\r\n    \"Text\": \"Y\",\r\n    \"Score\": 0.3481239080429077,\r\n    \"X\": 58.02292251586914,\r\n    \"Y\": 2187.077392578125\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 946.93408203125,\r\n    \"Y\": 2269.0830078125\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.9306322336196899,\r\n    \"X\": 134.61317443847656,\r\n    \"Y\": 2272.951171875\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.9992617964744568,\r\n    \"X\": 405.3868103027344,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9955251812934875,\r\n    \"X\": 136.16046142578125,\r\n    \"Y\": 2335.615966796875\r\n  },\r\n  {\r\n    \"Text\": \"发现\",\r\n    \"Score\": 0.8636053800582886,\r\n    \"X\": 676.93408203125,\r\n    \"Y\": 2335.615966796875\r\n  },\r\n  {\r\n    \"Text\": \"我\",\r\n    \"Score\": 0.9992340803146362,\r\n    \"X\": 945.3868408203125,\r\n    \"Y\": 2335.615966796875\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "b5e0b8d1-1c86-47bd-b821-c0067da478bb",
+        "Title": "JsonData(String)",
+        "PropertyName": "JsonData",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2467.7200000000003,3264.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9207533001899719,\r\n    \"X\": 140.80226135253906,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"PN+5\",\r\n    \"Score\": 0.41359174251556396,\r\n    \"X\": 906.7265625,\r\n    \"Y\": 59.9431037902832\r\n  },\r\n  {\r\n    \"Text\": \"Q\",\r\n    \"Score\": 0.4229925870895386,\r\n    \"X\": 875.7593383789062,\r\n    \"Y\": 165.55874633789062\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.9681625366210938,\r\n    \"X\": 539.2263793945312,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"田\",\r\n    \"Score\": 0.587546169757843,\r\n    \"X\": 996.447021484375,\r\n    \"Y\": 168.65328979492188\r\n  },\r\n  {\r\n    \"Text\": \"新的朋友\",\r\n    \"Score\": 0.9983634352684021,\r\n    \"X\": 297.8509521484375,\r\n    \"Y\": 324.9283752441406\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 482.7507019042969\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 112.17765045166016,\r\n    \"Y\": 488.16619873046875\r\n  },\r\n  {\r\n    \"Text\": \"群聊\",\r\n    \"Score\": 0.9979088306427002,\r\n    \"X\": 257.5059509277344,\r\n    \"Y\": 492.5298156738281\r\n  },\r\n  {\r\n    \"Text\": \"☆\",\r\n    \"Score\": 0.9835163950920105,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 535.358154296875\r\n  },\r\n  {\r\n    \"Text\": \"A\",\r\n    \"Score\": 0.903715193271637,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 589.5128784179688\r\n  },\r\n  {\r\n    \"Text\": \"B\",\r\n    \"Score\": 0.6336751580238342,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 639.7994384765625\r\n  },\r\n  {\r\n    \"Text\": \"标签\",\r\n    \"Score\": 0.9992554783821106,\r\n    \"X\": 256.9683837890625,\r\n    \"Y\": 659.6521606445312\r\n  },\r\n  {\r\n    \"Text\": \"（\",\r\n    \"Score\": 0.8544014096260071,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 693.1805419921875\r\n  },\r\n  {\r\n    \"Text\": \"Ｄ\",\r\n    \"Score\": 0.6952758431434631,\r\n    \"X\": 1049.054443359375,\r\n    \"Y\": 745.7879638671875\r\n  },\r\n  {\r\n    \"Text\": \"E\",\r\n    \"Score\": 0.39387622475624084,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 798.3953857421875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 106.76217651367188,\r\n    \"Y\": 827.0200805664062\r\n  },\r\n  {\r\n    \"Text\": \"公众号\",\r\n    \"Score\": 0.8736531138420105,\r\n    \"X\": 278.5100402832031,\r\n    \"Y\": 827.793701171875\r\n  },\r\n  {\r\n    \"Text\": \"F\",\r\n    \"Score\": 0.5715973377227783,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 851.0028686523438\r\n  },\r\n  {\r\n    \"Text\": \"Ｇ\",\r\n    \"Score\": 0.45758742094039917,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 902.0630493164062\r\n  },\r\n  {\r\n    \"Text\": \"H\",\r\n    \"Score\": 0.6478720307350159,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 956.2177734375\r\n  },\r\n  {\r\n    \"Text\": \"A\",\r\n    \"Score\": 0.7608993649482727,\r\n    \"X\": 57.24928283691406,\r\n    \"Y\": 961.6332397460938\r\n  },\r\n  {\r\n    \"Text\": \"+\",\r\n    \"Score\": 0.18384681642055511,\r\n    \"X\": 1048.28076171875,\r\n    \"Y\": 1008.8251953125\r\n  },\r\n  {\r\n    \"Text\": \"」\",\r\n    \"Score\": 0.7109828591346741,\r\n    \"X\": 1048.28076171875,\r\n    \"Y\": 1062.97998046875\r\n  },\r\n  {\r\n    \"Text\": \"阿呆\",\r\n    \"Score\": 0.9791970252990723,\r\n    \"X\": 258.3954162597656,\r\n    \"Y\": 1093.15185546875\r\n  },\r\n  {\r\n    \"Text\": \"K\",\r\n    \"Score\": 0.5564833879470825,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1116.361083984375\r\n  },\r\n  {\r\n    \"Text\": \"L\",\r\n    \"Score\": 0.9117615222930908,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1167.421142578125\r\n  },\r\n  {\r\n    \"Text\": \"M\",\r\n    \"Score\": 0.89208984375,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1220.80224609375\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 56.475643157958984,\r\n    \"Y\": 1225.444091796875\r\n  },\r\n  {\r\n    \"Text\": \"Ｎ\",\r\n    \"Score\": 0.5432594418525696,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1272.6361083984375\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.6699748039245605,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1326.790771484375\r\n  },\r\n  {\r\n    \"Text\": \"平常心\",\r\n    \"Score\": 0.9940481781959534,\r\n    \"X\": 278.5100402832031,\r\n    \"Y\": 1357.7364501953125\r\n  },\r\n  {\r\n    \"Text\": \"p\",\r\n    \"Score\": 0.4040622115135193,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1380.171875\r\n  },\r\n  {\r\n    \"Text\": \"Q\",\r\n    \"Score\": 0.9997441172599792,\r\n    \"X\": 1051.3753662109375,\r\n    \"Y\": 1432.0057373046875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1484.6131591796875\r\n  },\r\n  {\r\n    \"Text\": \"w\",\r\n    \"Score\": 0.51580411195755,\r\n    \"X\": 61.891117095947266,\r\n    \"Y\": 1491.575927734375\r\n  },\r\n  {\r\n    \"Text\": \"（）\",\r\n    \"Score\": 0.8522242903709412,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1537.2205810546875\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1590.6016845703125\r\n  },\r\n  {\r\n    \"Text\": \"微信团队\",\r\n    \"Score\": 0.9974311590194702,\r\n    \"X\": 298.6246032714844,\r\n    \"Y\": 1623.0943603515625\r\n  },\r\n  {\r\n    \"Text\": \"Ｕ\",\r\n    \"Score\": 0.39524373412132263,\r\n    \"X\": 1050.6016845703125,\r\n    \"Y\": 1643.209228515625\r\n  },\r\n  {\r\n    \"Text\": \"V\",\r\n    \"Score\": 0.6523734331130981,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1693.4957275390625\r\n  },\r\n  {\r\n    \"Text\": \"W\",\r\n    \"Score\": 0.6245388984680176,\r\n    \"X\": 1049.054443359375,\r\n    \"Y\": 1748.424072265625\r\n  },\r\n  {\r\n    \"Text\": \"文件传输助手\",\r\n    \"Score\": 0.9626491069793701,\r\n    \"X\": 339.62750244140625,\r\n    \"Y\": 1791.747802734375\r\n  },\r\n  {\r\n    \"Text\": \"x\",\r\n    \"Score\": 0.2879961431026459,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1801.031494140625\r\n  },\r\n  {\r\n    \"Text\": \"Y\",\r\n    \"Score\": 0.5449697375297546,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1853.638916015625\r\n  },\r\n  {\r\n    \"Text\": \"Z\",\r\n    \"Score\": 0.3527730107307434,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1907.793701171875\r\n  },\r\n  {\r\n    \"Text\": \"X\",\r\n    \"Score\": 0.5471229553222656,\r\n    \"X\": 57.24928283691406,\r\n    \"Y\": 1924.813720703125\r\n  },\r\n  {\r\n    \"Text\": \"＃\",\r\n    \"Score\": 0.560279905796051,\r\n    \"X\": 1049.828125,\r\n    \"Y\": 1958.8538818359375\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9998689889907837,\r\n    \"X\": 256.84814453125,\r\n    \"Y\": 2057.10595703125\r\n  },\r\n  {\r\n    \"Text\": \"Y\",\r\n    \"Score\": 0.3481239080429077,\r\n    \"X\": 58.02292251586914,\r\n    \"Y\": 2187.077392578125\r\n  },\r\n  {\r\n    \"Text\": \"\",\r\n    \"Score\": \"NaN\",\r\n    \"X\": 946.93408203125,\r\n    \"Y\": 2269.0830078125\r\n  },\r\n  {\r\n    \"Text\": \"0\",\r\n    \"Score\": 0.9306322336196899,\r\n    \"X\": 134.61317443847656,\r\n    \"Y\": 2272.951171875\r\n  },\r\n  {\r\n    \"Text\": \"通讯录\",\r\n    \"Score\": 0.9992617964744568,\r\n    \"X\": 405.3868103027344,\r\n    \"Y\": 2334.84228515625\r\n  },\r\n  {\r\n    \"Text\": \"微信\",\r\n    \"Score\": 0.9955251812934875,\r\n    \"X\": 136.16046142578125,\r\n    \"Y\": 2335.615966796875\r\n  },\r\n  {\r\n    \"Text\": \"发现\",\r\n    \"Score\": 0.8636053800582886,\r\n    \"X\": 676.93408203125,\r\n    \"Y\": 2335.615966796875\r\n  },\r\n  {\r\n    \"Text\": \"我\",\r\n    \"Score\": 0.9992340803146362,\r\n    \"X\": 945.3868408203125,\r\n    \"Y\": 2335.615966796875\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "836c0a30-e7af-491e-b773-cd19173404bf",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2698,2734.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "3cd325c9-054b-4197-8094-feaa68db956b",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2618.33,3364.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "daf00db7-37c9-4d5a-b49e-153540c15ae8",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2803,3229.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "dbd84b92-472f-45b7-8ff0-a9571d59b45e",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "3379.003333333333,2734.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "ae518d26-2b15-4599-a776-5318ba7988b4",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2818,3409.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "5ea1a663-3cbf-4466-84d7-36d9348f077b",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "3163.48,3229.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "2d519453-c5a6-4425-a093-7bfe88a671a2",
+        "Title": "大图(String)",
+        "PropertyName": "TempPath",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2818,3429.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\XX.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "8b212095-af0a-43e0-8b9d-2843e09a4578",
+        "Title": "文件路径(String)",
+        "PropertyName": "FilePath",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "3163.48,3249.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\XX.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "c23aeb2d-ac5b-42e7-9882-565902014a30",
+        "Title": "文字(String)",
+        "PropertyName": "Text",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2818,3448.34",
+        "Operation": null,
+        "Type": 3,
+        "Value": "小明",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "f4072d1e-eed5-460e-84e3-612be4a71c35",
+        "Title": "wxUser",
+        "PropertyName": "wxUser",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "3379.003333333333,2754.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "小明",
+        "ValueIsKey": true,
+        "CanChangeType": true,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "a8b2046d-8685-4e33-8f25-757bd828e832",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2803,3604.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": false,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "459eafd5-c025-4131-b00e-50fa04b64727",
+        "Title": "失败(Bool)",
+        "PropertyName": "IsError",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "3075.9366666666665,3429.1",
+        "Operation": null,
+        "Type": 0,
+        "Value": false,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "daf00db7-37c9-4d5a-b49e-153540c15ae8",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "2803,3229.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "769f5e50-76d4-4ff7-9705-243c21993235",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "3080.3466666666673,3604.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "abe1b37c-6e28-4e0f-8393-16ba285a8934",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4047.9999999999995,3079.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": false,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "1a078b4f-6904-4b20-97db-bbe9064f3594",
+        "Title": "成功(Bool)",
+        "PropertyName": "IsSuccess",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "3075.9366666666665,3409.86",
+        "Operation": null,
+        "Type": 0,
+        "Value": false,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "10283bc3-ed15-4d81-95dc-74f8cb508f4a",
+        "Title": "X坐标(Int)",
+        "PropertyName": "X",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4047.9999999999995,3099.0999999999995",
+        "Operation": null,
+        "Type": 1,
+        "Value": 142.34956,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "b25a35e6-12fb-4eaf-baee-dfd11e84ca45",
+        "Title": "X(Int)",
+        "PropertyName": "X",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "3075.9366666666665,3448.34",
+        "Operation": null,
+        "Type": 1,
+        "Value": 142.34956,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "7b2116df-a563-422c-92af-ab59082c67a6",
+        "Title": "Y坐标(Int)",
+        "PropertyName": "Y",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4047.9999999999995,3118.3399999999997",
+        "Operation": null,
+        "Type": 1,
+        "Value": 2057.106,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "5904f3a3-6699-47a2-b1bb-34ac4eecdd57",
+        "Title": "Y(Int)",
+        "PropertyName": "Y",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "3075.9366666666665,3467.58",
+        "Operation": null,
+        "Type": 1,
+        "Value": 2057.106,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "ff03d0ba-4ac9-4cc7-a038-0d30b848d48f",
+        "Title": "大图(String)",
+        "PropertyName": "TempPath",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4002.9999999999995,3534.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\XX.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "6850714c-f60e-4158-ab39-67ccc970fcc3",
+        "Title": "文件路径(String)",
+        "PropertyName": "FilePath",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4318.48,3384.0999999999995",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\XX.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "1cc9fa8d-f597-4c88-832e-694c4792f3ab",
+        "Title": "X坐标(Int)",
+        "PropertyName": "X",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4047.9999999999995,3714.1",
+        "Operation": null,
+        "Type": 1,
+        "Value": 584.0974,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "3f4e5773-e8db-47c6-b7ff-4e40497851b3",
+        "Title": "X(Int)",
+        "PropertyName": "X",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4260.9366666666665,3553.34",
+        "Operation": null,
+        "Type": 1,
+        "Value": 584.0974,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "38f3c86f-af9d-4ea4-b1dc-4b3db4e9770f",
+        "Title": "Y坐标(Int)",
+        "PropertyName": "Y",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4047.9999999999995,3733.3400000000006",
+        "Operation": null,
+        "Type": 1,
+        "Value": 1894.6418,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "d152a381-12f0-41df-a0c1-eb0d37bf744e",
+        "Title": "Y(Int)",
+        "PropertyName": "Y",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4260.9366666666665,3572.58",
+        "Operation": null,
+        "Type": 1,
+        "Value": 1894.6418,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "0acba8ad-8110-4c0e-b76a-76529d165410",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4033,3229.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "f89f9fd3-739a-43c7-8a4a-d779a4b6ba75",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4239.613333333333,3079.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "b2cdccc4-f901-4034-9b67-016316930d94",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "3958,3364.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "873bab76-a822-4cdc-abc3-4528ec99f5dd",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4225.243333333334,3229.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "325b2064-eb70-4d75-9648-efaa077875ee",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4047.9999999999995,3829.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "55ba4b66-484c-4406-a36f-2c27b4efffff",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4239.613333333333,3694.8600000000006",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "3b52d410-eca8-4046-aa30-daea037207b3",
+        "Title": "X坐标(Int)",
+        "PropertyName": "X",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "3628,2942.86",
+        "Operation": null,
+        "Type": 1,
+        "Value": 405.3868,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "e5dda7f3-1509-42f5-b26b-42417bd5c583",
+        "Title": "X(Int)",
+        "PropertyName": "X",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2014.3166666666666,3148.34",
+        "Operation": null,
+        "Type": 1,
+        "Value": 405.3868,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "356e2f1b-c8a6-4d54-93b6-8ef7747dcf85",
+        "Title": "Y坐标(Int)",
+        "PropertyName": "Y",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "3628,2962.1",
+        "Operation": null,
+        "Type": 1,
+        "Value": 2334.8423,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "4b9f31ba-723f-463a-8010-8ddbea410a6b",
+        "Title": "Y(Int)",
+        "PropertyName": "Y",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "2014.3166666666666,3167.58",
+        "Operation": null,
+        "Type": 1,
+        "Value": 2334.8423,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "05451a02-0648-465a-a2ed-499617568966",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4723,3154.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "7f31a6c2-b265-4f01-8498-26d9b7fed9e8",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4240.243333333334,3829.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "2b936625-ba96-4abc-9d5d-a0f381130860",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4738,3289.8600000000006",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "ed8a61fd-6c87-4e8a-a7ed-cbed73ffc950",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "5079.613333333334,3154.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "faa9f365-5a1d-4646-aaf6-f8a8b79bdfa2",
+        "Title": "图片(String)",
+        "PropertyName": "TempPath",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4738,3309.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "4df0d491-3d42-42a7-ae22-7433273a8305",
+        "Title": "文件路径(String)",
+        "PropertyName": "FilePath",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "5079.613333333334,3174.0999999999995",
+        "Operation": null,
+        "Type": 3,
+        "Value": "F:\\_Workspace\\AIRobot\\AiRobotUi\\AiRobot\\bin\\Debug\\net8-windows\\File\\xx.png",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "60508d70-f3ae-425f-89c6-d8f1f9ea11c4",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4738,3394.8600000000006",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "07c394a5-54b1-46bc-9644-fe2497ec57e4",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4972.72,3289.8600000000006",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "21579cde-0430-4709-b330-803ef3f68c9b",
+        "Title": "Source(String)",
+        "PropertyName": "Source",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4738,3414.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9222350120544434,\r\n    \"X\": 140.02865600585938,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"PN+5\",\r\n    \"Score\": 0.5030852556228638,\r\n    \"X\": 906.709228515625,\r\n    \"Y\": 59.28461456298828\r\n  },\r\n  {\r\n    \"Text\": \"<\",\r\n    \"Score\": 0.9191229343414307,\r\n    \"X\": 64.98567199707031,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9993205070495605,\r\n    \"X\": 534.5089111328125,\r\n    \"Y\": 169.449462890625\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.5572852492332458,\r\n    \"X\": 790.6589965820312,\r\n    \"Y\": 249.11175537109375\r\n  },\r\n  {\r\n    \"Text\": \" Alice\",\r\n    \"Score\": 0.8406857848167419,\r\n    \"X\": 782.922607421875,\r\n    \"Y\": 313.32379150390625\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.9845319390296936,\r\n    \"X\": 774.41259765625,\r\n    \"Y\": 386.04583740234375\r\n  },\r\n  {\r\n    \"Text\": \"Charlie\",\r\n    \"Score\": 0.9263668060302734,\r\n    \"X\": 799.1690673828125,\r\n    \"Y\": 461.0888366699219\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.9919532537460327,\r\n    \"X\": 789.7935791015625,\r\n    \"Y\": 535.1624755859375\r\n  },\r\n  {\r\n    \"Text\": \"AliceAlice\",\r\n    \"Score\": 0.9377743601799011,\r\n    \"X\": 775.2587280273438,\r\n    \"Y\": 692.6559448242188\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.9028651118278503,\r\n    \"X\": 821.6046142578125,\r\n    \"Y\": 850.229248046875\r\n  },\r\n  {\r\n    \"Text\": \"CharlieDavid\",\r\n    \"Score\": 0.9385690689086914,\r\n    \"X\": 752.7388916015625,\r\n    \"Y\": 1009.235107421875\r\n  },\r\n  {\r\n    \"Text\": \" Alice\",\r\n    \"Score\": 0.8468602299690247,\r\n    \"X\": 816.34228515625,\r\n    \"Y\": 1167.30810546875\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.895742654800415,\r\n    \"X\": 822.3782348632812,\r\n    \"Y\": 1324.469970703125\r\n  },\r\n  {\r\n    \"Text\": \"Charlie\",\r\n    \"Score\": 0.9059718251228333,\r\n    \"X\": 799.1882934570312,\r\n    \"Y\": 1483.02978515625\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.9331012964248657,\r\n    \"X\": 809.2263793945312,\r\n    \"Y\": 1641.661865234375\r\n  },\r\n  {\r\n    \"Text\": \"10:51\",\r\n    \"Score\": 0.8923929929733276,\r\n    \"X\": 541.5473022460938,\r\n    \"Y\": 1809.54150390625\r\n  },\r\n  {\r\n    \"Text\": \"5.87复制打开抖音，看看【醉尘仙的\",\r\n    \"Score\": 0.9325231909751892,\r\n    \"X\": 520.6589965820312,\r\n    \"Y\": 1964.269287109375\r\n  },\r\n  {\r\n    \"Text\": \"作品】AI翻唱——实战教程 #醉尘\",\r\n    \"Score\": 0.8776522278785706,\r\n    \"X\": 500.5444030761719,\r\n    \"Y\": 2038.5386962890625\r\n  },\r\n  {\r\n    \"Text\": \"仙...更多信息\",\r\n    \"Score\": 0.8906785845756531,\r\n    \"X\": 309.4555969238281,\r\n    \"Y\": 2112.034423828125\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "cd4fc6ba-246a-49bc-b9bf-54a8492026b9",
+        "Title": "JsonData(String)",
+        "PropertyName": "JsonData",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4972.72,3309.1",
+        "Operation": null,
+        "Type": 3,
+        "Value": "[\r\n  {\r\n    \"Text\": \"16:45  v\",\r\n    \"Score\": 0.9222350120544434,\r\n    \"X\": 140.02865600585938,\r\n    \"Y\": 58.02292251586914\r\n  },\r\n  {\r\n    \"Text\": \"PN+5\",\r\n    \"Score\": 0.5030852556228638,\r\n    \"X\": 906.709228515625,\r\n    \"Y\": 59.28461456298828\r\n  },\r\n  {\r\n    \"Text\": \"<\",\r\n    \"Score\": 0.9191229343414307,\r\n    \"X\": 64.98567199707031,\r\n    \"Y\": 167.87965393066406\r\n  },\r\n  {\r\n    \"Text\": \"小明\",\r\n    \"Score\": 0.9993205070495605,\r\n    \"X\": 534.5089111328125,\r\n    \"Y\": 169.449462890625\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.5572852492332458,\r\n    \"X\": 790.6589965820312,\r\n    \"Y\": 249.11175537109375\r\n  },\r\n  {\r\n    \"Text\": \" Alice\",\r\n    \"Score\": 0.8406857848167419,\r\n    \"X\": 782.922607421875,\r\n    \"Y\": 313.32379150390625\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.9845319390296936,\r\n    \"X\": 774.41259765625,\r\n    \"Y\": 386.04583740234375\r\n  },\r\n  {\r\n    \"Text\": \"Charlie\",\r\n    \"Score\": 0.9263668060302734,\r\n    \"X\": 799.1690673828125,\r\n    \"Y\": 461.0888366699219\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.9919532537460327,\r\n    \"X\": 789.7935791015625,\r\n    \"Y\": 535.1624755859375\r\n  },\r\n  {\r\n    \"Text\": \"AliceAlice\",\r\n    \"Score\": 0.9377743601799011,\r\n    \"X\": 775.2587280273438,\r\n    \"Y\": 692.6559448242188\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.9028651118278503,\r\n    \"X\": 821.6046142578125,\r\n    \"Y\": 850.229248046875\r\n  },\r\n  {\r\n    \"Text\": \"CharlieDavid\",\r\n    \"Score\": 0.9385690689086914,\r\n    \"X\": 752.7388916015625,\r\n    \"Y\": 1009.235107421875\r\n  },\r\n  {\r\n    \"Text\": \" Alice\",\r\n    \"Score\": 0.8468602299690247,\r\n    \"X\": 816.34228515625,\r\n    \"Y\": 1167.30810546875\r\n  },\r\n  {\r\n    \"Text\": \"Bob\",\r\n    \"Score\": 0.895742654800415,\r\n    \"X\": 822.3782348632812,\r\n    \"Y\": 1324.469970703125\r\n  },\r\n  {\r\n    \"Text\": \"Charlie\",\r\n    \"Score\": 0.9059718251228333,\r\n    \"X\": 799.1882934570312,\r\n    \"Y\": 1483.02978515625\r\n  },\r\n  {\r\n    \"Text\": \"David\",\r\n    \"Score\": 0.9331012964248657,\r\n    \"X\": 809.2263793945312,\r\n    \"Y\": 1641.661865234375\r\n  },\r\n  {\r\n    \"Text\": \"10:51\",\r\n    \"Score\": 0.8923929929733276,\r\n    \"X\": 541.5473022460938,\r\n    \"Y\": 1809.54150390625\r\n  },\r\n  {\r\n    \"Text\": \"5.87复制打开抖音，看看【醉尘仙的\",\r\n    \"Score\": 0.9325231909751892,\r\n    \"X\": 520.6589965820312,\r\n    \"Y\": 1964.269287109375\r\n  },\r\n  {\r\n    \"Text\": \"作品】AI翻唱——实战教程 #醉尘\",\r\n    \"Score\": 0.8776522278785706,\r\n    \"X\": 500.5444030761719,\r\n    \"Y\": 2038.5386962890625\r\n  },\r\n  {\r\n    \"Text\": \"仙...更多信息\",\r\n    \"Score\": 0.8906785845756531,\r\n    \"X\": 309.4555969238281,\r\n    \"Y\": 2112.034423828125\r\n  }\r\n]",
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": false,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "1dfd717b-6477-4107-8378-a8ae1855e871",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4753,3994.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "2be89c44-7f84-4df3-bdf6-a19cd7b6600c",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "5260.2733333333335,3394.8600000000006",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "ace82dc5-bdb0-4aa4-b768-19ae0d087bc4",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "5113,3994.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "714dbeeb-7591-4378-996e-6699b0087bcb",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4920.613333333334,3994.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "be27e013-42d7-487c-8d43-a9714bd142c7",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "733,3094.8600000000006",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "2b92ba13-5637-43a3-8453-1ecf372f3cdd",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "860.9999999999998,2959.8600000000006",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "316c00fa-6e82-418f-b103-dc674b55a3d4",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4047.9999999999995,3694.8600000000006",
+        "Operation": null,
+        "Type": 5,
+        "Value": false,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "205c2352-4c80-477b-9200-2ec0590dd27e",
+        "Title": "成功(Bool)",
+        "PropertyName": "IsSuccess",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4260.9366666666665,3514.8599999999997",
+        "Operation": null,
+        "Type": 0,
+        "Value": false,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    },
+    {
+      "Input": {
+        "Id": "8ca751f9-03e8-4922-b63a-060308dc3f14",
+        "Title": "执行",
+        "PropertyName": "InputRoot",
+        "IsConnected": true,
+        "IsInput": true,
+        "Anchor": "4002.9999999999995,3514.8599999999997",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "Output": {
+        "Id": "e400dc49-7c47-41ad-9647-c59b948b0aea",
+        "Title": "执行",
+        "PropertyName": "OutputRoot",
+        "IsConnected": true,
+        "IsInput": false,
+        "Anchor": "4318.48,3364.86",
+        "Operation": null,
+        "Type": 5,
+        "Value": null,
+        "ValueIsKey": true,
+        "CanChangeType": false,
+        "IsRoot": true,
+        "IsDirty": true
+      },
+      "IsDirty": true
+    }
+  ]
+}

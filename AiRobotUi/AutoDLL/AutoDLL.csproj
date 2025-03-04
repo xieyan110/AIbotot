@@ -1,0 +1,133 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ADBKeyboard.apk" />
+    <None Remove="PlatformTools\adb.exe" />
+    <None Remove="PlatformTools\AdbWinApi.dll" />
+    <None Remove="PlatformTools\AdbWinUsbApi.dll" />
+    <None Remove="PlatformTools\avcodec-60.dll" />
+    <None Remove="PlatformTools\avformat-60.dll" />
+    <None Remove="PlatformTools\avutil-58.dll" />
+    <None Remove="PlatformTools\etc1tool.exe" />
+    <None Remove="PlatformTools\fastboot.exe" />
+    <None Remove="PlatformTools\hprof-conv.exe" />
+    <None Remove="PlatformTools\icon.png" />
+    <None Remove="PlatformTools\libusb-1.0.dll" />
+    <None Remove="PlatformTools\libwinpthread-1.dll" />
+    <None Remove="PlatformTools\make_f2fs.exe" />
+    <None Remove="PlatformTools\make_f2fs_casefold.exe" />
+    <None Remove="PlatformTools\mke2fs.conf" />
+    <None Remove="PlatformTools\mke2fs.exe" />
+    <None Remove="PlatformTools\NOTICE.txt" />
+    <None Remove="PlatformTools\open_a_terminal_here.bat" />
+    <None Remove="PlatformTools\scrcpy-console.bat" />
+    <None Remove="PlatformTools\scrcpy-noconsole.vbs" />
+    <None Remove="PlatformTools\scrcpy-server" />
+    <None Remove="PlatformTools\scrcpy.exe" />
+    <None Remove="PlatformTools\SDL2.dll" />
+    <None Remove="PlatformTools\source.properties" />
+    <None Remove="PlatformTools\sqlite3.exe" />
+    <None Remove="PlatformTools\swresample-4.dll" />
+    <None Remove="说明.md" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ADBKeyboard.apk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\adb.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\AdbWinApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\AdbWinUsbApi.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\avcodec-60.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\avformat-60.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\avutil-58.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\etc1tool.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\fastboot.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\hprof-conv.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\libusb-1.0.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\libwinpthread-1.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\make_f2fs.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\make_f2fs_casefold.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\mke2fs.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\mke2fs.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\NOTICE.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\open_a_terminal_here.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\scrcpy-console.bat">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\scrcpy-noconsole.vbs">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\scrcpy-server">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\scrcpy.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\SDL2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\source.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\sqlite3.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PlatformTools\swresample-4.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.KernelMemory.AI.OpenAI" Version="0.69.240727.1" />
+    <PackageReference Include="Microsoft.KernelMemory.Core" Version="0.69.240727.1" />
+    <PackageReference Include="OpenAI" Version="1.11.0" />
+    <PackageReference Include="OpenCvSharp4.runtime.win" Version="4.10.0.20240616" />
+    <PackageReference Include="PaddleOCRSharp" Version="4.4.0.2" />
+  </ItemGroup>
+
+</Project>

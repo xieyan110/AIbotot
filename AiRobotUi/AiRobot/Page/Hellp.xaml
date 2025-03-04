@@ -1,0 +1,162 @@
+﻿<UserControl x:Class="Aibot.Hellp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Aibot"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:nodify="https://miroiu.github.io/nodify"
+             xmlns:shared="clr-namespace:Nodify;assembly=Nodify.Shared"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             mc:Ignorable="d" 
+             Background="{DynamicResource NodifyEditor.BackgroundBrush}"
+             Foreground="{DynamicResource ForegroundBrush}"
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+    <UserControl.DataContext>
+        <local:HelpViewModel />
+    </UserControl.DataContext>
+
+
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled">
+        <StackPanel Margin="10" IsHitTestVisible="False">
+            <StackPanel.Resources>
+                <Style BasedOn="{StaticResource {x:Type TextBlock}}" TargetType="{x:Type TextBlock}">
+                    <Setter Property="Margin" Value="0,0,0,5" />
+                </Style>
+            </StackPanel.Resources>
+
+            <StackPanel Margin="0,0,0,20">
+
+                <ui:Card Margin="20">
+                    <StackPanel>
+                        <ui:TextBlock
+                            FontSize="24"
+                            FontWeight="Medium"
+                            Text="快捷键说明" />
+                        <TextBlock TextWrapping="Wrap">
+   <Run FontWeight="Bold" Foreground="Red">CTRL + N/W</Run>
+   <Run>: 打开/关闭 editor</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+   <Run FontWeight="Bold" Foreground="Red">Shif + W</Run>
+   <Run>: 全局 停止执行</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+   <Run FontWeight="Bold" Foreground="Red">ALT + 点击</Run>
+   <Run>: 断开节点连接</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+   <Run FontWeight="Bold" Foreground="Red">右击鼠标</Run>
+   <Run>: 打开菜单创建节点</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+   <Run FontWeight="Bold" Foreground="Red">Delete键</Run>
+   <Run>:  删除</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+   <Run FontWeight="Bold" Foreground="Red">CTRL + T</Run>
+   <Run>: 切换主题</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+   <Run FontWeight="Bold" Foreground="Red">CTRL + S</Run>
+   <Run>: 保存节点</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+   <Run FontWeight="Bold" Foreground="Red">CTRL + C</Run>
+   <Run>: 复制节点</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+   <Run FontWeight="Bold" Foreground="Red">CTRL + V</Run>
+   <Run>: 粘贴节点</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap">
+   <Run FontWeight="Bold" Foreground="Red">CTRL + G</Run>
+   <Run>: 组选择（按住SHIFT并鼠标拖动标题可单独移动组节点）</Run>
+                        </TextBlock>
+                    </StackPanel>
+                </ui:Card>
+                <ui:Card Margin="20">
+                    <StackPanel>
+                        <ui:TextBlock
+            FontSize="24"
+            FontWeight="Medium"
+            Text="功能说明" />
+                        <TextBlock TextWrapping="Wrap" Margin="0,10,0,0">
+            <Run FontWeight="Bold">StartRoot 节点：</Run>
+            <Run>开始的节点，在只有一个的情况下才可以正常运行。多了少了都会有问题。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">算数-基本 节点：</Run>
+            <Run>运算符 +(加号)-(减号)*(乘)/(除)%(余数)。例：x(2) - y(5) = 2 - 5 = -3。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">foreachJson 节点：</Run>
+            <Run>jsonData 是 list 里面套实体。可以遍历这些数据。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">endfor 节点：</Run>
+            <Run>当 foreachJson 的数据遍历到 endfor 后就会返回遍历第二个数据，直到遍历完。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">LoadJson 节点：</Run>
+            <Run>jsonData 是数据结构 { "xx":"xxx", "yyy":"xzafds" }</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">List-获取包含Data 节点：</Run>
+            <Run>JsonData 的类型是 json list，可以获取特定属性的值。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">图片Json 节点：</Run>
+            <Run>输入图片路径，输出解析图片的文字 list 结果。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">图片文字 节点：</Run>
+            <Run>输入图片路径，输出解析图片的文字结果。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">图片宽高 节点：</Run>
+            <Run>输入图片路径，输出图片的宽和高（可以获取屏幕的宽高）。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">定位图片 节点：</Run>
+            <Run>输入两图片，相似度（0.8-0.95，默认0.8），从中解析出小图在大图中的位置。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">定位文字 节点：</Run>
+            <Run>输入大图片（图片路径），图片中的文字，自上而下（从下面开始往上面搜索，默认从下往上），index（从上往下数第几个，默认第一个）。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">通用-字符串格式化 节点：</Run>
+            <Run>格式模板和文本输入，输出格式化后的结果。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">服务-解析聊天 节点：</Run>
+            <Run>详细记录（图片详细Json节点的结果），对面聊天的最左侧（x坐标），对面聊天的最右侧（x坐标），自己发送聊天的最左侧（x坐标），自己发送聊天的最右侧（x坐标）。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">时间-等待 节点：</Run>
+            <Run>等待指定的毫秒数。</Run>
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+            <Run FontWeight="Bold">时间-定时任务 节点：</Run>
+            <Run>使用 cron 表达式设置定时任务。例如：0-59 * * * * （每分钟执行一次），0 9 * * 1-5 （周一到周五每天9点0分执行一次）。注意：本软件的 cron 不支持秒。</Run>
+                <TextBlock TextWrapping="Wrap" Margin="0,5,0,0">
+                    <Run>注意：本软件的 cron 不支持秒。更多 cron 表达式信息，请访问 </Run>
+                    <ui:Button
+                        Content="https://www.bejson.com/othertools/cron"
+                        Icon="{ui:SymbolIcon Link24}"
+                        Command="{Binding OpenUrlCommand}"
+                        CommandParameter="{Binding Content, RelativeSource={RelativeSource Self}}"/>
+                    
+                </TextBlock>
+                        </TextBlock>
+                    </StackPanel>
+                </ui:Card>
+
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+
+
+</UserControl>

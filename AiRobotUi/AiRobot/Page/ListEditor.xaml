@@ -1,0 +1,218 @@
+﻿<UserControl x:Class="Aibot.ListEditor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Aibot"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:nodify="https://miroiu.github.io/nodify"
+             xmlns:shared="clr-namespace:Nodify;assembly=Nodify.Shared"
+             xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+             mc:Ignorable="d" 
+             Background="{DynamicResource NodifyEditor.BackgroundBrush}"
+             Foreground="{DynamicResource ForegroundBrush}"
+             d:DesignHeight="450" d:DesignWidth="900">
+
+
+    <UserControl.DataContext>
+        <local:ListEditorViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Aibot;component/Controls/ModernComboBoxStyles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Style x:Key="ScrollBarStyle" TargetType="{x:Type ScrollBar}">
+                <Setter Property="Background" Value="Red"/>
+                <Setter Property="BorderBrush" Value="Red"/>
+            </Style>
+            <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+            <local:InverseBooleanToVisibilityConverter x:Key="InverseBooleanToVisibilityConverter"/>
+            <local:ContentConverter x:Key="ContentConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+    <UserControl.InputBindings>
+        <KeyBinding
+            Key="R"
+            Command="{Binding RefreshWorkfCommand}"
+            Modifiers="Ctrl" />
+
+        <KeyBinding
+            Key="S"
+            Command="{Binding SaveListCommand}"
+            Modifiers="Ctrl" />
+
+    </UserControl.InputBindings>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <ui:TextBox Text="{Binding IpAddress, Mode=TwoWay}" PlaceholderText="IP地址（可选）" Width="150" Margin="5"/>
+                <ui:Button Content="ADB链接" Command="{Binding AdbConnectCommand}" Margin="5"/>
+                <ui:TextBox Text="{Binding AdbDeviceName, Mode=TwoWay}"  IsReadOnly="True" Width="250" Margin="5"/>
+                <ui:Button Content="上高下宽"  Width="80"  Margin="50 0 0 0"/>
+
+                <VirtualizingStackPanel Margin="15 0 0 0">
+
+                    <Slider x:Name="HeightSlider"
+                    Orientation="Horizontal"
+                    Minimum="35"
+                    Maximum="400"
+                    Value="75"
+                    Width="200"/>
+
+                    <Slider x:Name="WidthSlider"
+                    Orientation="Horizontal"
+                    Minimum="60"
+                    Maximum="600"
+                    Value="250"
+                    Width="200"/>
+                </VirtualizingStackPanel>
+
+            </StackPanel>
+        </DockPanel>
+
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <ui:Button Content="并发执行" Command="{Binding StartCommand}" Margin="5"/>
+            <ui:Button Content="全选/取消" Command="{Binding SelectCommand}" Margin="5"/>
+            <!--<ui:Button Content="顺序执行" Command="{Binding StartBaseCommand}" Margin="5"/>-->
+            <ui:Button Content="暂停" Command="{Binding PauseCommand}" Margin="5"/>
+            <ui:Button Content="删除" Command="{Binding DeleteSelectedCommand}" Margin="5"/>
+            <ui:Button Content="新增" Command="{Binding AddNewCommand}" Margin="5"/>
+
+            <ComboBox 
+                Style="{StaticResource ModernComboBoxStyle}"
+                ItemContainerStyle="{StaticResource ModernComboBoxItemStyle}"
+                ItemsSource="{Binding WorkflowFiles}" 
+                SelectedItem="{Binding SelectedWorkflow, Mode=TwoWay}"
+                DisplayMemberPath="Name"
+                Width="Auto" 
+                Height="30"
+                MinWidth="200"
+                MaxWidth="400"
+                Margin="5">
+            </ComboBox>
+
+
+
+        </StackPanel>
+
+        <!--列表开始-->
+        <ScrollViewer Grid.Row="2" 
+              VerticalScrollBarVisibility="Auto"
+              HorizontalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding OperationList}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Border 
+                    BorderBrush="{DynamicResource BackgroundBrush}" 
+                    BorderThickness="1" 
+                    Margin="0,0,0,5" 
+                    ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                    CornerRadius="5" >
+                            <Border.Style>
+                                <Style TargetType="Border">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding RunnerState}" Value="Stopped">
+                                            <Setter Property="Background" Value="{x:Null}"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RunnerState}" Value="Running">
+                                            <Setter Property="Background" Value="#16572c"/>
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding RunnerState}" Value="Paused">
+                                            <Setter Property="Background"  Value="{x:Null}"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <CheckBox Grid.Column="0" 
+                                      IsChecked="{Binding IsSelected}" 
+                                      VerticalAlignment="Center" 
+                                      Margin="5,0,5,0">
+                                    <CheckBox.Content>
+                                        <MultiBinding Converter="{StaticResource ContentConverter}">
+                                            <Binding Path="NodeTitle" />
+                                            <Binding Path="Name" />
+                                        </MultiBinding>
+                                    </CheckBox.Content>
+                                </CheckBox>
+                                <ScrollViewer Grid.Column="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled" Padding="0,5">
+                                    <ItemsControl ItemsSource="{Binding Operations}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <ItemsControl ItemsSource="{Binding Input}">
+                                                    <ItemsControl.ItemsPanel>
+                                                        <ItemsPanelTemplate>
+                                                            <StackPanel Orientation="Horizontal"/>
+                                                        </ItemsPanelTemplate>
+                                                    </ItemsControl.ItemsPanel>
+                                                    <ItemsControl.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <StackPanel Orientation="Vertical" Margin="0,0,5,0">
+                                                                <StackPanel.Style>
+                                                                    <Style TargetType="StackPanel">
+                                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                                        <Style.Triggers>
+                                                                            <MultiDataTrigger>
+                                                                                <MultiDataTrigger.Conditions>
+                                                                                    <Condition Binding="{Binding IsConnected}" Value="False"/>
+                                                                                    <Condition Binding="{Binding IsPublic}" Value="True"/>
+                                                                                </MultiDataTrigger.Conditions>
+                                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                                            </MultiDataTrigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </StackPanel.Style>
+                                                                <ui:TextBlock Text="{Binding Title}"
+                                                                      FontWeight="Bold"/>
+                                                                <ui:TextBox Text="{Binding Value}"
+                                                                 VerticalAlignment="Center"
+                                                                 MinHeight="{Binding ElementName=HeightSlider, Path=Value}"
+                                                                 Width="{Binding ElementName=WidthSlider, Path=Value}"
+                                                                 Height="{Binding ElementName=HeightSlider, Path=Value}"
+                                                                 Margin="0,2,0,0"
+                                                                 AcceptsReturn="True"
+                                                                 TextWrapping="Wrap" />
+                                                            </StackPanel>
+                                                        </DataTemplate>
+                                                    </ItemsControl.ItemTemplate>
+                                                </ItemsControl>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </ScrollViewer>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
+        <!--列表结束-->
+
+    </Grid>
+
+</UserControl>

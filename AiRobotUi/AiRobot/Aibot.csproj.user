@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ActiveDebugFramework>net8-windows</ActiveDebugFramework>
+    <_LastSelectedProfileId>G:\_Workspace\C#_works\AIbotot\AiRobotUi\AiRobot\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Page\CustomOverlayWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Page\Hellp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Page\ListEditor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MainEditor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MainWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Page\InputDialog.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Controls\ModernComboBoxStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Page\CustomOverlayWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Page\Hellp.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Page\ListEditor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainEditor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Page\InputDialog.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModel\OperationViewModel\OperationsMenuView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

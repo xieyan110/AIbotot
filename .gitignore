@@ -1,0 +1,16 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.svn
+/AiRobotUi/AibotLibrary/bin
+/AiRobotUi/AibotLibrary/obj
+/AiRobotUi/AiRobot/.vs
+/AiRobotUi/AiRobot/bin
+/AiRobotUi/AiRobot/obj
+/AiRobotUi/AutoDLL/obj
+/AiRobotUi/AutoDLL/bin
+/AiRobotUi/Nodify.Shared/bin
+/AiRobotUi/Nodify.Shared/obj
+/AiRobotUi/WindowsAPI/WindowsAPI/bin
+/AiRobotUi/WindowsAPI/WindowsAPI/obj
