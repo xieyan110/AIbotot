@@ -31,6 +31,9 @@ namespace Aibot
         [AibotProperty("执行", AibotKeyType.Object, IsRoot = true, Usage = AibotKeyUsage.Output)]
         public AibotProperty OutputRoot { get; set; }
 
+        [AibotProperty("设备(String)", AibotKeyType.String, Usage = AibotKeyUsage.Output)]
+        public AibotProperty Device { get; set; }
+
         public Task Execute(AibotV blackboard)
         {
             return Task.CompletedTask;

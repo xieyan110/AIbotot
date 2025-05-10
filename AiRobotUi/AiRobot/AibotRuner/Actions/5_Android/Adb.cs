@@ -1,5 +1,6 @@
 ﻿using Nodify;
 using OpenCvSharp;
+using SharpCompress.Common;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -91,6 +92,8 @@ namespace Aibot
             {
                 if (node.PropertyName == "FilePath")
                     node.Value = filePath;
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
             });
 
             return Task.CompletedTask;
@@ -108,6 +111,11 @@ namespace Aibot
             var deviceName = DeviceName.Value?.ToString() ?? "";
 
             AdbHelper.OpenApp(PackageName.Value?.ToString() ?? "", deviceName);
+            blackboard.Node!.Output.ForEach(node =>
+            {
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
+            });
             return Task.CompletedTask;
         }
     }
@@ -122,6 +130,11 @@ namespace Aibot
             var deviceName = DeviceName.Value?.ToString() ?? "";
 
             AdbHelper.KillApp(PackageName.Value?.ToString() ?? "", deviceName);
+            blackboard.Node!.Output.ForEach(node =>
+            {
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
+            });
             return Task.CompletedTask;
         }
     }
@@ -154,6 +167,12 @@ namespace Aibot
                 AdbHelper.Click(x, y, deviceName);
                 Thread.Sleep(50);
             }
+
+            blackboard.Node!.Output.ForEach(node =>
+            {
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
+            });
             return Task.CompletedTask;
         }
     }
@@ -179,6 +198,11 @@ namespace Aibot
             if (duration == 0)
                 duration = 500;
 
+            blackboard.Node!.Output.ForEach(node =>
+            {
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
+            });
             AdbHelper.LongPress(x, y, duration, deviceName);
             return Task.CompletedTask;
         }
@@ -199,6 +223,11 @@ namespace Aibot
             {
                 AdbHelper.GoBack(deviceName);
             }
+            blackboard.Node!.Output.ForEach(node =>
+            {
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
+            });
             return Task.CompletedTask;
         }
     }
@@ -213,6 +242,12 @@ namespace Aibot
             var deviceName = DeviceName.Value?.ToString() ?? "";
 
             AdbHelper.InputText(Text.Value?.ToString() ?? "", deviceName);
+
+            blackboard.Node!.Output.ForEach(node =>
+            {
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
+            });
             return Task.CompletedTask;
         }
     }
@@ -235,6 +270,11 @@ namespace Aibot
             else
                 (blackboard["IsSuccess"], blackboard["IsError"]) = (true, false);
 
+            blackboard.Node!.Output.ForEach(node =>
+            {
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
+            });
             return Task.CompletedTask;
         }
     }
@@ -250,7 +290,11 @@ namespace Aibot
             var deviceName = DeviceName.Value?.ToString() ?? "";
 
             AdbHelper.InstallApp(ApkPath.Value?.ToString() ?? "", deviceName);
-
+            blackboard.Node!.Output.ForEach(node =>
+            {
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
+            });
             return Task.CompletedTask;
         }
     }
@@ -283,6 +327,11 @@ namespace Aibot
 
 
             AdbHelper.SwipeVertical(startX, startY, moveY, duration, deviceName);
+            blackboard.Node!.Output.ForEach(node =>
+            {
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
+            });
             return Task.CompletedTask;
         }
     }
@@ -315,6 +364,11 @@ namespace Aibot
 
 
             AdbHelper.SwipeHorizontal(startX, startY, moveX, duration, deviceName);
+            blackboard.Node!.Output.ForEach(node =>
+            {
+                if (node.PropertyName == "Device")
+                    node.Value = deviceName;
+            });
             return Task.CompletedTask;
         }
     }
